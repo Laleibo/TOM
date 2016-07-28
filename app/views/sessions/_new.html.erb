@@ -10,6 +10,7 @@
 	<p>
 		<%= f.text_field :email %>
 	</p>
+	
 
 	<p>
 		<%= f.password_field :password_digest %>
@@ -18,6 +19,7 @@
 	<p>
 		<%= f.password_field :password_confirmation %>
 	</p>
+		<%= f.submit, :controller => 'sessions', :action => 'new%>
 </div>
 
 <% end %>
