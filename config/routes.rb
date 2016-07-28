@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'sessions#index'
   get 'sessions/new'
 
   resources :profiles
