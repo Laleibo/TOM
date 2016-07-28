@@ -25,29 +25,18 @@ class ProfilesController < ApplicationController
   # POST /profiles
   # POST /profiles.json
   def create
-    @profile = Profile.new(profile_params).merge(email: stripe_params["stripeEmail"],
-                                                               card_token: stripe_params["stripeToken"])
-    raise "Please, check Profile errors" unless @profile.valid?
-    @profile.process_payment
-    @profile.save
-    redirect_to @profile, notice: 'Profile was successfully created.'
-  rescue => e
-    flash[:error] = e.message
-    render :new
-  end
+    @profile = Profile.new(profile_params)
 
-  #   @profile = Profile.new(profile_params)
-  #
-  #   respond_to do |format|
-  #     if @profile.save
-  #       format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
-  #       format.json { render :show, status: :created, location: @profile }
-  #     else
-  #       format.html { render :new }
-  #       format.json { render json: @profile.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+    respond_to do |format|
+      if @profile.save
+        format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
+        format.json { render :show, status: :created, location: @profile }
+      else
+        format.html { render :new }
+        format.json { render json: @profile.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
@@ -81,7 +70,7 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:email, :password_digest, :address1, :address2, :city, :state, :zip)
+      params.require(:profile).permit(:email, :password, :password_confirmation, :address1, :address2, :city, :state, :zip)
     end
 
       def stripe_params
