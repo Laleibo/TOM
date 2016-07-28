@@ -1,5 +1,6 @@
 class ChargesController < ApplicationController
   def new
+      @amount = 800
 end
 
 def create

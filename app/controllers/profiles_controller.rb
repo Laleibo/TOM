@@ -24,18 +24,29 @@ class ProfilesController < ApplicationController
   # POST /profiles
   # POST /profiles.json
   def create
-    @profile = Profile.new(profile_params)
-
-    respond_to do |format|
-      if @profile.save
-        format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
-        format.json { render :show, status: :created, location: @profile }
-      else
-        format.html { render :new }
-        format.json { render json: @profile.errors, status: :unprocessable_entity }
-      end
-    end
+    @Profile = Profile.new profile_params.merge(email: stripe_params["stripeEmail"],
+                                                               card_token: stripe_params["stripeToken"])
+    raise "Please, check Profile errors" unless @profile.valid?
+    @profile.process_payment
+    @rprofile.save
+    redirect_to @profile, notice: 'Profile was successfully created.'
+  rescue e
+    flash[:error] = e.message
+    render :new
   end
+
+  #   @profile = Profile.new(profile_params)
+  #
+  #   respond_to do |format|
+  #     if @profile.save
+  #       format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
+  #       format.json { render :show, status: :created, location: @profile }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @profile.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
@@ -71,4 +82,8 @@ class ProfilesController < ApplicationController
     def profile_params
       params.require(:profile).permit(:email, :password_digest, :address1, :address2, :city, :state, :zip)
     end
+
+      def stripe_params
+        params.permit :stripeEmail, :stripeToken
+      end
 end
