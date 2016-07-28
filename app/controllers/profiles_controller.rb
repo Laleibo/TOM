@@ -10,6 +10,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    redirect_to login_path unless session[:user_id]
   end
 
   # GET /profiles/new
@@ -24,13 +25,13 @@ class ProfilesController < ApplicationController
   # POST /profiles
   # POST /profiles.json
   def create
-    @Profile = Profile.new(profile_params).merge(email: stripe_params["stripeEmail"],
+    @profile = Profile.new(profile_params).merge(email: stripe_params["stripeEmail"],
                                                                card_token: stripe_params["stripeToken"])
     raise "Please, check Profile errors" unless @profile.valid?
     @profile.process_payment
-    @rprofile.save
+    @profile.save
     redirect_to @profile, notice: 'Profile was successfully created.'
-  rescue e
+  rescue => e
     flash[:error] = e.message
     render :new
   end
