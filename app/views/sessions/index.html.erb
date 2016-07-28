@@ -14,18 +14,13 @@
 		</span>
 		<% end %>
 	</div>
-	<div class="random">Would you like to sign up? <span class="create"> Click Here
-	</span></div>
+	<div class="random">Would you like to sign up? <%=link_to "Click here", :controller => "profiles", :action => "new" %></div>
 	<div class="log_in">
 		Log In
 	</div>
 
 </div>
 <div class="index_pic">This is where the picture goes</div>
-<div class="create_form">
-	<button id="create_form_exit">X</button>
-	<%= render 'new' %>
-</div>
 <div class="steps">
 	
 </div>
