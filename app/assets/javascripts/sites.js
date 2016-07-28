@@ -1,11 +1,9 @@
 $(".sessions.index").ready(function(){
-	var login = false
 	$('.sessions.index .sign_in').hide();
 	$('.sessions.index .log_in').click(function(){
 		$(this).transition({x: '-30em'}, 500, 'ease', function(){
 			$('.sessions.index .sign_in').show();
 		});
-		login = true;
 	});
 	$('.sessions.index .create_form').hide();
 	$('.sessions.index .create').click(function(){
