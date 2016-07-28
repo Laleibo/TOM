@@ -1,3 +1,100 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.sessions.index {
+	padding: 0;
+	margin: 1em;
+}
+.sessions.index div{
+	border: 1px solid black;
+	position: absolute;
+	/*overflow-y: hidden; */
+}
+
+.sessions.index .logo{
+	position: absolute;
+	font-size: 200%;
+	height: 100%;
+	width: 15%;
+	z-index: 1;
+}
+
+.sessions.index .header{
+	position: relative;
+	height: 4em;
+	width: 99.3%;
+	z-index: 1;
+}
+
+.sessions.index .sign_in{
+	position: float;
+	top: 30%;
+	width: 34em;
+	right: 3.6em;
+	z-index: 1;
+}
+.sessions.index .username_in{
+	position: inline;
+}
+.sessions.index .password_in{
+	position: inline;
+}
+
+.sessions.index .random{
+	top : 1%;
+	right: 4em;
+}
+
+.sessions.index .log_in{
+	top: 39%;
+	right: 4em;
+	z-index: 1;
+}
+
+.sessions.index .create{
+	color: blue;
+}
+
+.sessions.index .create_form{
+	width: 36%;
+	height: 70%;
+	top: 16%;
+	left: 30%;
+	padding-left: 2em;
+	padding-bottom: 2em;
+	padding-right: 2em;
+	border-radius: 30px 0px 30px 30px;
+}
+
+.sessions.index h1{
+	text-align: center;
+}
+
+.sessions.index .index_pic{
+	position: relative;
+	height: 28%;
+	width: 99.3%;
+	padding-top: 20%;
+	text-align: center;
+	margin-bottom: 2em
+}
+.sessions.index .steps{
+	position: relative;
+	width: 99.3%;
+	height: 9em;
+}
+#create_fields{
+	left: 15em;
+}
+#create_labels{
+	text-align: right;
+	font-size: 18px;
+}
+
+#create_form_exit{
+	position: absolute;
+	right: 0;
+}
+
+
