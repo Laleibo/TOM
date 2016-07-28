@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 20160727203923) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_orders_on_product_id"
-    t.index ["user_id"], name: "index_orders_on_user_id"
+    t.index ["product_id"], name: "index_orders_on_product_id", using: :btree
+    t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
   create_table "products", force: :cascade do |t|
@@ -48,7 +51,10 @@ ActiveRecord::Schema.define(version: 20160727203923) do
     t.integer  "profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["profile_id"], name: "index_users_on_profile_id"
+    t.index ["profile_id"], name: "index_users_on_profile_id", using: :btree
   end
 
+  add_foreign_key "orders", "products"
+  add_foreign_key "orders", "users"
+  add_foreign_key "users", "profiles"
 end
