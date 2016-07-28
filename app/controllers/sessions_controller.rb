@@ -1,26 +1,23 @@
 class SessionsController < ApplicationController
- 
+
   def index
-  	@profile = Profile.new
-  	render 'index'
   end
 
   def new
-  	# @profile = Profile.new
   end
 
-  def create 
-  	@user = Profiles.
-		find_by(username: params[:username]).
-			try(:authenticate, params[:password])
-
-		return render action: 'new' unless @user
-
-		# logged in, hooray
-
-		session[:user_id] = @user.id
-
-		redirect_to notes_path
-
+  def create
+    @profile = Profile.find_by(email: params[:email])
+    if @profile && @profile.authenticate(params[:password])
+      session[:user_id] = @profile.id
+      redirect_to @profile
+    else
+      render :new
+    end
 	end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_path
+  end
 end

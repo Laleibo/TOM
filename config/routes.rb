@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   root 'sessions#index'
-  get 'sessions/new'
+  get '/register' => 'profiles#new'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
 
-
-resources :charges
+  resources :charges
   resources :profiles
 
 
