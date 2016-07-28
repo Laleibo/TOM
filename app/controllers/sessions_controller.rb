@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
- 
+
   def index
   	@profile = Profile.new
   	render 'index'
@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   	# @profile = Profile.new
   end
 
-  def create 
+  def create
   	@user = Profiles.
 		find_by(username: params[:username]).
 			try(:authenticate, params[:password])
@@ -23,4 +23,7 @@ class SessionsController < ApplicationController
 		redirect_to notes_path
 
 	end
+
+  def destroy
+  end
 end
