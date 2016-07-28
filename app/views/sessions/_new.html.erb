@@ -1,0 +1,25 @@
+<h1>Sign up</h1>
+
+<%= form_for @profile do |f| %>
+<div id="create_labels">
+	<p> Email: </p>
+	<p> Password: <p>
+	<p> Password Confirmation: </p>
+</div>
+<div id="create_fields">
+	<p>
+		<%= f.text_field :email %>
+	</p>
+	
+
+	<p>
+		<%= f.password_field :password_digest %>
+	</p>
+
+	<p>
+		<%= f.password_field :password_confirmation %>
+	</p>
+		<%= f.submit, :controller => 'sessions', :action => 'new%>
+</div>
+
+<% end %>

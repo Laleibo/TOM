@@ -80,7 +80,7 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:email, :password_digest, :address1, :address2, :city, :state, :zip)
+      params.require(:profile).permit(:email, :password_digest, :address1, :address2, :city, :state, :zip, :password, :password_confirmation)
     end
 
       def stripe_params
