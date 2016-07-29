@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
-  has_many :users, through: :orders
   has_many :orders
+  has_many :users, through: :orders
 
   def box
 	  if @user.variety == "tampon" && @user.flow == "light" && @user.scent == "scent" then

@@ -17,6 +17,9 @@ def create
 
   respond_to do |format|
     if @user.save
+      @product = Product.where(variety: @user.variety], flow: @user.flow, scent: @user.scent]).id
+      @product_name = @product_id.name
+      Order.create =(user_id: @user.id, product_id: @product)
       format.html { redirect_to profile_user_path(@profile, @user), notice: 'User was successfully created.' }
       format.json { render :show, status: :created, location: profile_user_path }
     else
@@ -24,6 +27,9 @@ def create
       format.json { render json: @user.errors, status: :unprocessable_entity }
     end
   end
+
+
+
 end
 
 def show
@@ -52,7 +58,7 @@ end
 
   private
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :birthday, :type, :flow, :scent)
+      params.require(:user).permit(:first_name, :last_name, :birthday, :variety, :flow, :scent)
     end
 
 
