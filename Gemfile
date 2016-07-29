@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gem 'rspec-rails'
+gem 'capybara'
 gem 'stripe'
 gem 'hirb'
 gem 'rails_12factor'
