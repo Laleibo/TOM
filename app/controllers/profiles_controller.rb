@@ -25,8 +25,9 @@ class ProfilesController < ApplicationController
   # POST /profiles
   # POST /profiles.json
   def create
-    @profile = Profile.new(profile_params).merge(email: stripe_params["stripeEmail"],
-                                                               card_token: stripe_params["stripeToken"])
+    byebug
+    @profile = Profile.new(profile_params.merge(email: stripe_params["stripeEmail"],
+                                                               card_token: stripe_params["stripeToken"]))
     raise "Please, check Profile errors" unless @profile.valid?
     @profile.process_payment
     @profile.save
