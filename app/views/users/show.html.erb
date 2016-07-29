@@ -1,0 +1,34 @@
+<p>
+  <strong>First Name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last Name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @user.birthday %>
+</p>
+
+<p>
+  <strong>Variety</strong>
+  <%= @user.variety %>
+</p>
+
+<p>
+  <strong>Flow</strong>
+  <%= @user.flow %>
+</p>
+
+<p>
+  <strong>Scent</strong>
+  <%= @user.scent %>
+</p>
+
+<%= link_to 'Edit', edit_profile_user_path(@profile, @user) %>
+
+<%= link_to 'Add Another User', new_profile_user_path(@profile) %>
+<%= link_to 'Go To delivery', profile_path(@profile) %>
