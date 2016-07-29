@@ -1,25 +1,28 @@
 require 'rails_helper'
 
-feature 'Visiting the Registration Page' do
+feature 'Visiting the Profile Page' do
 
-  it 'displays a link to login' do
-    visit profile_path
-    find_link 'Log In'
-  end
+  # it 'displays a link to login' do
+  #   visit profile_path
+  #   find_link 'Log In'
+  # end
 
-  it 'shows a registration form' do
-    visit profile_path
+  it 'shows a sign up/profile new form' do
+    visit root_path
     find_field 'Email'
     find_field 'Password'
-    find_button 'Register'
+    find_field 'address1'
+    find_field 'city'
+    find_field 'zip'
+    find_button 'Submit'
   end
 
   it 'submitting that form logs a Profile in' do
-    visit profile_path
+    visit root_path
     fill_in 'Email', with: 'john@example.com'
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
-    click_button 'Register'
+    click_button 'submit'
     expect(current_path).to eq(root_path)
   end
 end
