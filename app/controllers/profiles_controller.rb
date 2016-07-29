@@ -36,7 +36,7 @@ class ProfilesController < ApplicationController
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
-    # redirect_to 
+    # redirect_to
   end
 
   # PATCH/PUT /profiles/1
