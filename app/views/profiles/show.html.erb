@@ -32,3 +32,8 @@
 
 <%= link_to 'Edit', edit_profile_path(@profile) %> |
 <%= link_to 'Back', profiles_path %>
+
+<h2> Users in the account </h2>
+<% @profile.users.each do |user| %>
+<%= link_to user.first_name, profile_user_path(@profile, @user)%>
+<% end %>
