@@ -10,9 +10,9 @@
 <%= label_tag :birthday %>
 <%= text_field_tag :birthday %>
 <br>
-<%= radio_button_tag(:variety, "tampons") %>
+<%= radio_button_tag(:variety, "tampon") %>
 <%= label_tag(:variety_tampon, "All Tampons") %>
-<%= radio_button_tag(:variety, "pads") %>
+<%= radio_button_tag(:variety, "pad") %>
 <%= label_tag(:variety_pad, "All Pads") %>
 <%= radio_button_tag(:variety, "combo") %>
 <%= label_tag(:variety_combo, "Combination") %>
@@ -24,13 +24,13 @@
 <%= radio_button_tag(:flow, "heavy") %>
 <%= label_tag(:flow_heavy, "Heavy") %>
 <br>
-<%= radio_button_tag(:scent, "Scent") %>
+<%= radio_button_tag(:scent, "scent") %>
 <%= label_tag(:scent_scented, "Scented") %>
 <%= radio_button_tag(:scent, "unscent") %>
-<%= label_tag(:scent_unscented, "Uscented") %>
+<%= label_tag(:scent_unscented, "Unscented") %>
+
+
 
 <%= submit_tag %>
 
 <% end %>
-<%= link_to 'Add Another User', new_profile_user_path(@profile) %>
-<%= link_to 'Go To delivery', profile_path(@profile) %>

@@ -46,8 +46,6 @@ def update
   end
 end
 
-def add_another_user
-end
 
 def destroy
 end
@@ -57,9 +55,7 @@ end
       params.require(:user).permit(:first_name, :last_name, :birthday, :type, :flow, :scent)
     end
 
-    # def set_params
-    #
-    # end
+
 
 
 end
