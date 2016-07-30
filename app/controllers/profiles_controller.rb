@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_filter :authorize, except: [:create, :new]
+  before_filter :authorize, except: [:create, :new, :delivery]
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /profiles
@@ -56,7 +56,7 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1.json
   def update
     respond_to do |format|
-      if @profile.update(profile_params)
+      if @profile.update(delivery_params)
         format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
         format.json { render :show, status: :ok, location: @profile }
       else
@@ -76,6 +76,10 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def delivery
+    @profile = Profile.find(params[:profile_id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
@@ -83,11 +87,20 @@ class ProfilesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    def log_in_params
+      params.require(:profile).permit(:email, :password, :password_confirmation)
+    end
+
+    def stripe_params
+      params.permit :stripeEmail, :stripeToken
+    end
+
+    def delivery_params
+      params.require(:profile).permit(:address1, :address2, :city, :state, :zip)
+    end
+
     def profile_params
       params.require(:profile).permit(:email, :password, :password_confirmation, :address1, :address2, :city, :state, :zip)
     end
 
-      def stripe_params
-        params.permit :stripeEmail, :stripeToken
-      end
 end
