@@ -28,6 +28,7 @@
   <%= @profile.zip %>
 <%= link_to 'New User', new_profile_user_path(@profile) %>
 <%= link_to 'Edit', edit_profile_path(@profile) %>
+<%= link_to 'Go To delivery', "/profiles/#{@profile.id}/delivery" %>
 
 <h2> Users in the account </h2>
 <% @profile.users.each do |user| %>
