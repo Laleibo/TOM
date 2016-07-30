@@ -12,7 +12,6 @@ class UsersController < ApplicationController
 
 def create
   @user = @profile.users.create!(user_params)
-
   created_product = Product.user_pref(@user)
   Order.create!(user_id: @user.id, product_id: created_product.id)
   redirect_to profile_user_path(@profile, @user), notice: "User was successfully created"
@@ -33,6 +32,7 @@ def create
 end
   def show
     @user = User.find(params[:id])
+    # @user = User.find.first
 
   end
 
