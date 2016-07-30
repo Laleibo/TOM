@@ -1,7 +1,10 @@
 class SessionsController < ApplicationController
 
   def index
-
+    # if session[:profile_id].nil?
+    # else
+    #   redirect_to root_path
+    # end
   end
 
   def new

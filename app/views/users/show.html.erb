@@ -1,3 +1,6 @@
+<h3> User info </h3>
+<%= link_to 'Edit', edit_profile_user_path(@profile, @user) %>
+
 <p>
   <strong>First Name:</strong>
   <%= @user.first_name %>
@@ -28,7 +31,6 @@
   <%= @user.scent %>
 </p>
 
-<%= link_to 'Edit', edit_profile_user_path(@profile, @user) %>
 
-<%= link_to 'Add Another User', new_profile_user_path(@profile) %>
+<%= link_to 'Add Another User', new_profile_user_path(@profile) %> <br>
 <%= link_to 'Go To delivery', profile_path(@profile) %>

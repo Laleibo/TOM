@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_filter :authorize
+  before_filter :authorize, except: [:create, :new]
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /profiles
@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-    redirect_to login_path unless session[:profile_id]
+    # redirect_to '/' unless session[:profile_id]
   end
 
   # GET /profiles/new
