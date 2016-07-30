@@ -3,7 +3,8 @@ class Product < ApplicationRecord
   has_many :users, through: :orders
 
   def self.user_pref(user)
-    product = Product.where(variety: user.variety, flow: user.flow, scent: user.scent)
+    # product =
+    Product.find_by(variety: user.variety, flow: user.flow, scent: user.scent)
   end
 
   # def self.box

@@ -1,21 +1,19 @@
 class UsersController < ApplicationController
+  before_action :set_profile, only: [:index, :new, :create, :show]
 
   def index
     @users = User.all
-    @profile = Profile.find(params[:profile_id])
   end
 
   def new
     @user = User.new
-    @profile = Profile.find(params[:profile_id])
   end
 
 def create
+  @user = @profile.users.create!(user_params)
 
-  profile = Profile.find(params[:profile_id])
-  user = profile.users.create!(user_params)
-  product = Product.user_pref(user)
-  Order.create!(user_id: user.id, product_id: product.id)
+  created_product = Product.user_pref(@user)
+  Order.create!(user_id: @user.id, product_id: created_product.id)
   redirect_to profile_user_path(@profile, @user), notice: "User was successfully created"
 
   # respond_to do |format|
@@ -35,7 +33,7 @@ end
 
   def show
     @user = User.find(params[:id])
-    @profile = Profile.find(params[:profile_id])
+
   end
 
   def edit
@@ -59,5 +57,9 @@ end
   private
     def user_params
       params.require(:user).permit(:first_name, :last_name, :birthday, :variety, :flow, :scent)
+    end
+
+    def set_profile
+      @profile = Profile.find(params[:profile_id])
     end
 end
