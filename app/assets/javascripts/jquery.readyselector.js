@@ -17,7 +17,8 @@
 })(jQuery);
 
 
-#customized payment form on chargesnew page
+// #customized payment form on charges new page
+
 $(function() {
   var $form = $('#payment-form');
   $form.submit(function(event) {
