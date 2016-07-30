@@ -10,8 +10,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-    redirect_to login_path unless session[:user_id]
-    @user = User.find(params[:id])
+    redirect_to login_path unless session[:profile_id]
   end
 
   # GET /profiles/new
