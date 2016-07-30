@@ -55,7 +55,7 @@ end
 
   private
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :birthday, :type, :flow, :scent)
+      params.require(:user).permit(:first_name, :last_name, :birthday, :variety, :flow, :scent)
     end
 
     def set_profile
