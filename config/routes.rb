@@ -4,17 +4,14 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
-
-  resources :charges
-  resources :profiles
-
+  post '/users/:profile_id' => 'user#create'
 
   resources :profiles do
     resources :users
   end
 
-resources :users
-  post '/users/:profile_id' => 'user#create'
+  resources :charges
+  resources :profiles
 
   resources :sessions
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
