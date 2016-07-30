@@ -26,8 +26,7 @@
 <p>
   <strong>Zip:</strong>
   <%= @profile.zip %>
-</p>
-
+<%= link_to 'New User', new_profile_user_path(@profile) %>
 <%= link_to 'Edit', edit_profile_path(@profile) %>
 
 <h2> Users in the account </h2>
