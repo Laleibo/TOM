@@ -1,36 +1,36 @@
-<%= form_tag ([@profile , @profile.users.build]) do |u| %>
+<%= form_for ([@profile, @profile.users.build]) do |u| %>
 
-<%= label_tag :first_name %>
-<%= text_field_tag :first_name %>
+<%= u.label :first_name %>
+<%= u.text_field :first_name %>
 <br>
 
-<%= label_tag :last_name %>
-<%= text_field_tag :last_name %>
+<%= u.label :last_name %>
+<%= u.text_field :last_name %>
 <br>
-<%= label_tag :birthday %>
-<%= text_field_tag :birthday %>
+<%= u.label :birthday %>
+<%= u.text_field :birthday %>
 <br>
-<%= radio_button_tag(:variety, "tampon") %>
-<%= label_tag(:variety_tampon, "All Tampons") %>
-<%= radio_button_tag(:variety, "pad") %>
-<%= label_tag(:variety_pad, "All Pads") %>
-<%= radio_button_tag(:variety, "combo") %>
-<%= label_tag(:variety_combo, "Combination") %>
+<%= u.radio_button(:variety, "tampon") %>
+<%= u.label(:variety_tampon, "All Tampons") %>
+<%= u.radio_button(:variety, "pad") %>
+<%= u.label(:variety_pad, "All Pads") %>
+<%= u.radio_button(:variety, "combo") %>
+<%= u.label(:variety_combo, "Combination") %>
 <br>
-<%= radio_button_tag(:flow, "light") %>
-<%= label_tag(:flow_light, "Light") %>
-<%= radio_button_tag(:flow, "medium") %>
-<%= label_tag(:flow_medium, "Medium") %>
-<%= radio_button_tag(:flow, "heavy") %>
-<%= label_tag(:flow_heavy, "Heavy") %>
+<%= u.radio_button(:flow, "light") %>
+<%= u.label(:flow_light, "Light") %>
+<%= u.radio_button(:flow, "medium") %>
+<%= u.label(:flow_medium, "Medium") %>
+<%= u.radio_button(:flow, "heavy") %>
+<%= u.label(:flow_heavy, "Heavy") %>
 <br>
-<%= radio_button_tag(:scent, "scent") %>
-<%= label_tag(:scent_scented, "Scented") %>
-<%= radio_button_tag(:scent, "unscent") %>
-<%= label_tag(:scent_unscented, "Unscented") %>
+<%= u.radio_button(:scent, "scent") %>
+<%= u.label(:scent_scented, "Scented") %>
+<%= u.radio_button(:scent, "unscent") %>
+<%= u.label(:scent_unscented, "Unscented") %>
 
 
 
-<%= submit_tag %>
+<%= u.submit %>
 
 <% end %>

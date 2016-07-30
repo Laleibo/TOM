@@ -6,27 +6,31 @@ class UsersController < ApplicationController
   end
 
   def new
-    @users = User.new
+    @user = User.new
     @profile = Profile.find(params[:profile_id])
   end
 
 def create
-  @profile = Profile.find(params[:profile_id])
-  # @user = @profile.users.create(user_params)
-  @user =  @profile.users.create!({first_name: params[:first_name],last_name: params[:flast_name], birthday: params[:birthday], variety: params[:variety], flow: params[:flow],scent: params[:scent] })
 
-  respond_to do |format|
-    if @user.save
-      @product = Product.where(variety: @user.variety], flow: @user.flow, scent: @user.scent]).id
-      @product_name = @product_id.name
-      Order.create =(user_id: @user.id, product_id: @product)
-      format.html { redirect_to profile_user_path(@profile, @user), notice: 'User was successfully created.' }
-      format.json { render :show, status: :created, location: profile_user_path }
-    else
-      format.html { render :new }
-      format.json { render json: @user.errors, status: :unprocessable_entity }
-    end
-  end
+  profile = Profile.find(params[:profile_id])
+  user = profile.users.create!(user_params)
+  product = Product.user_pref(user)
+  Order.create!(user_id: user.id, product_id: product.id)
+  redirect_to profile_user_path(@profile, @user), notice: "User was successfully created"
+
+  # respond_to do |format|
+  #   if @user.save
+  #
+  #     product = Product.user_pref(@user)
+  #     Order.create!(user: @user, product: product)
+  #
+  #     format.html { redirect_to profile_user_path(@profile, @user), notice: 'User was successfully created.' }
+  #     format.json { render :show, status: :created, location: profile_user_path }
+  #   else
+  #     format.html { render :new }
+  #     format.json { render json: @user.errors, status: :unprocessable_entity }
+  #   end
+  # end
 
 
 
