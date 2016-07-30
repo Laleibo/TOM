@@ -40,9 +40,6 @@ class Product < ApplicationRecord
 	  elsif @user.variety == "combo" && @user.flow == "heavy" && @user.scent == "scent" then
 	  	return "chu"
 	  else
-
-	  end
-	
+    end
 	end
-  		
 end
