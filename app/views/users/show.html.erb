@@ -33,4 +33,4 @@
 
 
 <%= link_to 'Add Another User', new_profile_user_path(@profile) %> <br>
-<%= link_to 'Go To delivery', profile_path(@profile) %>
+<%= link_to 'Go To delivery', "/profiles/#{@profile.id}/delivery" %>
