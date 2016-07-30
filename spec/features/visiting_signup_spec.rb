@@ -8,11 +8,13 @@ feature 'Visiting the Profile Page' do
   # end
 
   it 'shows a sign up/profile new form' do
-    visit root_path
+    visit '/register'
     find_field 'Email'
     find_field 'Password'
     find_field 'address1'
+    find_field 'address2'
     find_field 'city'
+    find_field 'state'
     find_field 'zip'
     find_button 'Submit'
   end
