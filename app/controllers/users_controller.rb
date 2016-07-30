@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_profile, only: [:index, :new, :create, :show]
+  before_action :set_profile, only: [:index, :new, :create, :show, :update, :edit, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -29,7 +30,6 @@ def create
   #   end
   # end
 end
-
   def show
     @user = User.find(params[:id])
 
@@ -41,7 +41,7 @@ end
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to profile_user_path(@profile, @user), notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -60,5 +60,9 @@ end
 
     def set_profile
       @profile = Profile.find(params[:profile_id])
+    end
+
+    def set_user
+      @user = User.find(params[:id])
     end
 end

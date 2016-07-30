@@ -12,10 +12,10 @@
 
 
   <body  class="<%= controller_name %> <%= action_name %>">
-    <% if current_user %>
-  Signed in as <%= current_user.email %> | <%= link_to "Logout", logout_path %>
+    <% if current_profile %>
+  Signed in as <%= current_profile.email %> | <%= link_to "Logout", logout_path %>
 <% else %>
-  <%= link_to 'Login', login_path %> | <%= link_to 'Register', register_path %>
+  <%= link_to 'Login', login_path %> | <%= link_to 'Register', new_profile_path %>
 <% end %>
 
     <%= yield %>

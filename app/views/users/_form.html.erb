@@ -1,0 +1,36 @@
+<%= form_for ([@profile, @user]) do |u| %>
+
+<%= u.label :first_name %>
+<%= u.text_field :first_name %>
+<br>
+
+<%= u.label :last_name %>
+<%= u.text_field :last_name %>
+<br>
+<%= u.label :birthday %>
+<%= u.text_field :birthday %>
+<br>
+<%= u.radio_button(:variety, "tampon") %>
+<%= u.label(:variety_tampon, "All Tampons") %>
+<%= u.radio_button(:variety, "pad") %>
+<%= u.label(:variety_pad, "All Pads") %>
+<%= u.radio_button(:variety, "combo") %>
+<%= u.label(:variety_combo, "Combination") %>
+<br>
+<%= u.radio_button(:flow, "light") %>
+<%= u.label(:flow_light, "Light") %>
+<%= u.radio_button(:flow, "medium") %>
+<%= u.label(:flow_medium, "Medium") %>
+<%= u.radio_button(:flow, "heavy") %>
+<%= u.label(:flow_heavy, "Heavy") %>
+<br>
+<%= u.radio_button(:scent, "scent") %>
+<%= u.label(:scent_scented, "Scented") %>
+<%= u.radio_button(:scent, "unscent") %>
+<%= u.label(:scent_unscented, "Unscented") %>
+
+
+
+<%= u.submit %>
+
+<% end %>

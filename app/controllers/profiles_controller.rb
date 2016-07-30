@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  before_filter :authorize, except: [:create, :new]
   before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
   # GET /profiles
@@ -10,8 +11,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-    redirect_to login_path unless session[:user_id]
-    @user = User.find(params[:id])
+    # redirect_to '/' unless session[:profile_id]
   end
 
   # GET /profiles/new
@@ -42,7 +42,7 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
+        format.html { redirect_to new_profile_user_path(@profile), notice: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new }
