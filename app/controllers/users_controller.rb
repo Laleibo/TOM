@@ -11,11 +11,17 @@ class UsersController < ApplicationController
   end
 
 def create
-  @user = @profile.users.create!(user_params)
-  created_product = Product.user_pref(@user)
-  Order.create!(user_id: @user.id, product_id: created_product.id)
-  redirect_to profile_user_path(@profile, @user), notice: "User was successfully created"
+  @user = @profile.users.create(user_params)
+  if @user.save
+    created_product = Product.user_pref(@user)
+    Order.create(user_id: @user.id, product_id: created_product.id)
+    redirect_to profile_user_path(@profile, @user), notice: "User was successfully created"
+  else
+    render :new
+  end
 
+  ##I dont think we need any of this commented out code
+  
   # respond_to do |format|
   #   if @user.save
   #
