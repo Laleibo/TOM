@@ -3,23 +3,33 @@
     should generate pop up to create new users</h4>
 </div>
 <div>
-  <strong>Email:</strong>
+  <strong>Account Email:</strong>
   <%= @profile.email %>
   <br>
-  <strong>Address1:</strong>
-  <%= @profile.address1 %>
-  <br>
-  <strong>Address2:</strong>
-  <%= @profile.address2 %>
-  <br>
-  <strong>City:</strong>
-  <%= @profile.city %>
-  <br>
-  <strong>State:</strong>
-  <%= @profile.state %>
-  <br>
-  <strong>Zip:</strong>
-  <%= @profile.zip %>
+  <% unless @profile.address1.blank? %>
+    <strong>Address1:</strong>
+    <%= @profile.address1 %>
+  <% end %>
+
+  <% unless @profile.address2.blank? %>
+    <strong>Address2:</strong>
+    <%= @profile.address2 %>
+  <% end %>
+
+  <% unless @profile.city.blank? %>
+    <strong>City:</strong>
+    <%= @profile.city %>
+  <% end %>
+
+  <% unless @profile.state.blank? %>
+    <strong>State:</strong>
+    <%= @profile.state %>
+  <% end %>
+
+  <% unless @profile.zip.blank? %>
+    <strong>Zip:</strong>
+    <%= @profile.zip %>
+  <% end %>
 </div>
 <br>
 <span>

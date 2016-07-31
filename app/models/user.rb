@@ -3,10 +3,9 @@ class User < ApplicationRecord
   has_many :orders
   has_many :products, through: :orders
 
-
-validates :first_name, presence: {message: "Enter a first name"}
-validates :last_name, presence: {message: "Enter a last name "}
-validates :variety, presence: {message: "Choose the type of feminine product"}
-validates :flow, presence: {message: "Choose the type of flow box"}
-validates :scent, presence: {message: "Choose if you want scented or unscented "}
+  validates :first_name, presence: {message: "Sorry! We like to be on a first name basis!"}
+  validates :last_name, presence: true
+  validates :variety, presence: true
+  validates :flow, presence: true
+  validates :scent, presence: true
 end
