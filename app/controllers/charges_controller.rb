@@ -15,7 +15,7 @@ skip_before_filter  :verify_authenticity_token
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
       :source  => params[:stripeToken],
-      :plan   => TOM,
+      # :plan   => TOM,
       :id => @profile.id
     )
     @profile.subscribed = true
