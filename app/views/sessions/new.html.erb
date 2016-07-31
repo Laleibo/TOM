@@ -1,4 +1,6 @@
 <h1>welcome to TOM</h1>
+
+<!-- this chunk of info should be in a pop up window-->
 <%= form_tag '/login' do %>
  <span class="username_in">
 	<%= label_tag :email %>
@@ -8,5 +10,7 @@
 	<%= label_tag :password %>
 	<%= password_field_tag :password %>
 </span>
+
 <%= submit_tag 'log in'%>
 <% end %>
+<!--above info will be in a popup -->

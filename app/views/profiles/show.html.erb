@@ -1,35 +1,35 @@
-<p>
+<div>
+  <h4> "profile show page" probably static page, new user button <br>
+    should generate pop up to create new users</h4>
+</div>
+<div>
   <strong>Email:</strong>
   <%= @profile.email %>
-</p>
-
-<p>
+  <br>
   <strong>Address1:</strong>
   <%= @profile.address1 %>
-</p>
-
-<p>
+  <br>
   <strong>Address2:</strong>
   <%= @profile.address2 %>
-</p>
-
-<p>
+  <br>
   <strong>City:</strong>
   <%= @profile.city %>
-</p>
-
-<p>
+  <br>
   <strong>State:</strong>
   <%= @profile.state %>
-</p>
-
-<p>
+  <br>
   <strong>Zip:</strong>
   <%= @profile.zip %>
-<%= link_to 'New User', new_profile_user_path(@profile) %>
-<%= link_to 'Edit', edit_profile_path(@profile) %>
+</div>
+<br>
+<span>
+  <%= link_to 'Edit', edit_profile_path(@profile) %> |
+  <%= link_to 'New User', new_profile_user_path(@profile) %>  |
+  <%= link_to 'Go To delivery', "/profiles/#{@profile.id}/delivery" %>
+</span>
 
-<h2> Users in the account </h2>
-<% @profile.users.each do |user| %>
-<%= link_to user.first_name, profile_user_path(@profile, @user)%>
-<% end %>
+
+  <h2> Your users </h2>
+  <% @profile.users.each do |user| %>
+  <%= link_to user.first_name, profile_user_path(@profile, user)%> |
+  <% end %>

@@ -1,36 +1,33 @@
-<h3> User info </h3>
-<%= link_to 'Edit', edit_profile_user_path(@profile, @user) %>
+<div>
+  <h3> "User show page" <br>
+    will be static of profile show page with pop ups <br>
+    for user to enter their info and preferences</h3>
+</div>
 
-<p>
+<div>
+  <strong><%= @user.first_name%>'s Preferences </strong>
+  <br>
   <strong>First Name:</strong>
   <%= @user.first_name %>
-</p>
-
-<p>
+  <br>
   <strong>Last Name:</strong>
   <%= @user.last_name %>
-</p>
-
-<p>
+  <br>
   <strong>Birthday:</strong>
   <%= @user.birthday %>
-</p>
-
-<p>
+  <br>
   <strong>Variety</strong>
   <%= @user.variety %>
-</p>
-
-<p>
+  <br>
   <strong>Flow</strong>
   <%= @user.flow %>
-</p>
-
-<p>
+  <br>
   <strong>Scented?</strong>
   <%= @user.scent %>
-</p>
+</div>
+<br>
+<br>
 
-
-<%= link_to 'Add Another User', new_profile_user_path(@profile) %> <br>
-<%= link_to 'Go To delivery', profile_path(@profile) %>
+<%= link_to 'Edit Preferences', edit_profile_user_path(@profile, @user) %> |
+<%= link_to 'Add Another User', new_profile_user_path(@profile) %> |
+<%= link_to 'Back to Your Page', @profile %>

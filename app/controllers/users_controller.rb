@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_profile, only: [:index, :new, :create, :show, :update, :edit, :destroy]
-  before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :show, :destroy]
 
   def index
     @users = User.all
@@ -31,8 +31,6 @@ def create
   # end
 end
   def show
-    @user = User.find(params[:id])
-
   end
 
   def edit
