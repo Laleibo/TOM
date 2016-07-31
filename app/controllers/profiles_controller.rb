@@ -17,7 +17,7 @@ class ProfilesController < ApplicationController
   # GET /profiles/new
   def new
     @profile = Profile.new
-    @user = User.new
+    # @user = User.new
   end
 
   # GET /profiles/1/edit
@@ -43,6 +43,7 @@ class ProfilesController < ApplicationController
     respond_to do |format|
       if @profile.save
         format.html { redirect_to new_profile_user_path(@profile), notice: 'Profile was successfully created.' }
+        session[:profile_id] = @profile.id
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new }

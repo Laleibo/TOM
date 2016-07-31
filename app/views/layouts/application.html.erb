@@ -8,10 +8,11 @@
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   </head>
 
-  <body  class="<%= controller_name %> <%= action_name %>">
+  <body class="<%= controller_name %> <%= action_name %>">
     <% if current_profile %>
       Signed in as <%= current_profile.email %> | <%= link_to "Logout", logout_path %>
     <% else %>
+    <h1>TEST<%= current_profile%></h1>
       <%= link_to 'Login', login_path %> | <%= link_to 'Register', new_profile_path %>
     <% end %>
     <%= yield %>
