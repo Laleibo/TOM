@@ -41,7 +41,7 @@
 <!-- User Account and User names -->
   <h2> You have <%= @profile.users.count %> Tom boxes * need to pluralize</h2>
   <% @profile.users.each do |user| %>
-  <%= link_to user.first_name, profile_user_path(@profile, user)%> |
+  <%= link_to user.first_name, profile_user_path(@profile, user) %> |
   <% end %>
 <br>
 
