@@ -5,31 +5,37 @@
 <div>
   <strong>Account Email:</strong>
   <%= @profile.email %>
-  <br>
+<br>
   <% unless @profile.address1.blank? %>
     <strong>Address1:</strong>
     <%= @profile.address1 %>
   <% end %>
-
+<br>
   <% unless @profile.address2.blank? %>
     <strong>Address2:</strong>
     <%= @profile.address2 %>
   <% end %>
-
+<br>
   <% unless @profile.city.blank? %>
     <strong>City:</strong>
     <%= @profile.city %>
   <% end %>
-
+<br>
   <% unless @profile.state.blank? %>
     <strong>State:</strong>
     <%= @profile.state %>
   <% end %>
-
+<br>
   <% unless @profile.zip.blank? %>
     <strong>Zip:</strong>
     <%= @profile.zip %>
   <% end %>
+<br>
+  <% unless @profile.delivery.blank? %>
+    <strong>Delivery:</strong>
+    <%= @profile.delivery %>
+  <% end %>
+
 </div>
 <br>
 <span>
@@ -39,7 +45,7 @@
 </span>
 
 <!-- User Account and User names -->
-  <h2> You have <%= @profile.users.count %> Tom boxes * need to pluralize</h2>
+  <h4> You have <%= @profile.users.count %> Tom boxes * need to pluralize</h4>
   <% @profile.users.each do |user| %>
   <%= link_to user.first_name, profile_user_path(@profile, user) %> |
   <% end %>
