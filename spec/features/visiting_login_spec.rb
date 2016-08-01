@@ -13,7 +13,7 @@ feature 'Visiting the Home Page' do
     visit root_path
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_button 'Login'
+    click_button 'Register'
     expect(current_path).to eq(profile_path)
   end
 end
