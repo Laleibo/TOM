@@ -10,10 +10,15 @@ Rails.application.routes.draw do
   get '/profiles/:profile_id/delivery', :to => "profiles#delivery"
   post '/profiles/:profile_id/delivery', :to => "profiles#update"
 
+  # get '/profiles/:profile_id', :to => "profiles#hold"
+  # post '/profiles/:profile_id/', :to => "profiles#hold"
 
   # get 'profiles/:profile_id/confirmation' => "profiles#confirmation"
 
   resources :profiles do
+    member do
+      put :hold
+    end
     resources :users
     resources :charges
   end

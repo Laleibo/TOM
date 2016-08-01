@@ -43,3 +43,12 @@
   <% @profile.users.each do |user| %>
   <%= link_to user.first_name, profile_user_path(@profile, user)%> |
   <% end %>
+<br>
+<% if @profile.subscribed == true %>
+    <%= link_to 'Hold Subscription', hold_profile_path(@profile), method: :put, data: { confirm: 'Are you sure you want to puts your subscription on hold?' } %>
+<% else %>
+    <%= link_to 'Activate Subscription', hold_profile_path(@profile), method: :put, data: { confirm: 'Do you want to activate your subscription? ' } %>
+<%end %>
+
+<h3> Cancel Account - not sure what page it belongs on?</h3>
+<%= link_to 'Cancel Subscription', @profile, method: :destroy, data: { confirm: 'Are you sure you want to delete your subscription and Account?' } %>
