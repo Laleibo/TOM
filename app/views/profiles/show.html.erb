@@ -48,9 +48,9 @@
 <!-- if/else to put profile on hold or to reactivate -->
 <% if @profile.subscribed == nil %>
 <% elsif @profile.subscribed == true %>
-    <%= link_to 'Hold Subscription', hold_profile_path(@profile), method: :put, data: { confirm: 'Are you sure you want to put your subscription on hold?' } %>
+    <%= link_to 'Hold Subscription', cancel_profile_charges_path(@profile), method: :put, data: { confirm: 'Are you sure you want to put your subscription on hold?' } %>
 <% else %>
-    <%= link_to 'Activate Subscription', hold_profile_path(@profile), method: :put, data: { confirm: 'Do you want to re-activate your subscription? ' } %>
+    <%= link_to 'Activate Subscription', cancel_profile_charges_path(@profile), method: :put, data: { confirm: 'Do you want to re-activate your subscription? ' } %>
 <%end %>
 
 <!-- if/else to delete profile -->

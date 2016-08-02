@@ -6,27 +6,23 @@ skip_before_filter  :verify_authenticity_token
   end
 
   def new
-    end
+  end
 
   def create
-  @profile = Profile.find(params[:profile_id])
+    @profile = Profile.find(params[:profile_id])
     token = params[:stripeToken]
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
-      :source  => params[:stripeToken],
-      # :plan   => TOM,
-      :id => @profile.id
-    )
-    @profile.subscribed = true
-    # @profile.stripe_id = @profile.id
-    @profile.save
+      :plan => 'TOM',
+      :source  => params[:stripeToken]
+      )
 
-    # # save the customer ID in your database so you can use it later
-    # save_stripe_customer_id(@profile, customer.id)
-    #
-    # # later
-    # customer_id = get_stripe_customer_id(@profile)
+    @profile.subscribed = true
+    @profile.stripe_id = customer.id
+    @profile.card_token = customer.default_source
+    @profile.Subscription_id = customer.subscriptions.data[0].id
+    @profile.save!
 
     # plan = Stripe::Plan.create(
     # :id       => 'TOM',
@@ -38,49 +34,62 @@ skip_before_filter  :verify_authenticity_token
     # )
 
     Stripe::Subscription.create(
-      :customer => @profile.id,
+      :customer => customer.id,
       :plan => "TOM",
       :quantity => @profile.users.count
-    )
+      )
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to new_charge_path
-    end
+  end
 
+
+
+  def hold
+    @profile = Profile.find(params[:profile_id])
+
+    if @profile.subscribed == true
+      @profile.update(subscribed: false)
+    else
+      @profile.update(subscribed: true)
+    end
+    @profile.save
+
+    subscription = Stripe::Subscription.retrieve(@profile.Subscription_id)
+    logger.debug("***********#{Stripe::Subscription.retrieve(@profile.Subscription_id)}**********")
+    subscription.plan = "TOM"
+    subscription.prorate = false
+    subscription.quantity = @profile.users.count
+    subscription.source = @profile.card_token
+    subscription.at_period_end = @profile.subscribed
+    subscription.save
+
+    redirect_to profile_path(@profile)
+  end
 
   def show
     @profile = Profile.find(params[:profile_id])
-    Stripe::Subscription.retrieve("#{@profile.id}")
+    Stripe::Subscription.retrieve(@profile.subscription_id)
+    logger.debug("*************#{Stripe::Subscription.retrieve(@profile.subscription_id)}****************")
   end
 
-  def update
+  def cancel
     @profile = Profile.find(params[:profile_id])
 
-    Stripe::Subscription.retrieve("#{@profile.id}")
-    @subscription = Stripe::Subscription.retrieve("#{@profile.id}")
-    @subscription.plan = "TOM",
-    @subscription.prorate = false,
-    @subscription.quantity = @profile.users.count,
-    @subscription.source = @profile.card_token,
-    @subscription.save
-end
+    if @profile.subscribed == true
+      @profile.update(subscribed: false)
+    else
+      @profile.update(subscribed: true)
+    end
+    @profile.save
 
-  # def cancel
-  #   @profile = Profile.find(params[:profile_id])
-  #
-  #   sub = Stripe::Subscription.retrieve(@profile.stripe_id)
-  #   sub.at_period_end = true,
-  #   sub.delete
-  # end
+    sub = Stripe::Subscription.retrieve(@profile.Subscription_id)
+    sub.at_period_end = @profile.subscribed
+      redirect_to profile_path(@profile)
+  end
 
-  def destroy
-   customer = Stripe::Customer.retrieve("#{@profile.id}")
-   customer.subscriptions.retrieve(@profile.subscribed).delete
-   @profile.update(subscribed: nil)
 
-   redirect_to root_path, notice: "Your subscription has been canceled."
- end
 
 
 end

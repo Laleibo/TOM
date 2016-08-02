@@ -71,7 +71,7 @@ class ProfilesController < ApplicationController
   end
 
   def hold
-    
+
     if @profile.subscribed == true
       @profile.update(subscribed: false)
     else
@@ -80,7 +80,6 @@ class ProfilesController < ApplicationController
 
     @profile.save
     redirect_to profile_path(@profile)
-    flash[:notice] = "UPDATE TO TURE"
   end
 
   private
