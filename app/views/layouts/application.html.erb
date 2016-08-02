@@ -9,11 +9,19 @@
   </head>
 
   <body  class="<%= controller_name %> <%= action_name %>">
-    <% if current_profile %>
-      Signed in as <%= current_profile.email %> | <%= link_to "Logout", logout_path %>
-    <% else %>
-      <%= link_to 'Login', login_path %> | <%= link_to 'Register', new_profile_path %>
-    <% end %>
+    <header id="navbar">
+      <div class="logo">
+        <h1>welcome to TOM.</h1>
+      </div>
+      <div id="login">
+        <% if current_profile %>
+          <span id="logout">Signed in as <%= current_profile.email %> | <%= link_to "Logout", logout_path %></span>
+        <% else %>
+          <span class="login" id="login_link">Login</span> | <span class="login" id="register_link">Register</span>
+        <% end %>
+      </div>
+    </header>
     <%= yield %>
+    <footer>This is the footer</footer>
   </body>
 </html>

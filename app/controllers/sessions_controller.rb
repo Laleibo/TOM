@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
   end
 
   def new
+    @profile = Profile.new
   end
 
   def create
@@ -23,5 +24,6 @@ class SessionsController < ApplicationController
   def destroy
     session[:profile_id] = nil
     redirect_to root_path
+    # render 'sessions/new'
   end
 end

@@ -1,35 +1,40 @@
-<div>
-  <h4> "profile show page" probably static page, new user button <br>
-    should generate pop up to create new users</h4>
+<div class="profile_container">
+  <div class="side_panel" data-user="<%= @users %>"></div>
+  <div class="main_panel">
+    <strong>Email:</strong>
+    <%= @profile.email %>
+    <br>
+    <strong>Address1:</strong>
+    <%= @profile.address1 %>
+    <br>
+    <strong>Address2:</strong>
+    <%= @profile.address2 %>
+    <br>
+    <strong>City:</strong>
+    <%= @profile.city %>
+    <br>
+    <strong>State:</strong>
+    <%= @profile.state %>
+    <br>
+    <strong>Zip:</strong>
+    <%= @profile.zip %>
+  </div>
 </div>
-<div>
-  <strong>Email:</strong>
-  <%= @profile.email %>
-  <br>
-  <strong>Address1:</strong>
-  <%= @profile.address1 %>
-  <br>
-  <strong>Address2:</strong>
-  <%= @profile.address2 %>
-  <br>
-  <strong>City:</strong>
-  <%= @profile.city %>
-  <br>
-  <strong>State:</strong>
-  <%= @profile.state %>
-  <br>
-  <strong>Zip:</strong>
-  <%= @profile.zip %>
-</div>
-<br>
-<span>
-  <%= link_to 'Edit', edit_profile_path(@profile) %> |
-  <%= link_to 'New User', new_profile_user_path(@profile) %>  |
-  <%= link_to 'Go To delivery', "/profiles/#{@profile.id}/delivery" %>
-</span>
+<!-- <div class="step_container">
+ <div class="step_boxes step_one"></div>
+  <div class="step_boxes step_two"></div>
+  <div class="step_boxes step_three"></div>
+</div> -->
+<div class="ref_code">Reference code</div>
+<div class="faq">Frequently asked questions</div>
+<!-- <span>
+  <%#= link_to 'Edit', edit_profile_path(@profile) %> |
+  <%#= link_to 'New User', new_profile_user_path(@profile) %>  |
+  <%#= link_to 'Go To delivery', "/profiles/#{@profile.id}/delivery" %>
+</span> -->
 
 
-  <h2> Your users </h2>
-  <% @profile.users.each do |user| %>
-  <%= link_to user.first_name, profile_user_path(@profile, user)%> |
-  <% end %>
+<!--   <h2> Your users </h2> -->
+  <%# @profile.users.each do |user| %>
+  <%#= link_to user.first_name, profile_user_path(@profile, user)%> 
+  <%# end %>

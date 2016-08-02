@@ -1,23 +1,55 @@
-$(".sessions.index").ready(function(){
-	$('.sessions.index .sign_in').hide();
-	$('.sessions.index .log_in').click(function(){
-		$(this).transition({x: '-30em'}, 500, 'ease', function(){
-			$('.sessions.index .sign_in').show();
-		});
-	});
-	$('.sessions.index .create_form').hide();
-	$('.sessions.index .create').click(function(){
-		$('.sessions.index .create_form').fadeIn("150",function(){
-			// $('.sessions.index .header').foggy();
-			// $('.sessions.index .index_pic').foggy();
-			// $('.sessions.index .steps').foggy();
-		});
-	});
-	$('#create_form_exit').click(function(){
-		$('.sessions.index .create_form').hide(function(){
-			// $('.sessions.index .header').foggy(false);
-			// $('.sessions.index .index_pic').foggy(false);
-			// $('.sessions.index .steps').foggy(false);
-		});
-	});
+$(document).on("turbolinks:load",function(){
+	home_page_setup();
+	pop_set($(".profiles.show .step_container"))
+
+	var user = $(".profiles.show .side_panel").data("user");
+	if(user.id === undefined){
+		// alert("Load boxes!");
+	} else {
+		// alert("Error");
+	}
 });
+
+function home_page_setup(){
+	
+	var log_link = $(".sessions.new #login_link");
+	var log_in_pop = $(".sessions.new #login_pop");
+	var log_in_exit = $(".sessions.new #log_in_exit");
+	var reg_link = $(".sessions.new #register_link");
+	var reg_pop = $(".sessions.new #register_pop");
+	var reg_exit = $(".sessions.new #register_exit");
+	pop_set($(".sessions.new .index_pop"));
+	
+	$(window).resize(function(){
+		pop_set($(".sessions.new .index_pop"));
+	});
+
+	$(log_in_pop).hide();
+	$(log_link).click(function(){
+		$(log_in_pop).show(function(){
+			$(log_in_exit).click(function(){
+				$(log_in_pop).hide(170);
+			});
+		});
+	});
+
+	$(reg_pop).hide();
+	$(reg_link).click(function(){
+		$(reg_pop).show(function(){
+			$(reg_exit).click(function(){
+				$(reg_pop).hide(170);
+			});
+		});
+	});
+
+}
+
+function pop_set(selected){
+	var win_width = $(window).width();
+	var win_height = $(window).height();
+	var pop_width = $(selected).width();
+	var pop_height = $(selected).height();
+	var left = (win_width/2) - (pop_width/2);
+	var top = (win_height/2) - (pop_height/2);
+	$(selected).css({'top': top, 'left': left});
+}
