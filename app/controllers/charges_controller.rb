@@ -18,11 +18,11 @@ skip_before_filter  :verify_authenticity_token
       :plan => "TOM",
       :quantity => @profile.users.count
       )
-    @profile.subscribed = true
-    @profile.stripe_id = customer.id
-    @profile.card_token = customer.default_source
-    @profile.Subscription_id = customer.subscriptions.data[0].id
-    @profile.save!
+      @profile.subscribed = true
+      @profile.stripe_id = customer.id
+      @profile.card_token = customer.default_source
+      @profile.Subscription_id = customer.subscriptions.data[0].id
+      @profile.save!
 
           # plan = Stripe::Plan.create(
           # :id       => 'TOM',
