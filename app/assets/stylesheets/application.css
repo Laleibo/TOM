@@ -14,9 +14,12 @@
  *= require_self
  */
 
-
 body {
-  font-family: 'Reem Kufi', sans-serif;
-  font-family: 'Questrial', sans-serif;
+  /*font-family: 'Questrial', sans-serif;*/
+  /*font-family: 'Josefin Sans', sans-serif;*/
+  font-family: 'Poppins', sans-serif;
+}
 
+h1 {
+  font-family: 'Reem Kufi', sans-serif;
 }

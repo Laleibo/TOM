@@ -11,13 +11,11 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-    # redirect_to '/' unless session[:profile_id]
   end
 
   # GET /profiles/new
   def new
     @profile = Profile.new
-    # @user = User.new
   end
 
   # GET /profiles/1/edit
@@ -28,7 +26,6 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
-
     respond_to do |format|
       if @profile.save
         format.html { redirect_to new_profile_user_path(@profile), notice: 'Profile was successfully created.' }
@@ -71,7 +68,6 @@ class ProfilesController < ApplicationController
   end
 
   def hold
-    
     if @profile.subscribed == true
       @profile.update(subscribed: false)
     else
@@ -99,11 +95,11 @@ class ProfilesController < ApplicationController
     end
 
     def delivery_params
-      params.require(:profile).permit(:address1, :address2, :city, :state, :zip)
+      params.require(:profile).permit(:address1, :address2, :city, :state, :zip, :delivery)
     end
 
     def profile_params
-      params.require(:profile).permit(:email, :password, :password_confirmation, :address1, :address2, :city, :state, :zip)
+      params.require(:profile).permit(:email, :password, :password_confirmation, :address1, :address2, :city, :state, :zip, :delivery)
     end
 
 end
