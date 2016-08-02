@@ -60,12 +60,14 @@
 }
 
 .profiles.show .step_one{
+	float: left;
 	top: 0;
 	left: 0;
 	z-index: 6;
 }
 
 .profiles.show .step_two{
+	float: center;
 	top: 2em;
 	left: 2em;
 	z-index: 5;

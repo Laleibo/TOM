@@ -69,7 +69,7 @@ class ProfilesController < ApplicationController
   end
 
   def delivery
-    @profile = Profile.find(params[:profile_id])
+    # @profile = Profile.find(params[:profile_id])
   end
   
   private
