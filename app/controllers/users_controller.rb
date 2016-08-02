@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       render :new
     end
   end
-  
+
   def show
   end
 
@@ -40,6 +40,11 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to profiles_url, notice: 'User was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private

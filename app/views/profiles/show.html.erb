@@ -1,5 +1,5 @@
 <div>
-  <h4> "profile show page" probably static page, new user button <br>
+  <h4> "profile show page" static page, new user button <br>
     should generate pop up to create new users</h4>
 </div>
 <div>
@@ -39,20 +39,19 @@
 <br>
 <span>
   <%= link_to 'Edit', edit_profile_path(@profile) %> |
-  <%= link_to 'New User', new_profile_user_path(@profile) %>  |
-  <%= link_to 'Go To delivery', "/profiles/#{@profile.id}/delivery" %>
+  <%= link_to 'Start a new order', new_profile_user_path(@profile) %>
 </span>
-
-
-<!-- User Account and User names -->
-  <!-- <h4> You have <%= @profile.users.count %> Tom box</h4> -->
-<br>
 <br>
 <h4> Names in your account </h4>
   <% @profile.users.each do |user| %>
-  <%= link_to user.first_name, profile_user_path(@profile, user) %> |
+  <%= link_to user.first_name, profile_user_path(@profile, user) %>  |
   <% end %>
-<br>
+<br><br>
+<span>Current orders: <%= pluralize(@profile.users.count, 'Tom box')%>
+  <br>
+  <!-- <%= link_to 'Go To delivery', "/profiles/#{@profile.id}/delivery" %> -->
+  <%= link_to 'Go To delivery', delivery_profile_path(@profile) %>
+</span>
 <!-- if/else to put profile on hold or to reactivate -->
 <% if @profile.subscribed == nil %>
   <% elsif @profile.subscribed == true %>
