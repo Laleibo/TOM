@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :address1 %>
+    <%= f.label :address %>
     <%= f.text_field :address1 %>
   </div>
 
   <div class="field">
-    <%= f.label :address2 %>
+    <%= f.label :apt %>
     <%= f.text_field :address2 %>
   </div>
 
@@ -34,6 +34,11 @@
   <div class="field">
     <%= f.label :zip %>
     <%= f.text_field :zip %>
+  </div>
+
+  <div class="field">
+    <%= f.label :When_would_you_like_your_delivery_to_start? %>
+    <%= f.date_field :delivery %>
   </div>
 
   <div class="actions">

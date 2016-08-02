@@ -1,49 +1,56 @@
 <div>
-  <h4> "profile show page" probably static page, new user button <br>
+  <h4> "profile show page" static page, new user button <br>
     should generate pop up to create new users</h4>
 </div>
 <div>
   <strong>Account Email:</strong>
   <%= @profile.email %>
-  <br>
+<br>
   <% unless @profile.address1.blank? %>
     <strong>Address1:</strong>
     <%= @profile.address1 %>
   <% end %>
-
+<br>
   <% unless @profile.address2.blank? %>
     <strong>Address2:</strong>
     <%= @profile.address2 %>
   <% end %>
-
+<br>
   <% unless @profile.city.blank? %>
     <strong>City:</strong>
     <%= @profile.city %>
   <% end %>
-
+<br>
   <% unless @profile.state.blank? %>
     <strong>State:</strong>
     <%= @profile.state %>
   <% end %>
-
+<br>
   <% unless @profile.zip.blank? %>
     <strong>Zip:</strong>
     <%= @profile.zip %>
+  <% end %>
+<br>
+  <% unless @profile.delivery.blank? %>
+    <strong>Desired Delivery Start Date:</strong>
+    <%= @profile.delivery %>
   <% end %>
 </div>
 <br>
 <span>
   <%= link_to 'Edit', edit_profile_path(@profile) %> |
-  <%= link_to 'New User', new_profile_user_path(@profile) %>  |
-  <%= link_to 'Go To delivery', "/profiles/#{@profile.id}/delivery" %>
+  <%= link_to 'Start a new order', new_profile_user_path(@profile) %>
 </span>
-
-<!-- User Account and User names -->
-  <h2> You have <%= @profile.users.count %> Tom boxes * need to pluralize</h2>
-  <% @profile.users.each do |user| %>
-  <%= link_to user.first_name, profile_user_path(@profile, user) %> |
-  <% end %>
 <br>
+<h4> Names in your account </h4>
+  <% @profile.users.each do |user| %>
+  <%= link_to user.first_name, profile_user_path(@profile, user) %>  |
+  <% end %>
+<br><br>
+<span>Current orders: <%= pluralize(@profile.users.count, 'Tom box')%>
+  <br>
+  <%= link_to 'Go To delivery', delivery_profile_path(@profile) %>
+</span>
 
 <!-- if/else to put profile on hold or to reactivate -->
 <% if @profile.subscribed == nil %>

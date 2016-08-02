@@ -10,32 +10,17 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-def create
-  @user = @profile.users.create(user_params)
-  if @user.save
-    created_product = Product.user_pref(@user)
-    Order.create(user_id: @user.id, product_id: created_product.id)
-    redirect_to profile_user_path(@profile, @user), notice: "User was successfully created"
-  else
-    render :new
+  def create
+    @user = @profile.users.create(user_params)
+    if @user.save
+      created_product = Product.user_pref(@user)
+      Order.create(user_id: @user.id, product_id: created_product.id)
+      redirect_to profile_user_path(@profile, @user), notice: "User was successfully created"
+    else
+      render :new
+    end
   end
 
-  ##I dont think we need any of this commented out code
-  
-  # respond_to do |format|
-  #   if @user.save
-  #
-  #     product = Product.user_pref(@user)
-  #     Order.create!(user: @user, product: product)
-  #
-  #     format.html { redirect_to profile_user_path(@profile, @user), notice: 'User was successfully created.' }
-  #     format.json { render :show, status: :created, location: profile_user_path }
-  #   else
-  #     format.html { render :new }
-  #     format.json { render json: @user.errors, status: :unprocessable_entity }
-  #   end
-  # end
-end
   def show
   end
 
@@ -55,6 +40,11 @@ end
   end
 
   def destroy
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to profiles_url, notice: 'User was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
