@@ -50,12 +50,12 @@
 <% elsif @profile.subscribed == true %>
     <%= link_to 'Hold Subscription', cancel_profile_charges_path(@profile), method: :put, data: { confirm: 'Are you sure you want to put your subscription on hold?' } %>
 <% else %>
-    <%= link_to 'Activate Subscription', cancel_profile_charges_path(@profile), method: :put, data: { confirm: 'Do you want to re-activate your subscription? ' } %>
+    <%= link_to 'Activate Subscription', "/profiles/#{@profile.id}/delivery", method: :get, data: { confirm: 'You need to enter your payment information' } %>
 <%end %>
 
 <!-- if/else to delete profile -->
 <h3> Cancel Account - not sure what page it belongs on?</h3>
 <% if @profile.subscribed == true %>
-<%= link_to 'Cancel Subscription', @profile, method: :destroy, data: { confirm: 'Are you sure you want to delete your subscription and Account?' } %>
+<%= link_to 'Cancel Subscription', @profile, method: :destroy, data: { confirm: 'Are you sure you want to delete your profile' } %>
 <% else %>
 <% end %>

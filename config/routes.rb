@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     #   put :hold
     # end
     resources :users
-    resources :charges, only: [:create] do
+    resources :charges, only: [:create, :update] do
       collection do
         put :cancel
       end

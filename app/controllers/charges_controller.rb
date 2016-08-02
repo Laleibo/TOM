@@ -13,65 +13,47 @@ skip_before_filter  :verify_authenticity_token
     token = params[:stripeToken]
 
     customer = Stripe::Customer.create(
-      :email => params[:stripeEmail],
-      :plan => 'TOM',
-      :source  => params[:stripeToken]
+      :email => @profile.email,
+      :source  => params[:stripeToken],
+      :plan => "TOM",
+      :quantity => @profile.users.count
       )
-
     @profile.subscribed = true
     @profile.stripe_id = customer.id
     @profile.card_token = customer.default_source
     @profile.Subscription_id = customer.subscriptions.data[0].id
     @profile.save!
 
-    # plan = Stripe::Plan.create(
-    # :id       => 'TOM',
-    # :amount   => 900,
-    # :currency => 'usd',
-    # :interval => 'month',
-    # :name     =>  'TOM Monthly Box',
-    # :statement_descriptor => "TOM Box Subscription"
-    # )
-
-    Stripe::Subscription.create(
-      :customer => customer.id,
-      :plan => "TOM",
-      :quantity => @profile.users.count
-      )
+          # plan = Stripe::Plan.create(
+          # :id       => 'TOM',
+          # :amount   => 900,
+          # :currency => 'usd',
+          # :interval => 'month',
+          # :name     =>  'TOM Monthly Box',
+          # :statement_descriptor => "TOM Box Subscription"
+          # )
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
       redirect_to new_charge_path
   end
 
+ def update
+   @profile = Profile.find(params[:profile_id])
 
+  customer = Stripe::Customer.retrieve(@profile.stripe_id)
+    customer.quantity = @profile.users.count
+    customer.source = @profile.card_token
+    customer.email = @profile.email
+    customer.save!
 
-  def hold
-    @profile = Profile.find(params[:profile_id])
+   redirect_to profile_path(@profile)
 
-    if @profile.subscribed == true
-      @profile.update(subscribed: false)
-    else
-      @profile.update(subscribed: true)
-    end
-    @profile.save
-
-    subscription = Stripe::Subscription.retrieve(@profile.Subscription_id)
-    logger.debug("***********#{Stripe::Subscription.retrieve(@profile.Subscription_id)}**********")
-    subscription.plan = "TOM"
-    subscription.prorate = false
-    subscription.quantity = @profile.users.count
-    subscription.source = @profile.card_token
-    subscription.at_period_end = @profile.subscribed
-    subscription.save
-
-    redirect_to profile_path(@profile)
-  end
+end
 
   def show
     @profile = Profile.find(params[:profile_id])
-    Stripe::Subscription.retrieve(@profile.subscription_id)
-    logger.debug("*************#{Stripe::Subscription.retrieve(@profile.subscription_id)}****************")
+  Stripe::Customer.retrieve(@profile.stripe_id)
   end
 
   def cancel
@@ -84,8 +66,8 @@ skip_before_filter  :verify_authenticity_token
     end
     @profile.save
 
-    sub = Stripe::Subscription.retrieve(@profile.Subscription_id)
-    sub.at_period_end = @profile.subscribed
+    cu = Stripe::Customer.retrieve(@profile.stripe_id)
+    cu.delete
       redirect_to profile_path(@profile)
   end
 

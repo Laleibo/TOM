@@ -70,17 +70,17 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:profile_id])
   end
 
-  def hold
-
-    if @profile.subscribed == true
-      @profile.update(subscribed: false)
-    else
-      @profile.update(subscribed: true)
-    end
-
-    @profile.save
-    redirect_to profile_path(@profile)
-  end
+  # def hold
+  #
+  #   if @profile.subscribed == true
+  #     @profile.update(subscribed: false)
+  #   else
+  #     @profile.update(subscribed: true)
+  #   end
+  #
+  #   @profile.save
+  #   redirect_to profile_path(@profile)
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
