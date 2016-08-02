@@ -4,15 +4,14 @@ class Profile < ApplicationRecord
   has_many :orders, through: :users
   has_many :products, through: :orders
 
-# def process_payment
-# customer = Stripe::Customer.create email: email,
-#                                        card: card_token
-#
-#     Stripe::Charge.create customer: customer.id,
-#                           amount: product.price * 100,
-#                           description: product.name,
-#                           currency: 'usd'
 
-  # end
+validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }, uniqueness: true, confirmation: true, case_sensitive: false
+# validates :password, confirmation: true, length: { minimum: 8 }
 
+# validates :zip, length: { minimum: 5 }
+
+geocoded_by :address
+  def address
+    [address1, address2, city, state, zip].compact.join(', ')
+  end
 end

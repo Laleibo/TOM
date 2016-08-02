@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_filter :authorize, except: [:create, :new, :delivery]
-  before_action :set_profile, only: [:show, :edit, :update, :destroy]
+  before_action :set_profile, only: [:show, :edit, :update, :destroy, :hold]
 
   # GET /profiles
   # GET /profiles.json
@@ -19,7 +19,6 @@ class ProfilesController < ApplicationController
   # GET /profiles/new
   def new
     @profile = Profile.new
-    @user = User.new
   end
 
   # GET /profiles/1/edit
@@ -34,6 +33,8 @@ class ProfilesController < ApplicationController
       if @profile.save
         session[:profile_id] = @profile.id
         format.html { redirect_to profile_path(@profile), notice: 'Profile was successfully created.' }
+        # format.html { redirect_to new_profile_user_path(@profile), notice: 'Profile was successfully created.' }
+        # session[:profile_id] = @profile.id
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new }
@@ -70,7 +71,7 @@ class ProfilesController < ApplicationController
   def delivery
     @profile = Profile.find(params[:profile_id])
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
@@ -87,11 +88,11 @@ class ProfilesController < ApplicationController
     end
 
     def delivery_params
-      params.require(:profile).permit(:address1, :address2, :city, :state, :zip)
+      params.require(:profile).permit(:address1, :address2, :city, :state, :zip, :delivery)
     end
 
     def profile_params
-      params.require(:profile).permit(:email, :password, :password_confirmation, :address1, :address2, :city, :state, :zip)
+      params.require(:profile).permit(:email, :password, :password_confirmation, :address1, :address2, :city, :state, :zip, :delivery)
     end
 
 end

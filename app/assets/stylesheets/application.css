@@ -14,8 +14,17 @@
  *= require_self
  */
 
+<<<<<<< HEAD
 div {
 	/*border: 1px solid black;*/
+}
+
+h1 {
+  font-family: 'Reem Kufi', sans-serif;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
 }
 
 #navbar {
@@ -59,6 +68,5 @@ footer{
 	width: 100%;
 }
 
-#logout{
-	font-size: 75%;
-}
+
+
