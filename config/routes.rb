@@ -17,8 +17,13 @@ Rails.application.routes.draw do
       put :hold
       get :delivery
     end
+
     resources :users
-    resources :charges
+    resources :charges, only: [:create, :update] do
+      collection do
+        put :cancel
+      end
+    end
   end
 
   # resources :charges
