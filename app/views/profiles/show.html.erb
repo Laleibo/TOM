@@ -54,8 +54,8 @@
 
 <!-- if/else to put profile on hold or to reactivate -->
 <% if @profile.subscribed == nil %>
-<% elsif @profile.subscribed == true %>
-    <%= link_to 'Cancel Your Subscription', cancel_profile_charges_path(@profile), method: :put, data: { confirm: 'Are you sure you want to cancel your Subscription?' } %>
-<% else %>
-    <%= link_to 'Re-Activate Subscription', "/profiles/#{@profile.id}/delivery", method: :get, data: { confirm: 'You need to enter your payment information' } %>
+  <% elsif @profile.subscribed == true %>
+      <%= link_to 'Cancel Your Subscription', cancel_profile_charges_path(@profile), method: :put, data: { confirm: 'Are you sure you want to cancel your Subscription?' } %>
+  <% else %>
+      <%= link_to 'Re-Activate Subscription', "/profiles/#{@profile.id}/delivery", method: :get, data: { confirm: 'You need to enter your payment information' } %>
 <%end %>

@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
-  before_filter :authorize, except: [:create, :new, :delivery]
-  before_action :set_profile, only: [:show, :edit, :update, :destroy, :hold]
+  before_filter :authorize, except: [:create, :new]
+  before_action :set_profile, only: [:show, :edit, :update, :destroy, :hold, :delivery]
 
   # GET /profiles
   # GET /profiles.json
@@ -64,9 +64,8 @@ class ProfilesController < ApplicationController
   end
 
   def delivery
-    @profile = Profile.find(params[:profile_id])
   end
-  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_profile
