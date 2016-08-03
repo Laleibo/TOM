@@ -1,5 +1,20 @@
 <div class="profile_container">
-  <div class="side_panel" data-user="<%= @users %>"></div>
+  <div class="side_panel" data-user="<%= @users %>">
+    <h6> Welcome </h6>
+    <ul class="navig">
+      <% @profile.users.each do |user| %>
+      <li><%= link_to user.first_name, profile_user_path(@profile, user) %>  <br></li>
+      <% end %>
+    </ul>
+      <div class="side_links"><%= link_to 'Delivery', delivery_profile_path(@profile) %><a id="new_user">New User</a> | <%= link_to 'Go To delivery', "/profiles/#{@profile.id}/delivery" %>
+        <% if @profile.subscribed == nil %>
+        <% elsif @profile.subscribed == true %>
+          <%= link_to 'Cancel Your Subscription', cancel_profile_charges_path(@profile), method: :put, data: { confirm: 'Are you sure you want to cancel your Subscription?' } %>
+        <% else %>
+          <%= link_to 'Re-Activate Subscription', delivery_profile_path(@profile), method: :get, data: { confirm: 'You need to enter your payment information' } %>
+        <%end %>
+      </div>
+    </div>
   <div class="main_panel">
     <strong>Email:</strong>
       <%= @profile.email %>
@@ -31,12 +46,46 @@
   </div>
 </div>
 <div class="step_container">
-  <div class="step_boxes step_one"></div>
-  <div class="step_boxes step_two"></div>
-<!--   <div class="step_boxes step_three"></div> -->
+  <div class="user_exit" id="user_exit">X</div>
+  <%= form_for ([@profile, @user]) do |u| %>
+
+  <%= u.label :first_name %>
+  <%= u.text_field :first_name %>
+  <br>
+
+  <%= u.label :last_name %>
+  <%= u.text_field :last_name %>
+  <br>
+  <%= u.label :birthday %>
+  <%= u.date_field :birthday %>
+  <br>
+  <%= u.radio_button(:variety, "tampon") %>
+  <%= u.label(:variety_tampon, "All Tampons") %>
+  <%= u.radio_button(:variety, "pad") %>
+  <%= u.label(:variety_pad, "All Pads") %>
+  <%= u.radio_button(:variety, "combo") %>
+  <%= u.label(:variety_combo, "Combination") %>
+  <br>
+  <%= u.radio_button(:flow, "light") %>
+  <%= u.label(:flow_light, "Light") %>
+  <%= u.radio_button(:flow, "medium") %>
+  <%= u.label(:flow_medium, "Medium") %>
+  <%= u.radio_button(:flow, "heavy") %>
+  <%= u.label(:flow_heavy, "Heavy") %>
+  <br>
+  <%= u.radio_button(:scent, "scented") %>
+  <%= u.label(:scent_scented, "Yes") %>
+  <%= u.radio_button(:scent, "unscented") %>
+  <%= u.label(:scent_unscented, "No") %>
+
+  <%= u.submit %>
+
+  <% end %>
 </div>
+
 <div class="ref_code">Reference code</div>
 <div class="faq">Frequently asked questions</div>
+<<<<<<< HEAD
 <h4> Names in your account </h4>
   <% @profile.users.each do |user| %>
   <%= link_to user.first_name, profile_user_path(@profile, user) %>  |
@@ -50,6 +99,7 @@
   <%= link_to 'Start a new order', new_profile_user_path(@profile) %>
   <%= link_to 'New User', new_profile_user_path(@profile) %>  |
 </span>
+
 
 <!-- if/else to put profile on hold or to reactivate -->
 <% if @profile.subscribed == nil %>

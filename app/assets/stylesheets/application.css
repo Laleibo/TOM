@@ -35,10 +35,12 @@ h1 {
 
 .logo {
 	position: flex;
+	font-family: 'Reem Kufi', sans-serif;
+	font-size: 145%;
 	padding-top: 2.5em
 	top: 0;
 	width: 13em;
-	height: 10em;
+	height: auto;
 }
 
 #login{

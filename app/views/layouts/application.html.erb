@@ -4,18 +4,15 @@
     <title>TOM</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
-
-    <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-
-    <!-- googlefonts-->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+<!-- googlefonts-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
-
     <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Logo</a>
