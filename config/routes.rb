@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  # get  '/_form', to: 'controller_profiles#show'
+  # post '/_form', to: 'controller_profiles#show'
+
   resources :users, only: [:destroy, :create]
   post '/profiles/:profile_id/delivery' => 'profiles#update'
 

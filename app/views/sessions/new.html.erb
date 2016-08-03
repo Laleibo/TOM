@@ -1,4 +1,5 @@
 <div class="index_pic"></div>
+<<<<<<< HEAD
 <div class="index_pop" id= "login_pop">
 	<%= render 'login' %>
 </div>
@@ -7,6 +8,56 @@
 	<%= render 'new' %>
 </div>
 
+=======
+
+<div class="index_pop" id="login_pop">
+	<div class="index_exit" id="log_in_exit">X</div>
+	<h1> Log In </h1>
+
+	<div id="log_in_field">
+		
+		<%= form_tag '/login' do %>
+		 	<span class="username_in">
+				<%= label_tag :email %>
+				<%= text_field_tag :email %>
+			</span>
+			<span class="password_in">
+				<%= label_tag :password %>
+				<%= password_field_tag :password %>
+			</span>
+		<%= submit_tag 'log in'%>
+		<% end %>
+
+	</div>
+</div>
+<div class="index_pop" id="register_pop">
+	<div class="index_exit" id="register_exit">X</div>
+	<h1> Register </h1>
+
+	<%= form_for(@profile) do |f| %>
+
+	  <div class="field">
+	    <%= f.label :email %>
+	    <%= f.text_field :email %>
+	  </div>
+
+	  <div class="field">
+	    <%= f.label :password %>
+	    <%= f.password_field :password %>
+	  </div>
+
+	  <div class="field">
+	    <%= f.label :password_confirmation %>
+	    <%= f.password_field :password_confirmation %>
+	  </div>
+
+	  <div class="actions">
+	    <%= f.submit "Create Profile", {:controller => "profiles", :action => "show"} %>
+	  </div>
+	<% end %>
+
+</div>
+>>>>>>> 603538fd95b507f397ba60ee9688eb62e81faea1
 <div class="promo"></div>
 <div class="steps">
 	<div class="step" id="step_1">Step 1</div>

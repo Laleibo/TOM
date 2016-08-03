@@ -16,15 +16,6 @@
       <%= link_to 'Login', login_path %> | <%= link_to 'Register', new_profile_path %>
     <% end %>
 
-    
-    <%= yield %>
 
-    <div class="javascript">
-      <% if controller_name == "profiles" && action_name == "delivery" %>
-        <!-- <script type="text/javascript" src="https://js.stripe.com/v2/">
-          Stripe.setPublishableKey(<%= Rails.configuration.stripe[:publishable_key] %>)
-        </script> -->
-      <% end %>
-    </div>
   </body>
 </html>

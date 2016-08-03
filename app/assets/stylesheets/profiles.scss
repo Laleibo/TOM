@@ -1,97 +1,99 @@
 // Place all the styles related to the Profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 .profiles.show {
-	padding: 0;
-	margin: 0em 1em 1em 1em;
+    padding: 0;
+    margin: 0em 1em 1em 1em;
 }
 
 .profiles.show .profile_container{
-	position: relative;
-	border: 1px solid black;
-	top: 5.5em;
-	width: 100%;
-	height: 30em;
-	margin-bottom: 1.2em;
+    position: relative;
+    border: 1px solid black;
+    top: 5.5em;
+    width: 100%;
+    height: 30em;
+    margin-bottom: 1.2em;
 }
 
 .profiles.show .side_panel{
-	position: flex;
-	/*border: 1px solid black;*/
-	padding-top: 1em;
-	padding-left: 1.2em;
-	float: left;
-	box-sizing: inline;
-	height: 96.2%;
-	width: 25.2%;
-	z-index: 1;
+    display: flex;
+    padding-top: 1em;
+    padding-left: 1.2em;
+    float: left;
+    box-sizing: inline;
+    height: 100%;
+    width: 28%;
+    z-index: 1;
+}
+
+.profiles.show .navig{
+    font-size: 180%;
+    position: absolute;
+    top: 2em;
+    width: auto;
+    height: auto;
+    margin: 0;
+    left: 11em;
+    z-index: 3;
+    overflow-y: hidden;
+}
+
+.profiles.show li{
+    text-align: right;
+    padding-bottom: 2em;
+}
+
+.profiles.show .side_links {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    height: auto;
 }
 
 .profiles.show .main_panel{
-	position: flex;
-	border-left: 1px solid black;
-	padding-top: 1em;
-	padding-left: 1.2em;
-	float: right;
-	box-sizing: inline;
-	margin-left: auto;
-	height: 97%;
-	width: 72%;
-	z-index: 1;
+    position: flex;
+    border-left: 1px solid black;
+    padding-top: 0em;
+    padding-left: 1.2em;
+    float: right;
+    box-sizing: inline;
+    margin-left: auto;
+    height: 99%;
+    width: 72%;
+    z-index: 1;
 }
 
-.profiles.show .step_container{
-	position: fixed;
-	border: 1px solid black;
-	background-color: white;
-	margin-left: auto;
-	float: center;
-	width: 62em;
-	height: 42em;
-	z-index: 3;
-}
-
-.profiles.show .step_boxes{
-	position: flex;
-	border: 1px solid black;
-	width: 20em;
-	height: 28em;
-}
-
-.profiles.show .step_one{
-	float: left;
-	top: 0;
-	left: 0;
-	z-index: 6;
-}
-
-.profiles.show .step_two{
-	float: center;
-	top: 2em;
-	left: 2em;
-	z-index: 5;
+.profiles.show .user_exit{
+    display: flex;
+    cursor: pointer;
+    margin-left: auto;
+    padding-left: auto;
+    padding-right: auto;
+    font-size: 120%;
+    top: 0em;
+    right: 1em;
+    height: 1em;
+    width: 1em;
 }
 
 .profiles.show .ref_code{
-	position: relative;
-	border: 1px solid black;
-	top: 5.5em;
-	width: 100%;
-	height: 9em;
-	margin-bottom: 1.2em;
+    position: relative;
+    border: 1px solid black;
+    top: 5.5em;
+    width: 100%;
+    height: 9em;
+    margin-bottom: 1.2em;
 }
 
 .profiles.show .faq{
-	position: relative;
-	border: 1px solid black;
-	top: 5.5em;
-	width: 100%;
-	height: 20em;
-	margin-bottom: 1.2em;
+    position: relative;
+    border: 1px solid black;
+    top: 5.5em;
+    width: 100%;
+    height: 20em;
+    margin-bottom: 1.2em;
 }
 .profiles.show footer{
-	top: 5.5em;
+    top: 5.5em;
 }
-
-
