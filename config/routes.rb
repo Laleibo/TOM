@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root 'profiles#show'
   get '/register' => 'profiles#new'
+  post '/register' => 'profiles#show'
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'

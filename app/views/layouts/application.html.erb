@@ -6,12 +6,6 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
-
-    <!-- googlefonts-->
-    <link href="https://fonts.googleapis.com/css?family=Questrial|Reem+Kufi&subset=arabic" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
-
-
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
@@ -21,6 +15,8 @@
     <h1>TEST<%= current_profile%></h1>
       <%= link_to 'Login', login_path %> | <%= link_to 'Register', new_profile_path %>
     <% end %>
+
+    
     <%= yield %>
 
     <div class="javascript">
