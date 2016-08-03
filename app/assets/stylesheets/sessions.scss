@@ -9,14 +9,22 @@
 
 .sessions.new .index_pop {
 	border: 1px solid black;
+	background-color: white;
 	position: fixed;
-	float: center;
 	padding: 1em;
 	border-radius: 1em;
 	top: 12em;
 	width: 35em;
-	height: 20em;
+	height: 30em;
 	z-index: 3;
+}
+
+.sessions.new #login_pop{
+	
+}
+
+.sessions.new #register_pop{
+	height: 38em;
 }
 
 .sessions.new h1{
@@ -24,7 +32,7 @@
 }
 
 .sessions.new .index_exit{
-	position: flex;
+	display: flex;
 	cursor: pointer;
 	margin-left: auto;
 	padding-left: auto;
@@ -37,7 +45,7 @@
 }
 
 .sessions.new .index_pic{
-	position: flex;
+	display: flex;
 	border: 1px solid black;
 	z-index: 1;
 	top: 0;
@@ -52,7 +60,7 @@
 }
 
 .sessions.new .steps{
-	position: flex;
+	display: flex;
 	border: 1px solid black;
 	margin: auto;
 	z-index: 1;

@@ -6,9 +6,11 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 
     <!-- googlefonts-->
-    <link href="https://fonts.googleapis.com/css?family=Questrial|Reem+Kufi&subset=arabic" rel="stylesheet">
+<!--     <link href="https://fonts.googleapis.com/css?family=Questrial|Reem+Kufi&subset=arabic" rel="stylesheet">-->    
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
 
 
@@ -17,7 +19,7 @@
   <body  class="<%= controller_name %> <%= action_name %>">
     <header id="navbar">
       <div class="logo">
-        <h1>welcome to TOM.</h1>
+        welcome to TOM.      
       </div>
       <div id="login">
         <% if current_profile %>

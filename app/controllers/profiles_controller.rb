@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_filter :authorize, except: [:create, :new, :delivery]
-  before_action :set_profile, only: [:show, :edit, :update, :destroy, :hold]
+  before_action :set_profile, only: [:show, :edit, :update, :destroy, :delivery, :hold]
 
   # GET /profiles
   # GET /profiles.json
@@ -13,6 +13,7 @@ class ProfilesController < ApplicationController
   def show
     # redirect_to '/' unless session[:profile_id]
     @users = @profile.users.all
+    @user = User.new
     # p @users
   end
 
@@ -37,7 +38,7 @@ class ProfilesController < ApplicationController
         # session[:profile_id] = @profile.id
         format.json { render :show, status: :created, location: @profile }
       else
-        format.html { render :new }
+        format.html { render '/sessions/new' }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
@@ -50,7 +51,7 @@ class ProfilesController < ApplicationController
     respond_to do |format|
       if @profile.update(delivery_params)
         format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
-        forat.json { render :show, status: :ok, location: @profile }
+        format.json { render :show, status: :ok, location: @profile }
       else
         format.html { render :edit }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
