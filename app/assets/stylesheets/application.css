@@ -14,12 +14,53 @@
  *= require_self
  */
 
-body {
-  /*font-family: 'Questrial', sans-serif;*/
-  /*font-family: 'Josefin Sans', sans-serif;*/
-  font-family: 'Poppins', sans-serif;
-}
-
+ body {
+   font-family: 'Poppins', sans-serif;
+ }
+ 
 h1 {
   font-family: 'Reem Kufi', sans-serif;
+}
+
+
+
+/*#navbar {
+	border: 1px solid black;
+	position: fixed;
+	top: 0;
+	width: 98%;
+	height: 4.7em;
+	z-index: 2;
+}
+
+.logo {
+	position: flex;
+	padding-top: 2.5em
+	top: 0;
+	width: 13em;
+	height: 10em;
+}
+
+#login{
+	position: absolute;
+	margin-left: auto;
+	font-size: 150%;
+	bottom: 0.2em;
+	right: 1.2em;
+	width: auto;
+}
+
+.login{
+	color: gray;
+	cursor: pointer;
+}
+
+footer{
+
+	border: 1px solid black; 
+	margin-top: 1.2em;
+	position: relative;
+	bottom: 0;
+	height: 14em;
+	width: 100%;*/
 }

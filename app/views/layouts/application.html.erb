@@ -4,26 +4,32 @@
     <title>TOM</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%#= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
 
-  <!-- Compiled and minified CSS -->
+    <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 
     <!-- googlefonts-->
-    <link href="https://fonts.googleapis.com/css?family=Questrial|Reem+Kufi&subset=arabic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
-
-
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
-    <% if current_profile %>
-      Signed in as <%= current_profile.email %> | <%= link_to "Logout", logout_path %>
-    <% else %>
-    <h1>TEST<%= current_profile%></h1>
-      <%= link_to 'Login', login_path %> | <%= link_to 'Register', new_profile_path %>
-    <% end %>
+
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#">Sass</a></li>
+        <li><a href="#"><% if current_profile %>
+          Signed in as <%= current_profile.email %> <%= link_to "Logout", logout_path %>
+          <% else %><a href="#"> <%= link_to 'Login', login_path %> </a></li>
+        <li><%= link_to 'Register', new_profile_path %></a></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+
     <%= yield %>
 
     <div class="javascript">

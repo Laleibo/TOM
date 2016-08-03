@@ -1,18 +1,37 @@
-<h1>welcome to TOM</h1>
+	<%#= render 'login' %>
+	<h1>welcome to TOM.</h1>
 
-<!-- this chunk of info should be in a pop up window-->
-<%= form_tag '/login' do %>
- <span class="username_in">
-	<%= label_tag :email %>
-	<%= text_field_tag :email %>
-</span>
-<span class="password_in">
-	<%= label_tag :password %>
-	<%= password_field_tag :password %>
-</span>
+	<%= form_tag '/login' do %>
+	 	<span class="username_in">
+			<%= label_tag :email %>
+			<%= text_field_tag :email %>
+		</span>
+		<span class="password_in">
+			<%= label_tag :password %>
+			<%= password_field_tag :password %>
+		</span>
+	<%= submit_tag 'log in'%>
+	<% end %>
 
-<%= submit_tag 'log in'%>
-<% end %>
 
-<h4> Forgot Password? </h4>
-<!--above info will be in a popup -->
+	<%= form_for(@profile) do |f| %>
+
+	  <div class="field">
+	    <%= f.label :email %>
+	    <%= f.text_field :email %>
+	  </div>
+
+	  <div class="field">
+	    <%= f.label :password %>
+	    <%= f.password_field :password %>
+	  </div>
+
+	  <div class="field">
+	    <%= f.label :password_confirmation %>
+	    <%= f.password_field :password_confirmation %>
+	  </div>
+
+	  <div class="actions">
+	    <%= f.submit "Create Profile", {:controller => "profiles", :action => "show"} %>
+	  </div>
+	<% end %>

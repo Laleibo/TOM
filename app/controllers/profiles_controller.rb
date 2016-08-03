@@ -11,6 +11,9 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
+    # redirect_to '/' unless session[:profile_id]
+    @users = @profile.users.all
+    # p @users
   end
 
   # GET /profiles/new
@@ -28,8 +31,10 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to new_profile_user_path(@profile), notice: 'Profile was successfully created.' }
         session[:profile_id] = @profile.id
+        format.html { redirect_to profile_path(@profile), notice: 'Profile was successfully created.' }
+        # format.html { redirect_to new_profile_user_path(@profile), notice: 'Profile was successfully created.' }
+        # session[:profile_id] = @profile.id
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render :new }
@@ -45,7 +50,7 @@ class ProfilesController < ApplicationController
     respond_to do |format|
       if @profile.update(delivery_params)
         format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
-        format.json { render :show, status: :ok, location: @profile }
+        forat.json { render :show, status: :ok, location: @profile }
       else
         format.html { render :edit }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
