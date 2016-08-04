@@ -14,7 +14,7 @@ $(document).on("turbolinks:load",function(){
 	// }
 	
 	function home_page_setup(){
-	
+
 	var log_link = $(".sessions.new #login_link");
 	var log_in_pop = $(".sessions.new #login_pop");
 	var log_in_exit = $(".sessions.new #log_in_exit");
@@ -22,7 +22,7 @@ $(document).on("turbolinks:load",function(){
 	var reg_pop = $(".sessions.new #register_pop");
 	var reg_exit = $(".sessions.new #register_exit");
 	pop_set($(".sessions.new .index_pop"));
-	
+
 	$(window).resize(function(){
 		pop_set($(".sessions.new .index_pop"));
 	});
@@ -90,5 +90,3 @@ $(document).on("turbolinks:load",function(){
 		$(selected).css({'top': top, 'left': left});
 	}
 });
-
-

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     member do
       put :hold
       get :delivery
+      get :invoice
     end
 
     resources :users
