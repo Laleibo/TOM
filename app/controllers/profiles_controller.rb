@@ -11,10 +11,8 @@ class ProfilesController < ApplicationController
   # GET /profiles/1
   # GET /profiles/1.json
   def show
-    # redirect_to '/' unless session[:profile_id]
     @users = @profile.users.all
     @user = User.new
-    # p @users
   end
 
   # GET /profiles/new
@@ -34,8 +32,6 @@ class ProfilesController < ApplicationController
       if @profile.save
         session[:profile_id] = @profile.id
         format.html { redirect_to profile_path(@profile), notice: 'Profile was successfully created.' }
-        # format.html { redirect_to new_profile_user_path(@profile), notice: 'Profile was successfully created.' }
-        # session[:profile_id] = @profile.id
         format.json { render :show, status: :created, location: @profile }
       else
         format.html { render '/sessions/new' }

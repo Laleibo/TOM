@@ -24,6 +24,12 @@ class UsersController < ApplicationController
   def show
   end
 
+  def ajax
+    @user = User.find(params[:user_id])
+    if request.xhr?
+      render @user,  layout: false 
+    end
+  end
   def edit
   end
 

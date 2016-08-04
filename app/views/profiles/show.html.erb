@@ -1,12 +1,12 @@
 <div class="profile_container">
-  <div class="side_panel" data-user="<%= @users %>">
+  <div class="side_panel">
     <h6> Welcome </h6>
-    <ul class="navig">
+    <ul class="navig" data-profile="<%= @profile.id %>">
       <% @profile.users.each do |user| %>
-      <li><%= link_to user.first_name, profile_user_path(@profile, user) %>  <br></li>
+      <li data-user="<%= user.id %>"<%= link_to user.first_name, profile_user_path(@profile, user) %>  <br></li>
       <% end %>
     </ul>
-      <div class="side_links"><%#= link_to 'Delivery', delivery_profile_path(@profile) %><a id="new_user">New User</a> | <%= link_to 'Go To delivery', "/profiles/#{@profile.id}/delivery" %>
+      <div class="side_links"><%#= link_to 'Delivery', delivery_profile_path(@profile) %><a id="new_user">New User</a> | <%= link_to 'Delivery', "/profiles/#{@profile.id}/delivery" %>
         <% if @profile.subscribed == nil %>
         <% elsif @profile.subscribed == true %>
           <%= link_to 'Cancel Your Subscription', cancel_profile_charges_path(@profile), method: :put, data: { confirm: 'Are you sure you want to cancel your Subscription?' } %>
