@@ -63,6 +63,15 @@
     width: 72%;
     z-index: 1;
 }
+.profiles.show .step_container{
+    position: fixed;
+    border: 1px solid black;
+    background-color: white;
+    margin-left: auto;
+    width: 42em;
+    height: 45em;
+    z-index: 3;
+}
 
 .profiles.show .user_exit{
     display: flex;

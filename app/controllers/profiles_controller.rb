@@ -47,7 +47,7 @@ class ProfilesController < ApplicationController
     respond_to do |format|
       if @profile.update(delivery_params)
         format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
-        forat.json { render :show, status: :ok, location: @profile }
+        format.json { render :show, status: :ok, location: @profile }
       else
         format.html { render :edit }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
@@ -67,6 +67,8 @@ class ProfilesController < ApplicationController
 
   def delivery
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

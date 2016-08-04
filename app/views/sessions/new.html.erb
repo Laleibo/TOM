@@ -1,21 +1,11 @@
-<div class="index_pic"></div>
-<<<<<<< HEAD
-<div class="index_pop" id= "login_pop">
-	<%= render 'login' %>
-</div>
-
-<div class="index_pop" id="register_pop">
-	<%= render 'new' %>
-</div>
-
-=======
+#Login in Pop up
 
 <div class="index_pop" id="login_pop">
 	<div class="index_exit" id="log_in_exit">X</div>
 	<h1> Log In </h1>
 
 	<div id="log_in_field">
-		
+
 		<%= form_tag '/login' do %>
 		 	<span class="username_in">
 				<%= label_tag :email %>
@@ -30,6 +20,8 @@
 
 	</div>
 </div>
+
+#Sign up pop up 
 <div class="index_pop" id="register_pop">
 	<div class="index_exit" id="register_exit">X</div>
 	<h1> Register </h1>
@@ -55,17 +47,6 @@
 	    <%= f.submit "Create Profile", {:controller => "profiles", :action => "show"} %>
 	  </div>
 	<% end %>
-
-</div>
->>>>>>> 603538fd95b507f397ba60ee9688eb62e81faea1
-<div class="promo"></div>
-<div class="steps">
-	<div class="step" id="step_1">Step 1</div>
-	<div class="step" id="step_2">Step 2</div>
-	<div class="step" id="step_3">Step 3</div>
 </div>
 
-<div class="reviews">This is where the reviews</div>
-
-<!-- <h4> Forgot Password? </h4> -->
-<!--above info will be in a popup -->
+# Welcome page on the below
