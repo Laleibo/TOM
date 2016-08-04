@@ -17,14 +17,14 @@
  body {
    font-family: 'Poppins', sans-serif;
  }
- 
+
 h1 {
   font-family: 'Reem Kufi', sans-serif;
 }
 
 
 
-/*#navbar {
+#navbar {
 	border: 1px solid black;
 	position: fixed;
 	top: 0;
@@ -43,7 +43,7 @@ h1 {
 	height: auto;
 }
 
-#login{
+login{
 	position: absolute;
 	margin-left: auto;
 	font-size: 150%;
