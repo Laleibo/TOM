@@ -1,20 +1,30 @@
+
+<div class="banner"></div>
 <div class="profile_container">
   <div class="side_panel">
-    <h6> Welcome </h6>
     <ul class="navig" data-profile="<%= @profile.id %>">
+      <div class="accordion" id="Your_orders">Your Subscriptions</div>
       <% @profile.users.each do |user| %>
-      <li data-user="<%= user.id %>"<%= link_to user.first_name, profile_user_path(@profile, user) %>  <br></li>
+      <div class="panel" data-user="<%= user.id %>"><%= link_to user.first_name, profile_user_path(@profile, user) %></div>
       <% end %>
-    </ul>
-      <div class="side_links"><%#= link_to 'Delivery', delivery_profile_path(@profile) %><a id="new_user">New User</a> | <%= link_to 'Delivery', "/profiles/#{@profile.id}/delivery" %>
+      <div class="side_links" id="new_user">New User</div>
+      <div class="side_links"><%= link_to 'Delivery', delivery_profile_path(@profile) %></div>
+      <div class="side_links">
         <% if @profile.subscribed == nil %>
         <% elsif @profile.subscribed == true %>
-          <%= link_to 'Cancel Your Subscription', cancel_profile_charges_path(@profile), method: :put, data: { confirm: 'Are you sure you want to cancel your Subscription?' } %>
+        <%= link_to 'Cancel Your Subscription', cancel_profile_charges_path(@profile), method: :put, data: { confirm: 'Are you sure you want to cancel your Subscription?' } %>
         <% else %>
-          <%= link_to 'Re-Activate Subscription', delivery_profile_path(@profile), method: :get, data: { confirm: 'You need to enter your payment information' } %>
+        <%= link_to 'Re-Activate Subscription', delivery_profile_path(@profile), method: :get, data: { confirm: 'You need to enter your payment information' } %>
         <%end %>
       </div>
-    </div>
+<!--  <div class="side_links"> 
+        <%# if @profile.subscribed == nil %>
+        <%# else @profile.subscribed == true %>
+          <%#= link_to 'Order History', invoice_profile_path(@profile), method: :get %>
+        <%# end %>
+      </div> -->
+    </ul> 
+  </div>
   <div class="main_panel">
     <strong>Email:</strong>
       <%= @profile.email %>
@@ -82,12 +92,4 @@
 
   <% end %>
 </div>
-
-<div class="ref_code">Reference code</div>
-<div class="faq">Frequently asked questions</div>
-<!-- <span>
-  <%#= link_to 'Edit', edit_profile_path(@profile) %> |
-  <%#= link_to 'Start a new order', new_profile_user_path(@profile) %>
-  <%#= link_to 'New User', new_profile_user_path(@profile) %>  |
-</span> -->
 

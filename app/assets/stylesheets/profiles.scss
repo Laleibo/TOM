@@ -2,63 +2,74 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.profiles.show {
+.profiles {
 	padding: 0;
-	margin: 0em 1em 1em 1em;
+	margin: 0em 0em 1em 0em;
 }
 
+.profiles.show .banner{
+	border: 1px solid black;
+	height: 8em;
+	width: 100%;
+}
 .profiles.show .profile_container{
 	position: relative;
-	border: 1px solid black;
-	top: 5.5em;
+/*	border: 1px solid black;*/
+	top: 0em;
 	width: 100%;
-	height: 30em;
+	height: 50em;
 	margin-bottom: 1.2em;
 }
 
 .profiles.show .side_panel{
 	display: flex;
 	overflow-y: hidden;
-	padding-top: 1em;
-	padding-left: 1.2em;
+	padding-top: 0em;
+	padding-right: 1em;
 	float: left;
 	box-sizing: inline;
 	height: 100%;
 	width: 28%;
 	z-index: 1;
 }
-
+.profiles.show div.accordion{
+	cursor: pointer;
+	transition: 0.4s;
+	margin-bottom: 0.7em;
+}
 .profiles.show .navig{
 	
 	font-size: 180%;
-	position: absolute;
-	top: 2em;
-	width: auto;
-	height: auto;
+	position: relative;
+	text-align: right;
+	top: 0.8em;
+	width: 100%;
+	height: 100%;
 	margin: 0;
-	left: 9em;
+	left: 0em;
 	z-index: 3;
 	overflow-y: hidden;
 }
 
-.profiles.show li{
-	text-align: right;
-	padding-bottom: 2em;
+.profiles.show div.panel{
+	display: none;
+	background-color: white;
+	margin-top: 0.4em;
+	margin-bottom: 0.8em;
+}
 
+.profiles.show div.panel.show{
+	display: block !important;
 }
 
 .profiles.show .side_links {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: auto;
-	height: auto;
+	margin-bottom: 0.7em;
 }
 
 .profiles.show .main_panel{
 	position: flex;
 	border-left: 1px solid black;
-	padding-top: 0em;
+	padding-top: 1em;
 	padding-left: 1.2em;
 	float: right;
 	box-sizing: inline;
