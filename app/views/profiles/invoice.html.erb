@@ -1,0 +1,15 @@
+
+<h4> Subscription info </h4>
+<h4> Your Boxes deleivery day: </h4>
+<h4><%= Profile.delivery_day(@profile.delivery) %> day of each month </h4>
+<br>
+
+<table> <h4>Order Invoices</h4>
+
+<tr><th><h4> Date </h4> </th>
+<th><h4> Amount </h4></th>
+<th><h4> Status <h4> </th> </tr>
+<tr><td><%= Profile.invoice_date(@profile.id) %></td>
+<td><%= Profile.total_amount(@profile.id) %></td>
+<td><%= Profile.status(@profile.id) %> </td><tr>
+</table>

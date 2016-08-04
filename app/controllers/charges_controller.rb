@@ -2,6 +2,7 @@ class ChargesController < ApplicationController
 
 skip_before_filter  :verify_authenticity_token
 
+
   def index
   end
 
@@ -10,11 +11,20 @@ skip_before_filter  :verify_authenticity_token
 
   def create
     @profile = Profile.find(params[:profile_id])
+
     token = params[:stripeToken]
+
+    Rails.configuration.stripe = {
+      :publishable_key => ENV["STRIPE_PUBLISHABLE_KEY"],
+      :secret_key      => ENV["STRIPE_SECRET_KEY"]
+    }
+
+    Stripe.api_key = ENV['STRIPE_API_KEY']
+
 
     customer = Stripe::Customer.create(
       :email => @profile.email,
-      :source  => params[:stripeToken],
+      :source  => token,
       :plan => "TOM",
       :quantity => @profile.users.count
       )
@@ -26,7 +36,7 @@ skip_before_filter  :verify_authenticity_token
 
           # plan = Stripe::Plan.create(
           # :id       => 'TOM',
-          # :amount   => 900,
+          # :amount   => 800,
           # :currency => 'usd',
           # :interval => 'month',
           # :name     =>  'TOM Monthly Box',
