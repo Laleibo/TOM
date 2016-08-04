@@ -32,7 +32,7 @@ class ProfilesController < ApplicationController
       session[:profile_id] = @profile.id
       ProfileMailer.registration_confirmation(@profile).deliver
       flash[:success] = "Please confirm your email address to continue"
-      redirect_to @profile
+      render '/'
     else
       flash[:error] = "Ah ah ah.... try again."
       redirect_to new_session_path

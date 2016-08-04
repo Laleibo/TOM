@@ -3,9 +3,7 @@
 <div class="index_pop" id="login_pop">
 	<div class="index_exit" id="log_in_exit">X</div>
 	<h1> Log In </h1>
-
 	<div id="log_in_field">
-
 		<%= form_tag '/login' do %>
 		 	<span class="username_in">
 				<%= label_tag :email %>
@@ -24,13 +22,13 @@
 	<div class="index_exit" id="register_exit">X</div>
 	<h1> Register </h1>
 
-      <div class="field">
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation %>
-      </div>
-			<%= form_for(@profile) do |f| %>
+		<% flash.each do |message_type, message| %>
+			 <div class="alert alert-<%= message_type %>"><%= message %></div>
+		 <% end %>
 
-	  <div class="field">
+
+		<%= form_for(@profile) do |f| %>
+	  	<div class="field">
 	    <%= f.label :email %>
 	    <%= f.text_field :email %>
 	  </div>
@@ -49,5 +47,9 @@
 	    <%= f.submit "Create Profile", {:controller => "profiles", :action => "show"} %>
 	  </div>
 	<% end %>
-
 </div>
+
+
+
+
+<h1>body of the page down here</h1>

@@ -13,11 +13,8 @@
 <!--     <link href="https://fonts.googleapis.com/css?family=Questrial|Reem+Kufi&subset=arabic" rel="stylesheet">-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
   </head>
+  
   <body  class="<%= controller_name %> <%= action_name %>">
-    <header id="navbar">
-      <div class="logo">
-        welcome to TOM.
-      </div>
       <div id="login">
         <% if current_profile %>
           <span id="logout">Signed in as <%= current_profile.email %> | <%= link_to "Logout", logout_path %></span>
@@ -25,7 +22,6 @@
           <span class="login" id="login_link">Login</span> | <span class="login" id="register_link">Register</span>
         <% end %>
       </div>
-    </header>
     <%= yield %>
   </body>
 </html>
