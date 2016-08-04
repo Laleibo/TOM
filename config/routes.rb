@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  post '/use_form' => 'users#ajax'
+
   # get  '/_form', to: 'controller_profiles#show'
   # post '/_form', to: 'controller_profiles#show'
 

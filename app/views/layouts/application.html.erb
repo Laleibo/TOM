@@ -8,25 +8,24 @@
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-<!-- googlefonts-->
+
+    <!-- googlefonts-->
+<!--     <link href="https://fonts.googleapis.com/css?family=Questrial|Reem+Kufi&subset=arabic" rel="stylesheet">-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
   </head>
-
-  <body class="<%= controller_name %> <%= action_name %>">
-  <% if current_profile %>
+  <body  class="<%= controller_name %> <%= action_name %>">
+    <header id="navbar">
+      <div class="logo">
+        welcome to TOM.
+      </div>
+      <div id="login">
+        <% if current_profile %>
           <span id="logout">Signed in as <%= current_profile.email %> | <%= link_to "Logout", logout_path %></span>
         <% else %>
           <span class="login" id="login_link">Login</span> | <span class="login" id="register_link">Register</span>
         <% end %>
-
+      </div>
+    </header>
     <%= yield %>
-
-    <div class="javascript">
-      <% if controller_name == "profiles" && action_name == "delivery" %>
-        <!-- <script type="text/javascript" src="https://js.stripe.com/v2/">
-          Stripe.setPublishableKey(<%= Rails.configuration.stripe[:publishable_key] %>)
-        </script> -->
-      <% end %>
-    </div>
   </body>
 </html>

@@ -13,7 +13,6 @@ class ProfilesController < ApplicationController
   def show
     @users = @profile.users.all
     @user = User.new
-    # p @users
   end
 
   # GET /profiles/new

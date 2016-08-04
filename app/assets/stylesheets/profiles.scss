@@ -18,6 +18,7 @@
 
 .profiles.show .side_panel{
 	display: flex;
+	overflow-y: hidden;
 	padding-top: 1em;
 	padding-left: 1.2em;
 	float: left;
@@ -35,7 +36,7 @@
 	width: auto;
 	height: auto;
 	margin: 0;
-	left: 11em;
+	left: 9em;
 	z-index: 3;
 	overflow-y: hidden;
 }
@@ -43,6 +44,7 @@
 .profiles.show li{
 	text-align: right;
 	padding-bottom: 2em;
+
 }
 
 .profiles.show .side_links {
@@ -75,6 +77,7 @@
 	height: 45em;
 	z-index: 3;
 }
+
 .profiles.show .user_exit{
 	display: flex;
 	cursor: pointer;
@@ -87,34 +90,7 @@
 	height: 1em;
 	width: 1em;
 }
-.profiles.show .step_boxes{
-	position: relative;
-	border: 1px solid black;
-	width: 25em;
-	height: 27em;
-}
 
-.profiles.show #step_one{
-	float: left;
-	top: 0;
-	left: 0;
-	z-index: 6;
-}
-
-.profiles.show #step_two{
-	float: left;
-	top: 10.5em;
-	left: -3em;
-	z-index: 5;
-}
-
-.profiles.show #step_three{
-	float: left;
-	top: 21em;
-	left: -6em;
-	z-index: 4;
-
-}
 
 .profiles.show .ref_code{
 	position: relative;
