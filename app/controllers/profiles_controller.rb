@@ -1,6 +1,10 @@
 class ProfilesController < ApplicationController
   before_filter :authorize, except: [:create, :new]
+<<<<<<< HEAD
   before_action :set_profile, only: [:show, :edit, :update, :destroy, :delivery, :hold]
+=======
+  before_action :set_profile, only: [:show, :edit, :update, :destroy, :hold, :delivery]
+>>>>>>> e0f638a8c5663b786101e02fdb0dc06717e11a94
 
   # GET /profiles
   # GET /profiles.json
@@ -38,7 +42,6 @@ class ProfilesController < ApplicationController
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
-    # redirect_to
   end
 
   # PATCH/PUT /profiles/1
