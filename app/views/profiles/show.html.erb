@@ -8,18 +8,10 @@
 
     </ul>
       <div class="side_links"><%#= link_to 'Delivery', delivery_profile_path(@profile) %><a id="new_user">New User</a> | <%= link_to 'Delivery', "/profiles/#{@profile.id}/delivery" %>
-
-
-        <br>
-        <br>
-        <% if @profile.subscribed == nil %>
-        <% elsif @profile.subscribed == true %>
-          <%= link_to 'Cancel Your Subscription', cancel_profile_charges_path(@profile), method: :put, data: { confirm: 'Are you sure you want to cancel your Subscription?' } %>
-          <br>
-          <%= link_to 'Order History', invoice_profile_path(@profile), method: :get %>
-        <% else %>
-          <%= link_to 'Re-Activate Subscription', delivery_profile_path(@profile), method: :get, data: { confirm: 'You need to enter your payment information' } %>
-        <%end %>
+      <% if @profile.subscribed == nil %>
+      <% else @profile.subscribed == true %>
+        <%= link_to 'Order History', invoice_profile_path(@profile), method: :get %>
+      <%end %>
       </div>
     </div>
   <div class="main_panel">

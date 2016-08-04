@@ -50,6 +50,11 @@ validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i,
       end
   end
 
+  def self.boxes(id)
+    profile = Profile.find(id)
+    Profile.find(id).users.count
+  end
+
   # def self.invoice_line(id)
   #   profile = Profile.find(id)
   #   customer = Stripe::Customer.retrieve(profile.stripe_id)
