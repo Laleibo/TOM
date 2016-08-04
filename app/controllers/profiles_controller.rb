@@ -28,16 +28,27 @@ class ProfilesController < ApplicationController
   # POST /profiles.json
   def create
     @profile = Profile.new(profile_params)
-    respond_to do |format|
-      if @profile.save
-        session[:profile_id] = @profile.id
-        format.html { redirect_to profile_path(@profile), notice: 'Profile was successfully created.' }
-        format.json { render :show, status: :created, location: @profile }
-      else
-        format.html { render '/sessions/new' }
-        format.json { render json: @profile.errors, status: :unprocessable_entity }
-      end
+    if @profile.save
+      session[:profile_id] = @profile.id
+      ProfileMailer.registration_confirmation(@profile).deliver
+      flash[:success] = "Please confirm your email address to continue"
+      redirect_to @profile
+    else
+      flash[:error] = "Ah ah ah.... try again."
+      redirect_to new_session_path
     end
+
+    # respond_to do |format|
+    #   if @profile.save
+    #     session[:profile_id] = @profile.id
+    #     format.html { redirect_to profile_path(@profile), notice: 'Profile was successfully created.' }
+    #     format.json { render :show, status: :created, location: @profile }
+    #   else
+    #     format.html { render '/sessions/new' }
+    #     format.json { render json: @profile.errors, status: :unprocessable_entity }
+    #   end
+    # end
+
   end
 
   # PATCH/PUT /profiles/1
@@ -65,6 +76,18 @@ class ProfilesController < ApplicationController
   end
 
   def delivery
+  end
+
+  def confirm_email
+    profile = Profile.find_by_confirm_token(params[:id])
+    if profile
+      profile.email.active
+      flash[:success] = "Welcome to TOM! Your email has been confirmed. Please sign in to continue."
+      redirect_to '/login'
+    else
+      flash[:error] = "Sorry that profile does not exist."
+      redirect_to @profile
+    end
   end
 
   private
