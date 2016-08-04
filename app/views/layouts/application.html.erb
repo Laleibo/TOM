@@ -12,32 +12,12 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
   </head>
 
-  <body>
-    <%= controller_name %> <%= action_name %>
-    <nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li id="logout"><% if current_profile %>
-                Signed in as <%= current_profile.email %> | <%= link_to "Logout", logout_path %></li>
-              <% else %>
-                <li class="login" id="login_link">Login</span> | <span class="login" id="register_link">Register</span>
-              <% end %>
-      </ul>
-    </div>
-  </nav>
-<!--
-  <li><a href="#" id="logout"><% if current_profile %>
-    Signed in as <%= current_profile.email %> <%= link_to "Logout", logout_path %>
-    <% else %><a href="#" class="login"> <%= link_to 'Login', login_path %> </a></li>
-  <li><%#= link_to 'Register', new_profile_path %></a></li>
-  <% end %> -->
-
-
-  <!---
-   -->
+  <body class="<%= controller_name %> <%= action_name %>">
+  <% if current_profile %>
+          <span id="logout">Signed in as <%= current_profile.email %> | <%= link_to "Logout", logout_path %></span>
+        <% else %>
+          <span class="login" id="login_link">Login</span> | <span class="login" id="register_link">Register</span>
+        <% end %>
 
     <%= yield %>
 
@@ -48,5 +28,5 @@
         </script> -->
       <% end %>
     </div>
-   </body>
+  </body>
 </html>
