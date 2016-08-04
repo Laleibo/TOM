@@ -14,19 +14,17 @@
  *= require_self
  */
 
-div {
-	/*border: 1px solid black;*/
-}
-
+ body {
+   font-family: 'Poppins', sans-serif;
+ }
+ 
 h1 {
   font-family: 'Reem Kufi', sans-serif;
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
-}
 
-#navbar {
+
+/*#navbar {
 	border: 1px solid black;
 	position: fixed;
 	top: 0;
@@ -60,14 +58,11 @@ body {
 }
 
 footer{
-	
+
 	border: 1px solid black; 
 	margin-top: 1.2em;
 	position: relative;
 	bottom: 0;
 	height: 14em;
-	width: 100%;
+	width: 100%;*/
 }
-
-
-

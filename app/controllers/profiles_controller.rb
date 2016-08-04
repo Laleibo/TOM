@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
-  before_filter :authorize, except: [:create, :new, :delivery]
-  before_action :set_profile, only: [:show, :edit, :update, :destroy, :delivery, :hold]
+  before_filter :authorize, except: [:create, :new]
+  before_action :set_profile, only: [:show, :edit, :update, :destroy, :hold, :delivery]
 
   # GET /profiles
   # GET /profiles.json
@@ -38,7 +38,6 @@ class ProfilesController < ApplicationController
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
-    # redirect_to
   end
 
   # PATCH/PUT /profiles/1
@@ -66,7 +65,6 @@ class ProfilesController < ApplicationController
   end
 
   def delivery
-    # @profile = Profile.find(params[:profile_id])
   end
 
   private
