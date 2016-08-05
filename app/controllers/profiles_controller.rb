@@ -14,8 +14,8 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
     @users = @profile.users.all
-    if @users.blank? then 
-      @first="" 
+    if @users.blank? then
+      @first=""
     else
       @first= @users.first.first_name
     end
@@ -38,13 +38,15 @@ class ProfilesController < ApplicationController
   # POST /profiles
   # POST /profiles.json
   def create
-    @profile = Profile.new(profile_params)
-    respond_to do |format|
-      if @profile.save
-        session[:profile_id] = @profile.id
-        format.html { redirect_to profile_path(@profile), notice: 'Profile was successfully created.' }
-        format.json { render :show, status: :created, location: @profile }
-      else
+    @profile = Profile.create(profile_params)
+    if @profile.save
+      respond_to do |format|
+          session[:profile_id] = @profile.id
+          format.html { redirect_to profile_path(@profile), notice: 'Profile was successfully created.' }
+          format.json { render :show, status: :created, location: @profile }
+        end
+    else
+      respond_to do |format|
         format.html { redirect_to new_session_path, notice: 'Profile was not successfully created, please ensure to fill in all forms.' }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
