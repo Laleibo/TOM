@@ -7,32 +7,11 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-    <!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script> -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-
-  <!-- referall sasquatch -->
-      <script type="text/javascript">
-          var _sqh = _sqh || [];
-
-         // Push user details for a user who is logged in to your system
-         _sqh.push(['init', {
-             tenant_alias: 'test_ao1a2qmlvdugs', // Your live or test mode tenant_alias
-             account_id: '$accountId', // REPLACE: A company or group ID used to group users together
-             payment_provider_id: '$paymentId', // REPLACE: the Stripe/Recurly/Braintree/Zuora id used for payment system integration (or null)
-             user_id: '$userId', // REPLACE: A user ID from your system (must be unique for every user)
-             email: '$emailAddress', // REPLACE: The e-mail address of the user
-             first_name: '$firstName', // REPLACE: The user's first name
-             last_name: '$lastName' // REPLACE: The user's last name
-         }]);
-
-      // Include squatch.js
-      (function(){function l(){var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src=location.protocol+"//d2rcp9ak152ke1.cloudfront.net/assets/javascripts/squatch.min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t)}if(window.attachEvent){window.attachEvent("onload",l)}else{window.addEventListener("load",l,false)}})();
-      </script>
-
-
-      // referrall sassquatch 
-
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+    <!-- googlefonts-->
+<!--     <link href="https://fonts.googleapis.com/css?family=Questrial|Reem+Kufi&subset=arabic" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
+>>>>>>> 64e8ed78615d2a31bdedd16631424feb85dcfe48
   </head>
 
   <body  class="<%= controller_name %> <%= action_name %>">
