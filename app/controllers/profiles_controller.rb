@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   before_filter :authorize, except: [:create, :new]
   before_action :set_profile, only: [:show, :edit, :update, :destroy, :delivery, :hold, :invoice]
+  # before_action :create_invoice, only: [:invoice]
 
 
   # GET /profiles
@@ -70,6 +71,18 @@ class ProfilesController < ApplicationController
 
 def invoice
 end
+
+# def create_invoice
+#   profile = Profile.find(3)
+#     5.times do
+#     Stripe::Invoice.create(
+#       :customer => profile.stripe_id,
+#       :total => "54",
+#       :date => "1470339555",
+#       :paid => "true"
+#   )
+#   end
+# end
 
 
 
