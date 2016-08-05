@@ -12,13 +12,24 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @profile = Profile.find_by(email: params[:email])
+    @profile = Profile.find_by(email: params[:email].downcase)
     if @profile && @profile.authenticate(params[:password])
       session[:profile_id] = @profile.id
-      redirect_to profile_path(@profile)
+      if @profile.email_confirmed
+        sign_in profile
+        redirect_back_or profile
+      else
+        flash.now[:error] = "Please activate your account by following the instructions in the account confirmation email you received to proceed"
+        render 'new'
+      end
     else
-      render :new
+      flash.now[:error]= "invalid email or password confirmation"
+      render 'new'
     end
+    #   redirect_to profile_path(@profile)
+    # else
+    #   render :new
+    # end
 	end
 
   def destroy

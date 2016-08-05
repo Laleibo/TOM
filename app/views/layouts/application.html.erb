@@ -6,9 +6,9 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js">
+    </script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
-    <!-- googlefonts-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
@@ -32,7 +32,14 @@
       </div>
     </header>
 
-
+  <body  class="<%= controller_name %> <%= action_name %>">
+      <div id="login">
+        <% if current_profile %>
+          <span id="logout">Signed in as <%= current_profile.email %> | <%= link_to "Logout", logout_path %></span>
+        <% else %>
+          <span class="login" id="login_link">Login</span> | <span class="login" id="register_link">Register</span>
+        <% end %>
+      </div>
     <%= yield %>
 
     <footer class="page-footer purple darken-1">

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   resources :profiles do
     member do
+      get :confirm_email
       put :hold
       get :delivery
       get :invoice

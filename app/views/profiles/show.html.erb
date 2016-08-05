@@ -1,4 +1,5 @@
 <div class="banner" data-users="<%= @first %>"></div>
+
 <div class="profile_container">
   <div class="side_panel">
     <ul class="navig" data-profile="<%= @profile.id %>">
@@ -62,9 +63,9 @@
 </div>
 <div class="step_container modal">
   <button class="user_exit" id="user_exit">X</button>
+
   <p id="pro_prevent">You must create a user before proceding</p>
   <%= form_for ([@profile, @user]) do |u| %>
->>>>>>> 64e8ed78615d2a31bdedd16631424feb85dcfe48
 
  <%= u.label :first_name %>
  <%= u.text_field :first_name %>

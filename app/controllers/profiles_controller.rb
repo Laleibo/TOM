@@ -13,8 +13,8 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
     @users = @profile.users.all
-    if @users.blank? then 
-      @first="" 
+    if @users.blank? then
+      @first=""
     else
       @first= @users.first.first_name
     end
@@ -36,18 +36,31 @@ class ProfilesController < ApplicationController
 
   # POST /profiles
   # POST /profiles.json
-  def create
-    @profile = Profile.new(profile_params)
-    respond_to do |format|
+    def create
+      @profile = Profile.new(profile_params)
+      # respond_to do |format|
+
+  # this section is the old way, the second section I added for email confirm, keep this section just in case we toss the other. #
+
+        # if @profile.save
+        #   session[:profile_id] = @profile.id
+        #   format.html { redirect_to profile_path(@profile), notice: 'Profile was successfully created.' }
+        #   format.json { render :show, status: :created, location: @profile }
+        # else
+        #   format.html { redirect_to new_session_path, notice: 'Profile was not successfully created, please ensure to fill in all forms.' }
+        #   format.json { render json: @profile.errors, status: :unprocessable_entity }
+        # end
+
       if @profile.save
         session[:profile_id] = @profile.id
-        format.html { redirect_to profile_path(@profile), notice: 'Profile was successfully created.' }
-        format.json { render :show, status: :created, location: @profile }
+        ProfileMailer.registration_confirmation(@profile).deliver
+        flash[:success] = "Please confirm your email address to continue"
+        redirect_to profile_path(@profile)
       else
-        format.html { redirect_to new_session_path, notice: 'Profile was not successfully created, please ensure to fill in all forms.' }
-        format.json { render json: @profile.errors, status: :unprocessable_entity }
+        flash[:error] = "Ah ah ah.... try again."
+        redirect_to new_session_path
       end
-    end
+    # end
   end
 
   # PATCH/PUT /profiles/1
@@ -80,7 +93,17 @@ class ProfilesController < ApplicationController
 def invoice
 end
 
-
+  def confirm_email
+    profile = Profile.find_by_confirm_token(params[:id])
+    if profile
+      profile.email.active
+      flash[:success] = "Welcome to TOM! Your email has been confirmed. Please sign in to continue."
+      redirect_to '/login'
+    else
+      flash[:error] = "Sorry that profile does not exist."
+      redirect_to @profile
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
