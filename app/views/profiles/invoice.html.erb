@@ -1,0 +1,29 @@
+
+<h4> Subscription info </h4>
+<h5> Boxes monthly deleivery day: </h5>
+<h5><%= Profile.delivery_day(@profile.delivery) %> day of each month </h5 >
+<br>
+<h5> Boxes ordered </h5>
+<h5><%= Profile.boxes(@profile) %>
+
+
+<table> <h4>Order Invoices</h4>
+
+<tr><th><h4> Date </h4> </th>
+<th><h4> Amount </h4></th>
+<th><h4> Status <h4> </th> </tr>
+<tr><td><%= Profile.invoice_date(@profile.id) %></td>
+<td><%= Profile.total_amount(@profile.id) %></td>
+<td><%= Profile.status(@profile.id) %> </td><tr>
+</table>
+
+<br>
+<%= link_to 'Back', profile_path(@profile) %>
+
+<br>
+<% if @profile.subscribed == nil %>
+<% elsif @profile.subscribed == true %>
+  <%= link_to 'Cancel Your Subscription', cancel_profile_charges_path(@profile), method: :put, data: { confirm: 'Are you sure you want to cancel your Subscription?' } %>
+<% else %>
+  <%= link_to 'Re-Activate Subscription', delivery_profile_path(@profile), method: :get, data: { confirm: 'You need to enter your payment information' } %>
+<%end %>

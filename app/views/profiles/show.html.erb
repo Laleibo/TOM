@@ -1,88 +1,99 @@
+<div class="banner" data-users="<%= @first %>"></div>
 <div class="profile_container">
   <div class="side_panel">
-    <h6> Welcome </h6>
     <ul class="navig" data-profile="<%= @profile.id %>">
+      <div class="accordion" id="your_orders">Your Subscriptions</div>
       <% @profile.users.each do |user| %>
-      <li data-user="<%= user.id %>"<%= link_to user.first_name, profile_user_path(@profile, user) %>  <br></li>
+      <div class="panel" data-user="<%= user.id %>"><%= link_to user.first_name, profile_user_path(@profile, user) %></div>
       <% end %>
-    </ul>
-      <div class="side_links"><a id="new_user">New User</a> | <%= link_to 'Delivery', delivery_profile_path(@profile) %>
-        <% if @profile.subscribed == nil %>
-        <% elsif @profile.subscribed == true %>
-          <%= link_to 'Cancel Your Subscription', cancel_profile_charges_path(@profile), method: :put, data: { confirm: 'Are you sure you want to cancel your Subscription?' } %>
-        <% else %>
-          <%= link_to 'Re-Activate Subscription', delivery_profile_path(@profile), method: :get, data: { confirm: 'You need to enter your payment information' } %>
-        <%end %>
+      <div class="side_links" id="new_user">New User</div>
+      <div class="side_links"><%= link_to 'Delivery', delivery_profile_path(@profile) %></div>
+      <div class="side_links">Refer someone</div>
+      <div class="side_links">
       </div>
-    </div>
-  <div class="main_panel">
-    <strong>Email:</strong>
-      <%= @profile.email %>
-    <br>
-    <% unless @profile.address1.blank? %>
-      <strong>Address1:</strong>
-      <%= @profile.address1 %>
-    <% end %>
-    <br>
-    <% unless @profile.address2.blank? %>
-      <strong>Address2:</strong>
-      <%= @profile.address2 %>
-    <% end %>
-    <br>
-    <% unless @profile.city.blank? %>
-      <strong>City:</strong>
-      <%= @profile.city %>
-    <% end %>
-    <br>
-    <% unless @profile.state.blank? %>
-      <strong>State:</strong>
-      <%= @profile.state %>
-    <% end %>
-    <br>
-    <% unless @profile.zip.blank? %>
-      <strong>Zip:</strong>
-      <%= @profile.zip %>
-    <% end %>
+      <div class="side_links">
+        <% if @profile.subscribed == nil %>
+        <% else @profile.subscribed == true %>
+          <%= link_to 'Order History', invoice_profile_path(@profile), method: :get %>
+        <% end %>
+      </div>
+    </ul>
   </div>
-
+<div class="main_panel">
+  <p class="dis_title">Your Profile</p>
+   <table class="responsive-table bordered">
+    <tbody>
+      <tr>
+        <td><strong>Email:</strong></td>
+        <td><%= @profile.email %></td>
+      </tr>
+      <tr>
+        <% unless @profile.address1.blank? %>
+        <td><strong>Address1:</strong></td>
+        <td><%= @profile.address1 %></td>
+        <% end %>>
+      </tr>
+      <tr>
+        <% unless @profile.address2.blank? %>
+        <td><strong>Address2:</strong></td>
+        <td><%= @profile.address2 %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <% unless @profile.city.blank? %>
+        <td><strong>City:</strong></td>
+        <td><%= @profile.city %></td>
+         <% end %>
+      </tr>
+      <tr>
+        <% unless @profile.state.blank? %>
+        <td><strong>State:</strong></td>
+        <td><%= @profile.state %></td>
+        <% end %>>
+      </tr>
+      <tr>
+        <% unless @profile.zip.blank? %>
+        <td><strong>Zip:</strong></td>
+        <td><%= @profile.zip %></td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
 </div>
-<div class="step_container">
- <div class="user_exit" id="user_exit">X</div>
- <%= form_for ([@profile, @user]) do |u| %>
+<div class="step_container modal">
+  <button class="user_exit" id="user_exit">X</button>
+  <p id="pro_prevent">You must create a user before proceding</p>
+  <%= form_for ([@profile, @user]) do |u| %>
+>>>>>>> 64e8ed78615d2a31bdedd16631424feb85dcfe48
 
  <%= u.label :first_name %>
  <%= u.text_field :first_name %>
  <br>
-
- <%= u.label :last_name %>
- <%= u.text_field :last_name %>
- <br>
- <%= u.label :birthday %>
- <%= u.date_field :birthday %>
- <br>
- <%= u.radio_button(:variety, "tampon") %>
- <%= u.label(:variety_tampon, "All Tampons") %>
- <%= u.radio_button(:variety, "pad") %>
- <%= u.label(:variety_pad, "All Pads") %>
- <%= u.radio_button(:variety, "combo") %>
- <%= u.label(:variety_combo, "Combination") %>
- <br>
- <%= u.radio_button(:flow, "light") %>
- <%= u.label(:flow_light, "Light") %>
- <%= u.radio_button(:flow, "medium") %>
- <%= u.label(:flow_medium, "Medium") %>
- <%= u.radio_button(:flow, "heavy") %>
- <%= u.label(:flow_heavy, "Heavy") %>
- <br>
- <%= u.radio_button(:scent, "scented") %>
- <%= u.label(:scent_scented, "Yes") %>
- <%= u.radio_button(:scent, "unscented") %>
- <%= u.label(:scent_unscented, "No") %>
-
- <%= u.submit %>
-
+  <%= u.label :last_name %>
+  <%= u.text_field :last_name %>
+  <br>
+  <%= u.label :birthday %>
+  <%= u.date_field :birthday %>
+  <br>
+  <%= u.radio_button(:variety, "tampon") %>
+  <%= u.label(:variety_tampon, "All Tampons") %>
+  <%= u.radio_button(:variety, "pad") %>
+  <%= u.label(:variety_pad, "All Pads") %>
+  <%= u.radio_button(:variety, "combo") %>
+  <%= u.label(:variety_combo, "Combination") %>
+  <br>
+  <%= u.radio_button(:flow, "light") %>
+  <%= u.label(:flow_light, "Light") %>
+  <%= u.radio_button(:flow, "medium") %>
+  <%= u.label(:flow_medium, "Medium") %>
+  <%= u.radio_button(:flow, "heavy") %>
+  <%= u.label(:flow_heavy, "Heavy") %>
+  <br>
+  <%= u.radio_button(:scent, "scented") %>
+  <%= u.label(:scent_scented, "Yes") %>
+  <%= u.radio_button(:scent, "unscented") %>
+  <%= u.label(:scent_unscented, "No") %>
+  <br>
+  <%= u.submit %>
  <% end %>
 </div>
-
-<div class="ref_code">Reference code</div>
-<div class="faq">Frequently asked questions</div>

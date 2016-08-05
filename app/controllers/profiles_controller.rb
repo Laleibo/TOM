@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   before_filter :authorize, except: [:create, :new]
-  before_action :set_profile, only: [:show, :edit, :update, :destroy, :hold, :delivery]
+  before_action :set_profile, only: [:show, :edit, :update, :destroy, :delivery, :hold, :invoice]
+
 
   # GET /profiles
   # GET /profiles.json
@@ -12,7 +13,16 @@ class ProfilesController < ApplicationController
   # GET /profiles/1.json
   def show
     @users = @profile.users.all
+    if @users.blank? then 
+      @first="" 
+    else
+      @first= @users.first.first_name
+    end
     @user = User.new
+    if request.xhr?
+      render @profile
+    end
+
   end
 
   # GET /profiles/new
@@ -34,7 +44,7 @@ class ProfilesController < ApplicationController
         format.html { redirect_to profile_path(@profile), notice: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: @profile }
       else
-        format.html { render '/sessions/new' }
+        format.html { redirect_to new_session_path, notice: 'Profile was not successfully created, please ensure to fill in all forms.' }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
@@ -66,6 +76,11 @@ class ProfilesController < ApplicationController
 
   def delivery
   end
+
+def invoice
+end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
