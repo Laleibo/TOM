@@ -16,31 +16,6 @@
 
  body {
    font-family: 'Poppins', sans-serif;
- }
-
-h1 {
-  font-family: 'Reem Kufi', sans-serif;
-}
-
-
-
-#navbar {
-	border: 1px solid black;
-	position: fixed;
-	top: 0;
-	width: 98%;
-	height: 4.7em;
-	z-index: 2;
-}
-
-.logo {
-	position: flex;
-	font-family: 'Reem Kufi', sans-serif;
-	font-size: 145%;
-	padding-top: 2.5em
-	top: 0;
-	width: 13em;
-	height: auto;
 }
 
 login{
@@ -57,12 +32,7 @@ login{
 	cursor: pointer;
 }
 
-footer{
 
-	border: 1px solid black; 
-	margin-top: 1.2em;
-	position: relative;
-	bottom: 0;
-	height: 14em;
-	width: 100%;*/
+.nav-padding {
+  padding: 0em 2em;
 }
