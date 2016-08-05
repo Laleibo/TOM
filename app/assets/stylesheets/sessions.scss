@@ -14,6 +14,10 @@
     z-index: 3;
 }
 
+.sessions.new #login_pop{
+
+}
+
 .sessions.new #register_pop{
     height: 38em;
 }
@@ -29,4 +33,45 @@
     right: 1em;
     height: 1em;
     width: 1em;
+}
+
+.home-top {
+	margin: 0;
+	padding: 0;
+	height: 375px;
+	width:inherit;
+	background-color: yellow;
+}
+
+.breaker {
+	height: 3em;
+	background-color: #8e24aa;
+}
+.mentions {
+	height: 5em;
+	background-color: #ccc;
+}
+
+.home-bottom {
+	height: 450px;
+	background-color: green;
+}
+
+.reviews {
+	background-color: orange;
+	height: 200px;
+}
+
+.img-home {
+	margin-left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.circle {
+	background-color: #8e24aa;
+	width: 17em;
+	height: 17em;
+	margin-left: auto;
+	margin-right: auto;
 }

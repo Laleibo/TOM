@@ -16,8 +16,23 @@
 
  body {
    font-family: 'Poppins', sans-serif;
- }
+}
 
-h1 {
-  font-family: 'Reem Kufi', sans-serif;
+login{
+	position: absolute;
+	margin-left: auto;
+	font-size: 150%;
+	bottom: 0.2em;
+	right: 1.2em;
+	width: auto;
+}
+
+.login{
+	color: gray;
+	cursor: pointer;
+}
+
+
+.nav-padding {
+  padding: 0em 2em;
 }

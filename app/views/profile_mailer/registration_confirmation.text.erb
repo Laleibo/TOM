@@ -1,0 +1,5 @@
+Hi <%= @profile.email  %>
+
+Thanks for signing up for TOM! To confirm your registration click the link below.
+
+<%= confirm_email_profile_url(@profile.confirm_token)%>
