@@ -8,25 +8,24 @@
 	margin: 0em 0em 1em 0em;
 }
 
-.profiles.show .banner{
+.profiles.show .banner {
+	padding-top: 3.2%;
+	text-align: right;
+	padding-right: 3%;
 	border: 1px solid black;
-	height: 8em;
+	font-size: 45px;
+	overflow-y: hidden;
+	height: 2.2em;
 	width: 100%;
 }
-.profiles.show .profile_container{
 
+.profiles.show .profile_container{
+	border: 1px solid black;
 	position: relative;
-/*	border: 1px solid black;*/
 	top: 0em;
 	width: 100%;
-	height: 50em;
-	margin-bottom: 1.2em;
-    position: relative;
-    border: 1px solid black;
-    top: 5.5em;
-    width: 100%;
-    height: 30em;
-    margin-bottom: 1.2em;
+	height: 40em;
+	margin-bottom: 0;
 }
 
 .profiles.show .side_panel{
@@ -40,13 +39,14 @@
 	width: 28%;
 	z-index: 1;
 }
+
 .profiles.show div.accordion{
 	cursor: pointer;
 	transition: 0.4s;
 	margin-bottom: 0.7em;
 }
-.profiles.show .navig{
 
+.profiles.show .navig {
 	font-size: 180%;
 	position: relative;
 	text-align: right;
@@ -75,10 +75,10 @@
 }
 
 .profiles.show .main_panel{
-	position: flex;
+	font-size: 200%;
 	border-left: 1px solid black;
-	padding-top: 1em;
-	padding-left: 1.2em;
+	padding-top: 2%;
+	padding-left: 1%;
 	float: right;
 	box-sizing: inline;
 	margin-left: auto;
@@ -87,53 +87,46 @@
 	z-index: 1;
 }
 
-.profiles.show li{
-	text-align: right;
-	padding-bottom: 2em;
+.profiles.show .main_panel table {
+	position: relative;
+	left: 10%;
+	width: 60%;
+}
+.profiles.show strong {
+	font-size: 18px;
 }
 
-.profiles.show .side_links {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: auto;
-    height: auto;
-}
-
-.profiles.show .main_panel{
-    position: flex;
-    border-left: 1px solid black;
-    padding-top: 0em;
-    padding-left: 1.2em;
-    float: right;
-    box-sizing: inline;
-    margin-left: auto;
-    height: 99%;
-    width: 72%;
-    z-index: 1;
+.profiles.show .dis_title {
+	font-size: 32px;
 
 }
+
 .profiles.show .step_container{
     position: fixed;
     border: 1px solid black;
     background-color: white;
+    padding: 1%;
     margin-left: auto;
-    width: 42em;
-    height: 45em;
+    width: 53%;
+    height: 70%;
     z-index: 3;
+}
+.profiles.show .step_container p{
+	text-align: center;
+	padding: -1;
 }
 
 .profiles.show .user_exit{
     display: flex;
     cursor: pointer;
     margin-left: auto;
-    padding-left: auto;
-    padding-right: auto;
-    font-size: 120%;
-    top: 0em;
-    right: 1em;
-    height: 1em;
-    width: 1em;
+/*    padding-left: auto;
+    padding-right: auto;*/
+    text-align: left;
+    left: -1em;
+    font-size: 100%;
+    height: 1.4em;
+    width: 1.8em;
 }
 
 .profiles.show .ref_code{

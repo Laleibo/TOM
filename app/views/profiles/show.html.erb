@@ -1,62 +1,68 @@
-
-<div class="banner"></div>
+<div class="banner" data-users="<%= @first %>"></div>
 <div class="profile_container">
   <div class="side_panel">
     <ul class="navig" data-profile="<%= @profile.id %>">
-      <div class="accordion" id="Your_orders">Your Subscriptions</div>
+      <div class="accordion" id="your_orders">Your Subscriptions</div>
       <% @profile.users.each do |user| %>
       <div class="panel" data-user="<%= user.id %>"><%= link_to user.first_name, profile_user_path(@profile, user) %></div>
       <% end %>
       <div class="side_links" id="new_user">New User</div>
       <div class="side_links"><%= link_to 'Delivery', delivery_profile_path(@profile) %></div>
+      <div class="side_links">Refer someone</div>
       <div class="side_links">
-        <% if @profile.subscribed == nil %>
-        <% elsif @profile.subscribed == true %>
-        <%= link_to 'Cancel Your Subscription', cancel_profile_charges_path(@profile), method: :put, data: { confirm: 'Are you sure you want to cancel your Subscription?' } %>
-        <% else %>
-        <%= link_to 'Re-Activate Subscription', delivery_profile_path(@profile), method: :get, data: { confirm: 'You need to enter your payment information' } %>
-        <%end %>
       </div>
-<!--  <div class="side_links"> 
-        <%# if @profile.subscribed == nil %>
-        <%# else @profile.subscribed == true %>
-          <%#= link_to 'Order History', invoice_profile_path(@profile), method: :get %>
-        <%# end %>
-      </div> -->
+      <div class="side_links"> 
+        <% if @profile.subscribed == nil %>
+        <% else @profile.subscribed == true %>
+          <%= link_to 'Order History', invoice_profile_path(@profile), method: :get %>
+        <% end %>
+      </div>
     </ul> 
   </div>
-  <div class="main_panel">
-    <strong>Email:</strong>
-      <%= @profile.email %>
-    <br>
-    <% unless @profile.address1.blank? %>
-      <strong>Address1:</strong>
-      <%= @profile.address1 %>
-    <% end %>
-    <br>
-    <% unless @profile.address2.blank? %>
-      <strong>Address2:</strong>
-      <%= @profile.address2 %>
-    <% end %>
-    <br>
-    <% unless @profile.city.blank? %>
-      <strong>City:</strong>
-      <%= @profile.city %>
-    <% end %>
-    <br>
-    <% unless @profile.state.blank? %>
-      <strong>State:</strong>
-      <%= @profile.state %>
-    <% end %>
-    <br>
-    <% unless @profile.zip.blank? %>
-      <strong>Zip:</strong>
-      <%= @profile.zip %>
-    <% end %>
-  </div>
+<div class="main_panel">
+  <p class="dis_title">Your Profile</p>
+   <table class="responsive-table bordered">
+    <tbody>
+      <tr>
+        <td><strong>Email:</strong></td>
+        <td><%= @profile.email %></td>
+      </tr>
+      <tr>
+        <% unless @profile.address1.blank? %>
+        <td><strong>Address1:</strong></td>
+        <td><%= @profile.address1 %></td>
+        <% end %>>
+      </tr>
+      <tr>
+        <% unless @profile.address2.blank? %>
+        <td><strong>Address2:</strong></td>
+        <td><%= @profile.address2 %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <% unless @profile.city.blank? %>
+        <td><strong>City:</strong></td>
+        <td><%= @profile.city %></td>
+         <% end %>
+      </tr>
+      <tr>
+        <% unless @profile.state.blank? %>
+        <td><strong>State:</strong></td>
+        <td><%= @profile.state %></td>
+        <% end %>>
+      </tr>
+      <tr>
+        <% unless @profile.zip.blank? %>
+        <td><strong>Zip:</strong></td>
+        <td><%= @profile.zip %></td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>  
 </div>
-<div class="step_container">
-  <div class="user_exit" id="user_exit">X</div>
+<div class="step_container modal">
+  <button class="user_exit" id="user_exit">X</button>
+  <p id="pro_prevent">You must create a user before proceding</p>
   <%= form_for ([@profile, @user]) do |u| %>
 
   <%= u.label :first_name %>
@@ -87,7 +93,7 @@
   <%= u.label(:scent_scented, "Yes") %>
   <%= u.radio_button(:scent, "unscented") %>
   <%= u.label(:scent_unscented, "No") %>
-
+  <br>
   <%= u.submit %>
 
   <% end %>

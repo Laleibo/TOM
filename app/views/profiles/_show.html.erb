@@ -1,19 +1,39 @@
-  <div>
-  <strong>Email:</strong>
-  <%= @profile.email %>
-  <br>
-  <strong>Address1:</strong>
-  <%= @profile.address1 %>
-  <br>
-  <strong>Address2:</strong>
-  <%= @profile.address2 %>
-  <br>
-  <strong>City:</strong>
-  <%= @profile.city %>
-  <br>
-  <strong>State:</strong>
-  <%= @profile.state %>
-  <br>
-  <strong>Zip:</strong>
-  <%= @profile.zip %>
-  </div>
+  <p class="dis_title">Your Profile</p>
+   <table class="responsive-table bordered">
+    <tbody>
+      <tr>
+        <td><strong>Email:</strong></td>
+        <td><%= @profile.email %></td>
+      </tr>
+      <tr>
+        <% unless @profile.address1.blank? %>
+        <td><strong>Address1:</strong></td>
+        <td><%= @profile.address1 %></td>
+        <% end %>>
+      </tr>
+      <tr>
+        <% unless @profile.address2.blank? %>
+        <td><strong>Address2:</strong></td>
+        <td><%= @profile.address2 %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <% unless @profile.city.blank? %>
+        <td><strong>City:</strong></td>
+        <td><%= @profile.city %></td>
+         <% end %>
+      </tr>
+      <tr>
+        <% unless @profile.state.blank? %>
+        <td><strong>State:</strong></td>
+        <td><%= @profile.state %></td>
+        <% end %>>
+      </tr>
+      <tr>
+        <% unless @profile.zip.blank? %>
+        <td><strong>Zip:</strong></td>
+        <td><%= @profile.zip %></td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>  
