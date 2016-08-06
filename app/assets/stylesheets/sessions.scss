@@ -44,9 +44,9 @@
 }
 
 
-.featured_in{
+.feature_in h3 {
     margin-top: 10px;
-    font-size: 20px;
+    padding-top: 6em;
 }
 
 .press_logo img {
@@ -79,10 +79,26 @@
 	margin-right: auto;
 }
 
+.breaker {
+  justify-content: center;
+
+
+}
 .woman {
-  z-index: auto;
-  border: 1px purple solid;
-  background: silver;
+  padding-top: 10px;
+  margin-left: 20%;
+}
+
+.easy_women {
+  padding: .1em;
+  margin-left: 10%;
+}
+
+
+.surprises {
+  display: none;
+  color: purple;
+
 }
 
 .chevrons { width: 100%;  z-index: 0; }
