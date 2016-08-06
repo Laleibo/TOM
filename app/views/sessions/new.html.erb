@@ -39,10 +39,6 @@
 		    <%= f.password_field :password_confirmation %>
 		  </div>
 
-		<% flash.each do |message_type, message| %>
-			 <div class="alert alert-<%= message_type %>"><%= message %></div>
-		 <% end %>
-
 		  <div class="actions">
 		    <%= f.submit "Create Profile", {:controller => "profiles", :action => "show"} %>
 		  </div>
@@ -51,6 +47,10 @@
 
 	<div class="row">
 		<div class="col s12 m12 l12 home-top">
+			<div class="mission-background">
+				<p class="mission-header">TOM</p>
+				<p class ="mission-statement"> One less thing to worry about.</p>
+			</div>
 		</div>
 	</div>
 
