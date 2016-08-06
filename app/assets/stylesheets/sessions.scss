@@ -80,14 +80,12 @@
 }
 
 .woman {
-  z-index: 100;
+  z-index: auto;
   border: 1px purple solid;
   background: silver;
-  font-size: 14px;
-
 }
 
-.chevrons { width: 100%;  z-index: -1; }
+.chevrons { width: 100%;  z-index: 0; }
 
 .chevrons div { width: 100%; }
 

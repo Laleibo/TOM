@@ -20,14 +20,14 @@
 
 <!-- Sign up pop up -->
 <div class="index_pop" id="register_pop">
-	<div class="index_exit" id="register_exit">X</div>
+		<div class="index_exit" id="register_exit">X</div>
 
-	<h1> Register </h1>
-	<%= form_for(@profile) do |f| %>
-	<div class="field">
-		<%= f.label :email %>
-		<%= f.text_field :email %>
-	</div>
+		<h1> Register </h1>
+		<%= form_for(@profile) do |f| %>
+		  <div class="field">
+		    <%= f.label :email %>
+		    <%= f.text_field :email %>
+		  </div>
 
 	<div class="field">
 		<%= f.label :password %>
@@ -38,22 +38,20 @@
 		<%= f.label :password_confirmation %>
 		<%= f.password_field :password_confirmation %>
 	</div>
-
-	<% flash.each do |message_type, message| %>
-	<div class="alert alert-<%= message_type %>"><%= message %></div>
-	<% end %>
-
-	<div class="actions">
-		<%= f.submit "Create Profile", {:controller => "profiles", :action => "show"} %>
+		  <div class="actions">
+		    <%= f.submit "Create Profile", {:controller => "profiles", :action => "show"} %>
+		  </div>
+		<% end %>
 	</div>
-	<% end %>
-</div>
-<div class="row">
-	<div class="col s12 m12 l12 home-top">
-		<!-- <img class="responsive-img img-top" src="https://s3.amazonaws.com/tombox/Clock"> -->
-		<!-- <p>the picture goes here</p> -->
+
+	<div class="row">
+		<div class="col s12 m12 l12 home-top">
+			<div class="mission-background">
+				<p class="mission-header">TOM</p>
+				<p class ="mission-statement"> One less thing to worry about.</p>
+			</div>
+		</div>
 	</div>
-</div>
 
 <!--   Icon Section -->
 <div class="section">
@@ -159,10 +157,24 @@
 	</div>
 </div>
 
-<br><br>
-<div class="reviews">
-	ALL OF THE REVIEWS WILL GO SOMEWHERE HERE
-
-</div>
-</div>
+	<div class="carousel carousel-slider center" data-indicators="true">
+    <div class="carousel-fixed-item center">
+      <a class="btn waves-effect white grey-text darken-text-2">button</a>
+    </div>
+    <div class="carousel-item red white-text" href="#one!">
+      <h2>First Panel</h2>
+      <p class="white-text">This is your first panel</p>
+    </div>
+    <div class="carousel-item amber white-text" href="#two!">
+      <h2>Second Panel</h2>
+      <p class="white-text">This is your second panel</p>
+    </div>
+    <div class="carousel-item green white-text" href="#three!">
+      <h2>Third Panel</h2>
+      <p class="white-text">This is your third panel</p>
+    </div>
+    <div class="carousel-item blue white-text" href="#four!">
+      <h2>Fourth Panel</h2>
+      <p class="white-text">This is your fourth panel</p>
+    </div>
 </div>
