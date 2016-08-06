@@ -5,93 +5,93 @@
 	<h1> Log In </h1>
 	<div id="log_in_field">
 		<%= form_tag '/login' do %>
-		 	<div class="field" id="username_in">
-				<%= label_tag :email %>
-				<%= text_field_tag :email %>
-			</div>
-			<div class="field" id="password_in">
-				<%= label_tag :password %>
-				<%= password_field_tag :password %>
-			</div>
+		<div class="field" id="username_in">
+			<%= label_tag :email %>
+			<%= text_field_tag :email %>
+		</div>
+		<div class="field" id="password_in">
+			<%= label_tag :password %>
+			<%= password_field_tag :password %>
+		</div>
 		<%= submit_tag 'log in'%>
 		<% end %>
 	</div>
 </div>
 
 <!-- Sign up pop up -->
-	<div class="index_pop" id="register_pop">
-		<div class="index_exit" id="register_exit">X</div>
+<div class="index_pop" id="register_pop">
+	<div class="index_exit" id="register_exit">X</div>
 
-		<h1> Register </h1>
-		<%= form_for(@profile) do |f| %>
-		  <div class="field">
-		    <%= f.label :email %>
-		    <%= f.text_field :email %>
-		  </div>
-
-		  <div class="field">
-		    <%= f.label :password %>
-		    <%= f.password_field :password %>
-		  </div>
-
-		  <div class="field">
-		    <%= f.label :password_confirmation %>
-		    <%= f.password_field :password_confirmation %>
-		  </div>
-
-		<% flash.each do |message_type, message| %>
-			 <div class="alert alert-<%= message_type %>"><%= message %></div>
-		 <% end %>
-
-		  <div class="actions">
-		    <%= f.submit "Create Profile", {:controller => "profiles", :action => "show"} %>
-		  </div>
-		<% end %>
+	<h1> Register </h1>
+	<%= form_for(@profile) do |f| %>
+	<div class="field">
+		<%= f.label :email %>
+		<%= f.text_field :email %>
 	</div>
-		<div class="row">
-			<div class="col s12 m12 l12 home-top">
-				<!-- <img class="responsive-img img-top" src="https://s3.amazonaws.com/tombox/Clock"> -->
-				 <!-- <p>the picture goes here</p> -->
-			 </div>
-		 </div>
+
+	<div class="field">
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+	</div>
+
+	<div class="field">
+		<%= f.label :password_confirmation %>
+		<%= f.password_field :password_confirmation %>
+	</div>
+
+	<% flash.each do |message_type, message| %>
+	<div class="alert alert-<%= message_type %>"><%= message %></div>
+	<% end %>
+
+	<div class="actions">
+		<%= f.submit "Create Profile", {:controller => "profiles", :action => "show"} %>
+	</div>
+	<% end %>
+</div>
+<div class="row">
+	<div class="col s12 m12 l12 home-top">
+		<!-- <img class="responsive-img img-top" src="https://s3.amazonaws.com/tombox/Clock"> -->
+		<!-- <p>the picture goes here</p> -->
+	</div>
+</div>
 
 <!--   Icon Section -->
 <div class="section">
-  <div class="row">
+	<div class="row">
 		<!-- Section 1   -->
 		<div class="col s12 m3">
 			<div class="circle">
-      	<div class="icon-block">
-          <h2 class="center white-text"><i class="material-icons">group</i></h2>
-          <h5 class="center">User Experience Focused</h5>
+				<div class="icon-block">
+					<h2 class="center white-text"><i class="material-icons">group</i></h2>
+					<h5 class="center">Choose Your Products </h5>
 				</div>
 			</div>
-				<p class="center">User Experience Focused</p>
-	      <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+			<p class="center">What's in your Box?</p>
+			<p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
 		</div>
 
 		<!-- section 2 -->
 		<div class="col s12 m3">
 			<div class="circle">
-      	<div class="icon-block">
-          <h2 class="center white-text"><i class="material-icons">group</i></h2>
-          <h5 class="center">User Experience Focused</h5>
+				<div class="icon-block">
+					<h2 class="center white-text"><i class="material-icons">group</i></h2>
+					<h5 class="center">User Experience Focused</h5>
 				</div>
 			</div>
-				<p class="center">User Experience Focused</p>
-	      <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+			<p class="center">How do you flow?</p>
+			<p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
 		</div>
 
 		<!-- section 3 -->
 		<div class="col s12 m3">
 			<div class="circle">
-      	<div class="icon-block">
-          <h2 class="center white-text"><i class="material-icons">group</i></h2>
-          <h5 class="center">User Experience Focused</h5>
+				<div class="icon-block">
+					<h2 class="center white-text"><i class="material-icons">group</i></h2>
+					<h5 class="center">User Experience Focused</h5>
 				</div>
 			</div>
-				<p class="center">User Experience Focused</p>
-        <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+			<p class="center">Smells like flowers?</p>
+			<p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
 		</div>
 
 		<!-- section 4 -->
@@ -102,30 +102,67 @@
 					<h5 class="center">User Experience Focused</h5>
 				</div>
 			</div>
-				<p class="center">User Experience Focused</p>
-				<p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+			<p class="center">When is your delivery?</p>
+			<p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+		</div>
+	</div>
+</div>
+<div class="chevrons">
+  <div><b></b><b></b><b></b><b></b><b></b></div>
+  <div><b></b><b></b><b></b><b></b><b></b></div>
+  <div><b></b><b></b><b></b><b></b><b></b></div>
+  <div><b></b><b></b><b></b><b></b><b></b></div>
+  <div><b></b><b></b><b></b><b></b><b></b></div>
+	<div><b></b><b></b><b></b><b></b><b></b></div>
+	<div><b></b><b></b><b></b><b></b><b></b></div>
+</div>
+<div class="row breaker">
+	<div class="woman col 4 center-align">
+		<div class="easy_women"> Its not easy be a women. </div>
+		<div class="period_surprise"> Don't let your period surprise you. Let TOM give you a surprise each month! </div>
+	</div>
+<div class="row center-align">
+<div class="feature_in"><h3>Featured In </h3></div>
+	<div class="col s12 m6 l4">
+		<div class="press_logo"><img src="https://s3.amazonaws.com/tombox/Mashable.svg" alt="mashable">
+		</div>
+	</div>
+	<div class="col s12 m6 l4">
+		<div class="press_logo"><img src="https://s3.amazonaws.com/tombox/buzzfeed_1366.jpg" alt="buzzfeed" >
+		</div>
+	</div>
+	<div class="col s12 m6 l4">
+		<div class = "press_logo">
+			<img src="https://s3.amazonaws.com/tombox/refinery29.jpeg" alt="refinery29">
 		</div>
 	</div>
 </div>
 
-<div class="row breaker">
-		 <div class="col s12">BREAKER</div>
+<div class="row mentions center-align" >
+	<div class="col s12 m6 l3">
+		<div class="press_logo">
+			<img src="https://s3.amazonaws.com/tombox/Cosmopolitan+logo.jpg" alt="Cosmopolitan">
+		</div>
+	</div>
+	<div class="col s12 m6 l3">
+		<div class="press_logo">
+			<img src="https://s3.amazonaws.com/tombox/entrepreneur.png" alt="entrepeneur">
+		</div>
+	</div>
+	<div class="col s12 m6 l3">
+		<div class = "press_logo"><img src="https://s3.amazonaws.com/tombox/womenshealth.jpeg" alt="womenshealth">
+		</div>
+	</div>
+	<div class="col s12 m6 l3">
+		<div class = "press_logo"><img src="https://s3.amazonaws.com/tombox/pink-vogue-logo.jpg" alt="vogue">
+		</div>
+	</div>
 </div>
 
-<div class="row mentions valign-wrapper">
-		 <div class="col s12 m6 l2">MASHABLE</div>
-		 <div class="col s12 m6 l2">COSMO</div>
-		 <div class="col s12 m6 l2">self</div>
-		 <div class="col s12 m6 l2">SEVENTEEN</div>
-		 <div class="col s12 m6 l2">CNN</div>
-		 <div class="col s12 m6 l2">NBC</div>
+<br><br>
+<div class="reviews">
+	ALL OF THE REVIEWS WILL GO SOMEWHERE HERE
 
 </div>
-
-	    <br><br>
-	    <div class="reviews">
-				ALL OF THE REVIEWS WILL GO SOMEWHERE HERE
-
-	    </div>
-	  </div>
+</div>
 </div>

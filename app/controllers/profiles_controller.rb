@@ -95,21 +95,6 @@ class ProfilesController < ApplicationController
 def invoice
 end
 
-<<<<<<< HEAD
-# def create_invoice
-#   profile = Profile.find(3)
-#     5.times do
-#     Stripe::Invoice.create(
-#       :customer => profile.stripe_id,
-#       :total => "54",
-#       :date => "1470339555",
-#       :paid => "true"
-#   )
-#   end
-# end
-
-
-=======
   def confirm_email
     profile = Profile.find_by_confirm_token(params[:id])
     if profile
@@ -121,7 +106,6 @@ end
       redirect_to @profile
     end
   end
->>>>>>> 19eb8ba8305e0aac80700adc9e43b1905b8931f6
 
   private
     # Use callbacks to share common setup or constraints between actions.
