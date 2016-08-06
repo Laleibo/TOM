@@ -81,7 +81,22 @@ end
       redirect_to profile_path(@profile)
   end
 
-
+  def buildJWT(secret, userId, accountId, email, firstName, lastName, referralCode, userReferralCode, accountStatus, userImage, expiryDate)
+      secret = 'Referral SaaSquatch API key'
+      return payload = JWT.encode({
+      user: {
+      id: userId,
+      accountId: accountId,
+      firstName: firstName,
+      lastName: lastName,
+      referralCode: referralCode,
+      userReferralCode: userReferralCode,
+      accountStatus: accountStatus,
+      userImage: userImage
+      },
+      exp: expiryDate #optional date in seconds since the epoch
+      }, secret)
+  end
 
 
 end
