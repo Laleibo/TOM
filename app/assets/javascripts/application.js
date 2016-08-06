@@ -12,8 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require jquery.readyselector
 //= require jquery.turbolinks
 //= require transit.js
 //= require_tree .
+//= require turbolinks
+
+
+
+$(document).ready(function(){
+  $('.carousel.carousel-slider').carousel({
+    full_width: true
+  })
+})
