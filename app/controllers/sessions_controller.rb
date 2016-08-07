@@ -19,22 +19,18 @@ class SessionsController < ApplicationController
         sign_in profile
         redirect_back_or profile
       else
-        flash.now[:error] = "Please activate your account by following the instructions in the account confirmation email you received to proceed"
+        flash.now[:notice] = "Please activate your account by following the instructions in the account confirmation email you received to proceed"
         render 'new'
       end
     else
-      flash.now[:error]= "invalid email or password confirmation"
-      render 'new'
+      flash.now[:error]= "ah ah ah try again!"
+      redirect_to new_session_path
     end
-    #   redirect_to profile_path(@profile)
-    # else
-    #   render :new
-    # end
 	end
 
   def destroy
-    session[:profile_id] = nil
-    redirect_to root_path
-    # render 'sessions/new'
+   session[:profile_id] = nil
+   flash[:notice] = "You have successfully logged out."
+   redirect_to root_path
   end
 end

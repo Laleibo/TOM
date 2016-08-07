@@ -1,6 +1,9 @@
 <div class="banner" data-users="<%= @first %>"></div>
 
 <div class="profile_container">
+  <% if flash[:just_signed_up] %>
+  <p class="welcome">Thanks for joining TOM!</p>
+<% end %>
   <div class="side_panel">
     <ul class="navig" data-profile="<%= @profile.id %>">
       <div class="accordion" id="your_orders">Your Subscriptions</div>
@@ -10,7 +13,7 @@
       <div class="side_links pointer" id="new_user">New User</div>
       <div class="side_links pointer" id="delivery">Delivery</div>
       <div class="side_links pointer" id="refer">Refer someone</div>
-      <div class="side_links pointer" id="history"> 
+      <div class="side_links pointer" id="history">
         <% if @profile.subscribed == nil %>
         <% else @profile.subscribed == true %>
           <%= link_to 'Order History', invoice_profile_path(@profile), method: :get %>
