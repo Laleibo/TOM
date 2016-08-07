@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  post '/use_form' => 'users#ajax'
+  # get '/user_form' => 'users#update'
+  post '/user_form' => 'users#ajax'
   get '/deliv_get' => 'profiles#delivery'
 
   resources :users, only: [:destroy, :create]
