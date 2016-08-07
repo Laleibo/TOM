@@ -10,7 +10,9 @@
       </ul>
     </div>
   <% end %>
-
+<h5>Shipping Address</h5>
+<br>
+<br>
   <div class="field">
     <%= f.label :address %>
     <%= f.text_field :address1 %>
@@ -41,12 +43,14 @@
     <%= f.date_field :delivery %>
   </div>
 
-  <div class="actions">
+  <div class="actions waves-effect waves-light btn">
     <%= f.submit %>
   </div>
 <% end %>
-
+<br>
+<h5 id="billing">Billing</h5>
+<br>
 
 <%= render 'charges/new' %>
-<br>
-<%=link_to 'Cancel', @profile%>s
+<br><br>
+<h6><%=link_to 'Cancel', @profile%><h6>

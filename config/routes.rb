@@ -8,12 +8,13 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
   post '/use_form' => 'users#ajax'
+  get '/deliv_get' => 'profiles#delivery'
 
   # get  '/_form', to: 'controller_profiles#show'
   # post '/_form', to: 'controller_profiles#show'
 
   resources :users, only: [:destroy, :create]
-  post '/profiles/:profile_id/delivery' => 'profiles#update'
+  # post '/add_address' => 'profiles#address'
 
   # get '/profiles/:profile_id', :to => "profiles#hold"
   # post '/profiles/:profile_id/', :to => "profiles#hold"

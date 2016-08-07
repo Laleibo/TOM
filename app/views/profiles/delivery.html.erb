@@ -1,3 +1,4 @@
+<div class="banner" data-users="<%= @first %>"></div>
 <%= form_for(@profile) do |f| %>
   <% if @profile.errors.any? %>
     <div id="error_explanation">
@@ -10,7 +11,27 @@
       </ul>
     </div>
   <% end %>
-
+<div class="profile_container">
+  <div class="side_panel">
+    <ul class="navig" data-profile="<%= @profile.id %>">
+      <div class="accordion" id="your_orders">Your Subscriptions</div>
+      <% @profile.users.each do |user| %>
+      <div class="panel" data-user="<%= user.id %>"><%= link_to user.first_name, profile_user_path(@profile, user) %></div>
+      <% end %>
+      <div class="side_links" id="new_user">New User</div>
+      <div class="side_links"><%= link_to 'Delivery', delivery_profile_path(@profile) %></div>
+      <div class="side_links">Refer someone</div>
+      <div class="side_links">
+      </div>
+      <div class="side_links"> 
+        <% if @profile.subscribed == nil %>
+        <% else @profile.subscribed == true %>
+          <%= link_to 'Order History', invoice_profile_path(@profile), method: :get %>
+        <% end %>
+      </div>
+    </ul> 
+  </div>
+<div class="main_panel">
   <div class="field">
     <%= f.label :address %>
     <%= f.text_field :address1 %>
@@ -45,8 +66,10 @@
     <%= f.submit %>
   </div>
 <% end %>
-
-
 <%= render 'charges/new' %>
 <br>
 <%=link_to 'Cancel', @profile%>
+</div>
+
+
+

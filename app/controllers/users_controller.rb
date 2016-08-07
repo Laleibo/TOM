@@ -30,6 +30,7 @@ class UsersController < ApplicationController
       render @user,  layout: false 
     end
   end
+  
   def edit
   end
 

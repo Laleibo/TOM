@@ -3,12 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.profiles {
+.profiles.show {
 	padding: 0;
 	margin: 0em 0em 1em 0em;
 }
 
-.profiles.show .banner {
+.profiles .banner {
 	padding-top: 3.2%;
 	text-align: right;
 	padding-right: 3%;
@@ -19,8 +19,8 @@
 	width: 100%;
 }
 
-.profiles.show .profile_container{
-	border: 1px solid black;
+.profiles .profile_container{
+	border-top: 1px solid black;
 	position: relative;
 	top: 0em;
 	width: 100%;
@@ -28,7 +28,7 @@
 	margin-bottom: 0;
 }
 
-.profiles.show .side_panel{
+.profiles .side_panel{
 	display: flex;
 	overflow-y: hidden;
 	padding-top: 0em;
@@ -40,13 +40,17 @@
 	z-index: 1;
 }
 
-.profiles.show div.accordion{
+.profiles div.accordion{
 	cursor: pointer;
+	color: #616161;
 	transition: 0.4s;
-	margin-bottom: 0.7em;
+	margin-bottom: 1em;
+}
+.profiles.show div.accordion:hover{
+	color: #8e24aa;
 }
 
-.profiles.show .navig {
+.profiles .navig {
 	font-size: 180%;
 	position: relative;
 	text-align: right;
@@ -61,22 +65,55 @@
 
 .profiles.show div.panel{
 	display: none;
+	color: black;
 	background-color: white;
 	margin-top: 0.4em;
-	margin-bottom: 0.8em;
+	margin-bottom: 1em;
 }
 
-.profiles.show div.panel.show{
+.profiles.show .sho{
+	background-color: #8e24aa;
 	display: block !important;
 }
 
 .profiles.show .side_links {
-	margin-bottom: 0.7em;
+	margin-bottom: 0.9em;
+	color: #616161;
+}
+.profiles.show .side_links:hover {
+	color: #8e24aa;
+}
+.profiles.show a{
+	color: #616161;
 }
 
-.profiles.show .main_panel{
+.profiles.show a:hover {
+	background-color: white;
+	color: #8e24aa;
+}
+
+.profiles .pointer{
+	cursor: pointer;
+}
+
+.profiles.show .radio_container{
+	border: 1px solid black;
+	display: flex;
+	top: -15.5em;
+	width: 100%;
+	height: 10em;
+}
+
+.profiles.show .radio{
+	text-align: justify;
+	font-size: 16px;
+	margin-bottom: 2.5em;
+}
+
+.profiles .main_panel{
 	font-size: 200%;
-	border-left: 1px solid black;
+	border-left: 1px solid black; 
+	overflow-y: scroll;
 	padding-top: 2%;
 	padding-left: 1%;
 	float: right;
@@ -89,16 +126,38 @@
 
 .profiles.show .main_panel table {
 	position: relative;
+	padding-left: 0.5em;
 	left: 10%;
 	width: 60%;
 }
+
+.profiles.show .main_panel form{
+	position: relative;
+	left: 10%;
+	width: 60%;
+}
+
+.profiles.show .main_panel input{
+
+}
+
+.profiles.show .main_panel h5{
+	margin-left: -3.7em;
+}
+.profiles.show #billing{
+	margin-left: 0em;
+}
+
+.profiles.show .main_panel input{
+
+}
+
 .profiles.show strong {
 	font-size: 18px;
 }
 
 .profiles.show .dis_title {
 	font-size: 32px;
-
 }
 
 .profiles.show .step_container{
@@ -107,10 +166,11 @@
     background-color: white;
     padding: 1%;
     margin-left: auto;
-    width: 53%;
-    height: 70%;
+    width: 59%;
+    min-height: 78%;
     z-index: 3;
 }
+
 .profiles.show .step_container p{
 	text-align: center;
 	padding: -1;
@@ -120,8 +180,6 @@
     display: flex;
     cursor: pointer;
     margin-left: auto;
-/*    padding-left: auto;
-    padding-right: auto;*/
     text-align: left;
     left: -1em;
     font-size: 100%;
@@ -129,23 +187,32 @@
     width: 1.8em;
 }
 
-.profiles.show .ref_code{
-    position: relative;
-    border: 1px solid black;
-    top: 5.5em;
-    width: 100%;
-    height: 9em;
-    margin-bottom: 1.2em;
+.profiles.invoice {
+	padding: 2.3em;
+	/*margin: 0em 0em 1em 0em;*/
 }
 
-.profiles.show .faq{
-    position: relative;
-    border: 1px solid black;
-    top: 5.5em;
-    width: 100%;
-    height: 20em;
-    margin-bottom: 1.2em;
+.profiles.invoice .invoice_boxes{
+	margin: 3em;
 }
-.profiles.show footer{
-    top: 5.5em;
+
+.profiles.invoice table{
+	display: center;
+	position: relative;
+	padding-left: 0.5em;
+	left: 10%;
+	width: 75%;
 }
+
+.profiles.invoice .paper{
+	display: center;
+	margin-top: 2em;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1em 1em 2em 4em;
+	border: 1px solid;
+	width: 68%;
+	height: 90%;
+
+}
+

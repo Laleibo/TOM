@@ -44,7 +44,7 @@ class ProfilesController < ApplicationController
         format.html { redirect_to profile_path(@profile), notice: 'Profile was successfully created.' }
         format.json { render :show, status: :created, location: @profile }
       else
-        format.html { redirect_to new_session_path, notice: 'Profile was not successfully created, please ensure to fill in all forms.' }
+        format.html { redirect_to new_session_path, notice: 'Profile was not successfully created, please ensure to fill in all' }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
@@ -53,6 +53,10 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
+    # if request.xhr?
+    #   render 'delivery', layout: false
+    # end
+
     respond_to do |format|
       if @profile.update(delivery_params)
         format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
@@ -62,6 +66,7 @@ class ProfilesController < ApplicationController
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # DELETE /profiles/1
@@ -75,6 +80,9 @@ class ProfilesController < ApplicationController
   end
 
   def delivery
+    if request.xhr?
+      render '_del', layout: false
+    end
   end
 
 def invoice
