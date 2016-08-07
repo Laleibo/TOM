@@ -101,12 +101,12 @@ $(document).on("turbolinks:load",function(){
     	});
     });
 
-	 	$(".profiles.show .panel").click(function(e){
+	 	$("#user_profile").click(function(e){
 			e.preventDefault();
 			var profile_id = $(".profiles.show .navig").data("profile");
 			var user_id = $(this).data("user");
 			$.ajax({
-				url:'/user_form',
+				url:'/user_form/' + profile_id,
 				type: "post",
 				data: {profile_id: profile_id, user_id: user_id}
 				}).done(function(data){

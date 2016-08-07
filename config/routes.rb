@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
 
   # get '/user_form' => 'users#update'
-  post '/user_form' => 'users#ajax'
+  post '/user_form/:id' => 'users#ajax'
   get '/deliv_get' => 'profiles#delivery'
 
   resources :users, only: [:destroy, :create, :show]
