@@ -74,7 +74,6 @@ $(document).on("turbolinks:load",function(){
     		url: '/profiles/'+profile_id,
     		type: "get"
     	}).done(function(data){
-    		console.log(isBlank(data.address2));
     	var d = "<p class='dis_title'>Your Profile</p><table class='responsive-table bordered'><tbody>";
     	if(data.email != null || data.email != ""){
     		d = d.concat("<tr><td><strong>Email:</strong></td><td>"+data.email+"</td></tr>");
@@ -115,6 +114,8 @@ $(document).on("turbolinks:load",function(){
 				});
 		});
 
+
+
 		$("#delivery").click(function(){
 		var profile_id = $(".profiles.show .navig").data("profile");
 		$.ajax({
@@ -130,7 +131,7 @@ $(document).on("turbolinks:load",function(){
 			$.ajax({
 				ur:'/add_address'
 			}).done(function(data){
-				console.log(data);
+				// console.log(data);
 			});
 		});
 
@@ -147,6 +148,10 @@ $(document).on("turbolinks:load",function(){
 					$(".profiles.show .main_panel").append(data);
 				});
 		});
+
+		$(".profiles.show .edit_user").on("click",function(){
+						edit_user();
+			});
 
 	}
 
@@ -180,4 +185,9 @@ $(document).on("turbolinks:load",function(){
 
 	function isBlank(str) {
     return (!str || /^\s*$/.test(str));
+	}
+
+	function edit_user(){
+		var t1 = $(".main_panel")[0];
+		console.log(t1);
 	}
