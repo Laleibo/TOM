@@ -33,15 +33,7 @@ skip_before_filter  :verify_authenticity_token
       @profile.card_token = customer.default_source
       @profile.Subscription_id = customer.subscriptions.data[0].id
       @profile.save!
-
-          # plan = Stripe::Plan.create(
-          # :id       => 'TOM',
-          # :amount   => 800,
-          # :currency => 'usd',
-          # :interval => 'month',
-          # :name     =>  'TOM Monthly Box',
-          # :statement_descriptor => "TOM Box Subscription"
-          # )
+      redirect_to profile_path(@profile)
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
@@ -81,22 +73,33 @@ end
       redirect_to profile_path(@profile)
   end
 
-  def buildJWT(secret, userId, accountId, email, firstName, lastName, referralCode, userReferralCode, accountStatus, userImage, expiryDate)
-      secret = 'Referral SaaSquatch API key'
-      return payload = JWT.encode({
-      user: {
-      id: userId,
-      accountId: accountId,
-      firstName: firstName,
-      lastName: lastName,
-      referralCode: referralCode,
-      userReferralCode: userReferralCode,
-      accountStatus: accountStatus,
-      userImage: userImage
-      },
-      exp: expiryDate #optional date in seconds since the epoch
-      }, secret)
-  end
+def plan_create
+  plan = Stripe::Plan.create(
+  :id       => 'TOM',
+  :amount   => 900,
+  :currency => 'usd',
+  :interval => 'month',
+  :name     =>  'TOM Monthly Box',
+  :statement_descriptor => "TOM Box Subscription"
+  )
+end
+  #
+  # def buildJWT(secret, userId, accountId, email, firstName, lastName, referralCode, userReferralCode, accountStatus, userImage, expiryDate)
+  #     secret = 'Referral SaaSquatch API key'
+  #     return payload = JWT.encode({
+  #     user: {
+  #     id: userId,
+  #     accountId: accountId,
+  #     firstName: firstName,
+  #     lastName: lastName,
+  #     referralCode: referralCode,
+  #     userReferralCode: userReferralCode,
+  #     accountStatus: accountStatus,
+  #     userImage: userImage
+  #     },
+  #     exp: expiryDate #optional date in seconds since the epoch
+  #     }, secret)
+  # end
 
 
 end

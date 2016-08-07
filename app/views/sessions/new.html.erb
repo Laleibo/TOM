@@ -2,18 +2,28 @@
 <!-- Login in Pop up -->
 <div class="index_pop" id="login_pop">
 	<div class="index_exit" id="log_in_exit">X</div>
-	<h3> Log In </h3>
+	<h3 class="title center-align"> LOG IN </h3>
 	<div id="log_in_field">
 		<%= form_tag '/login' do %>
+		<div class="login row">
+		<div class="input-field col s12">
 		<div class="field" id="username_in">
 			<%= label_tag :email %>
 			<%= text_field_tag :email %>
 		</div>
+			 </div>
+		 </div>
+		 <div class="login row">
+				<div class="input-field col s12">
 		<div class="field" id="password_in">
 			<%= label_tag :password %>
 			<%= password_field_tag :password %>
 		</div>
-		<%= submit_tag 'log in'%>
+			 </div>
+		 </div>
+		 <span class="login-button">
+		 <button class="btn purple darken-1 waves-effect waves-light" type="submit" name="action"><%= submit_tag 'LOG IN'%>
+		 </button> </span><div class="forgot-pass">Forgot Password?</div>
 		<% end %>
 	</div>
 </div>
@@ -22,24 +32,36 @@
 <div class="index_pop" id="register_pop">
 		<div class="index_exit" id="register_exit">X</div>
 
-		<h3> Register </h3>
+	<h3 class="title center-align"> SIGN UP </h3>
 		<%= form_for(@profile) do |f| %>
-		  <div class="field">
+		<div class="sign-up row">
+		<div class="input-field col s12">
+ <div class="field" id="email">
 		    <%= f.label :email %>
 		    <%= f.text_field :email %>
 		  </div>
-
+		</div>
+	</div>
+	<div class="sign-up row">
+	<div class="input-field col s12">
 	<div class="field">
 		<%= f.label :password %>
 		<%= f.password_field :password %>
 	</div>
-
+</div>
+</div>
+<div class="sign-up row">
+<div class="input-field col s12">
 	<div class="field">
 		<%= f.label :password_confirmation %>
 		<%= f.password_field :password_confirmation %>
 	</div>
-		  <div class="actions">
-		    <%= f.submit "Create Profile", {:controller => "profiles", :action => "show"} %>
+</div>
+</div>
+
+<div class="login-button">
+<button class="btn purple darken-1 waves-effect waves-light" type="submit" name="action"><%= f.submit "SIGN UP", {:controller => "profiles", :action => "show"} %>
+</button> </div>
 		  </div>
 		<% end %>
 	</div>

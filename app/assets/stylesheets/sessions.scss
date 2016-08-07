@@ -3,23 +3,50 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .sessions.new .index_pop {
-    border: 1px solid black;
+    border: 2px solid #8e24aa;
     background-color: white;
     position: fixed;
     padding: 1em;
-    border-radius: 1em;
+    // border-radius: 1em;
     top: 12em;
     width: 35em;
     height: 30em;
     z-index: 3;
+    color: black;
 }
 
-.sessions.new #login_pop{
+.input#text:focus {
+  border-bottom: 1px black solid;
 
 }
 
+label:active {
+  color: black;
+}
+
+.input-field {
+  color: black;
+  font-weight: bold;
+}
+
+.login-button button:hover {
+  color: white;
+}
+
+.forgot-pass{
+  float: right;
+  margin-right: 15%;
+  margin-top: 2.5%;
+}
+.sessions.new .index_pop h3 {
+  justify-content: center;
+}
+// .sessions.new #login_pop{
+//
+// }
+//
 .sessions.new #register_pop{
-    height: 38em;
+    height: 39em;
 }
 
 .sessions.new .index_exit{
@@ -33,6 +60,7 @@
     right: 1em;
     height: 1em;
     width: 1em;
+    color: #8e24aa;
 }
 
 .home-top {
