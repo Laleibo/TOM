@@ -41,7 +41,8 @@ $(document).on("turbolinks:load",function(){
 		var pro_container = $(".profiles.show .step_container");
 
 		if(users === undefined || users === ''){
-	 		// $(pro_exit).css({"display": "none"});
+	 		pop_set(pro_pop);
+	 		$(pro_pop).show();
 		} else {
 			$(pro_pop).hide();
 	 		$(".banner").html('Welcome, '+ users);
@@ -75,26 +76,26 @@ $(document).on("turbolinks:load",function(){
     		type: "get"
     	}).done(function(data){
     	var d = "<p class='dis_title'>Your Profile</p><table class='responsive-table bordered'><tbody>";
-    	if(data.email != null || data.email != ""){
+    	if(isBlank(data.email) === false){
     		d = d.concat("<tr><td><strong>Email:</strong></td><td>"+data.email+"</td></tr>");
     	}
-    	if(data.address1 != null || data.address1 != ""){
+    	if(isBlank(data.address1) === false){
     		d = d.concat("<tr><td><strong>Address1:</strong></td><td>"+data.address1+"</td></tr>");
     	}
     	if(isBlank(data.address2) === false){
     		d = d.concat("<tr><td><strong>Address2:</strong></td><td>"+data.address2+"</td></tr>");
     	}
-    	if(data.city != null || data.city != ""){
+    	if(isBlank(data.city) === false){
     		d = d.concat("<tr><td><strong>City:</strong></td><td>"+data.city+"</td></tr>");
     	}
-    	if(data.state != null || data.state != ""){
+    	if(isBlank(data.state) === false){
     		d = d.concat("<tr><td><strong>State:</strong></td><td>"+data.state+"</td></tr>");
     	}
-    	if(data.zip != null || data.zip != ""){
+    	if(isBlank(data.zip) === false){
     		d = d.concat("<tr><td><strong>Zip:</strong></td><td>"+data.zip+"</td></tr>");
     	}
     	d = d.concat("</tbody></table>");
-
+    	console.log(d);
 			$(".profiles.show .main_panel").text('');
 			$(".profiles.show .main_panel").append(d);
     	});
