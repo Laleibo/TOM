@@ -7,10 +7,10 @@
       <% @profile.users.each do |user| %>
       <div class="panel" data-user="<%= user.id %>"><%= link_to user.first_name, profile_user_path(@profile, user) %></div>
       <% end %>
-      <div class="side_links pointer" id="new_user">New User</div>
+      <div class="side_links pointer" id="new_user">Add a Box</div>
       <div class="side_links pointer" id="delivery">Delivery</div>
       <div class="side_links pointer" id="refer">Refer someone</div>
-      <div class="side_links pointer" id="history"> 
+      <div class="side_links pointer" id="history">
         <% if @profile.subscribed == nil %>
         <% else @profile.subscribed == true %>
           <%= link_to 'Order History', invoice_profile_path(@profile), method: :get %>
@@ -28,13 +28,13 @@
       </tr>
       <tr>
         <% unless @profile.address1.blank? %>
-        <td><strong>Address1:</strong></td>
+        <td><strong>Address:</strong></td>
         <td><%= @profile.address1 %></td>
         <% end %>>
       </tr>
       <tr>
         <% unless @profile.address2.blank? %>
-        <td><strong>Address2:</strong></td>
+        <td><strong>Apt/Suite:</strong></td>
         <td><%= @profile.address2 %></td>
         <% end %>
       </tr>
@@ -52,7 +52,7 @@
       </tr>
       <tr>
         <% unless @profile.zip.blank? %>
-        <td><strong>Zip:</strong></td>
+        <td><strong>Zip Code:</strong></td>
         <td><%= @profile.zip %></td>
         <% end %>
       </tr>
@@ -77,7 +77,7 @@
     <%= u.date_field :birthday %>
   </div>
     <div class="radio">
-      I prefer to use...
+      I use
       <%= u.radio_button(:variety, "tampon") %>
       <%= u.label(:variety_tampon, "All Tampons") %>
       <%= u.radio_button(:variety, "pad") %>
@@ -86,7 +86,7 @@
       <%= u.label(:variety_combo, "Combination") %>
     </div>
     <div class="radio">
-      My flow is...
+      My flow is
       <%= u.radio_button(:flow, "light") %>
       <%= u.label(:flow_light, "Light") %>
       <%= u.radio_button(:flow, "medium") %>
@@ -95,11 +95,11 @@
       <%= u.label(:flow_heavy, "Heavy") %>
     </div>
     <div class="radio">
-      I prefer my Products: Scented or Unscented?
+      I prefer to use
       <%= u.radio_button(:scent, "scented") %>
-      <%= u.label(:scent_scented, "Yes") %>
+      <%= u.label(:scent_scented, "scented items") %>
       <%= u.radio_button(:scent, "unscented") %>
-      <%= u.label(:scent_unscented, "No") %>
+      <%= u.label(:scent_unscented, "non-scented items") %>
     </div>
   <%= u.submit %>
  <% end %>
