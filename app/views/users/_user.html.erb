@@ -29,7 +29,7 @@
     </tbody>
   </table>
   <br><br>
-  <h6 class="edit_user"><%= link_to "Edit User" %></h6>
+  <h6 class="edit_user"><%= link_to 'Edit', edit_profile_user_path(@profile, @user) %></h6>
   <h6 class="remove_user"><%= button_to "Remove User", profile_user_path(params[:profile_id], @user), method: "delete" %></h6>
 </div>
 <br><br><br>

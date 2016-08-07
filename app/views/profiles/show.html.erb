@@ -5,7 +5,7 @@
     <ul class="navig" data-profile="<%= @profile.id %>">
       <div class="accordion" id="your_orders">Your Subscriptions</div>
       <% @profile.users.each do |user| %>
-      <div class="panel" data-user="<%= user.id %>"><%= link_to user.first_name, profile_user_path(@profile, user) %></div>
+      <div class="panel" data-user="<%= user.id %>"><%= link_to user.first_name, profile_user_path(@profile, @user) %></div>
       <% end %>
       <div class="side_links pointer" id="new_user">Add a Box</div>
       <div class="side_links pointer" id="delivery">Delivery</div>

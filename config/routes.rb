@@ -7,10 +7,10 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
-  post '/use_form' => 'users#ajax'
+  post '/user_form' => 'users#ajax'
   get '/deliv_get' => 'profiles#delivery'
 
-  resources :users, only: [:destroy, :create]
+  resources :users, only: [:destroy, :create, :show]
   # post '/add_address' => 'profiles#address'
 
   resources :profiles do
