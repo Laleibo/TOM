@@ -41,23 +41,20 @@
 .links ul li a {
   float: left;
   font-size: 18px;
-  padding: .5em .5em;
 }
 .links ul li a:hover {
   color: #8e24aa;
   background-color: transparent;
-  padding: 1em .5em;
 }
 
 button .btn h5 {
-padding-bottom: 5em;
 border: 5px #8e24aa solid,
-}
+}*/
 
-button:hover {
+/*button:hover {
   color: #8e24aa;
   height: 3.5em;
-}
+}*/
 
 .left-footer {
   margin-left: 25%;
