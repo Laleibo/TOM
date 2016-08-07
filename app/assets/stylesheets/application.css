@@ -16,8 +16,52 @@
 
  body {
    font-family: 'Poppins', sans-serif;
- }
+}
 
-h1 {
-  font-family: 'Reem Kufi', sans-serif;
+/*login{
+	position: absolute;
+	margin-left: auto;
+	font-size: 150%;
+	bottom: 0.2em;
+	right: 1.2em;
+	width: auto;
+}
+
+.login{
+	color: gray;
+	cursor: pointer;
+}
+*/
+
+.fa {
+  color: #8e24aa;
+  padding: .25em;
+}
+
+.links ul li a {
+  float: left;
+  font-size: 18px;
+  padding: .5em .5em;
+}
+.links ul li a:hover {
+  color: #8e24aa;
+  background-color: transparent;
+  padding: 1em .5em;
+}
+
+button .btn h5 {
+padding-bottom: 5em;
+border: 5px #8e24aa solid,
+}
+
+button:hover {
+  color: #8e24aa;
+  height: 3.5em;
+}
+
+.left-footer {
+  margin-left: 25%;
+}
+.nav-padding {
+  padding: 0em 3.25em;
 }

@@ -1,4 +1,5 @@
 <div class="banner" data-users="<%= @first %>"></div>
+
 <div class="profile_container">
   <div class="side_panel">
     <ul class="navig" data-profile="<%= @profile.id %>">
@@ -15,7 +16,7 @@
           <%= link_to 'Order History', invoice_profile_path(@profile), method: :get %>
         <% end %>
       </div>
-    </ul> 
+    </ul>
   </div>
 <div class="main_panel">
   <p class="dis_title">Your Profile</p>
@@ -56,10 +57,11 @@
         <% end %>
       </tr>
     </tbody>
-  </table>  
+  </table>
 </div>
 <div class="step_container modal">
   <button class="user_exit" id="user_exit">X</button>
+
   <p id="pro_prevent">You must create a user before proceding</p>
   <%= form_for ([@profile, @user]) do |u| %>
   <div>
@@ -93,15 +95,12 @@
       <%= u.label(:flow_heavy, "Heavy") %>
     </div>
     <div class="radio">
-        I prefer my Products: Scented or Unscented?
+      I prefer my Products: Scented or Unscented?
       <%= u.radio_button(:scent, "scented") %>
       <%= u.label(:scent_scented, "Yes") %>
       <%= u.radio_button(:scent, "unscented") %>
       <%= u.label(:scent_unscented, "No") %>
     </div>
-
   <%= u.submit %>
-
-  <% end %>
+ <% end %>
 </div>
-

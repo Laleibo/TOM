@@ -3,31 +3,101 @@
   <head>
     <title>TOM</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
-    <!-- googlefonts-->
-<!--     <link href="https://fonts.googleapis.com/css?family=Questrial|Reem+Kufi&subset=arabic" rel="stylesheet">-->    
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js">
+    </script>
+    <script src="dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript">
+  Stripe.setPublishableKey('pk_test_ZLoVpQeHNQJ6jURffN5Jburr');
+</script>
+
   </head>
 
-  <body  class="<%= controller_name %> <%= action_name %>">
+  <body class="<%= controller_name %> <%= action_name %>">
+    <header>
+      <div class="navbar-fixed">
+        <nav>
+          <!-- <div class=" break grey">
+          </div> -->
+          <!-- <div class=" break purple darken-1">
+          </div> -->
+         <div class="nav-wrapper nav-padding purple darken-1 z-depth-1">
+           <a href="#" class="brand-logo center">TOMLOGO</a>
+           <span id="nav-mobile" class="left hide-on-med-and-down">
+             <% if current_profile %>
+             <span id="logout">Signed in as <%= current_profile.email %> |
+             <%= link_to "Logout", logout_path %></span>
+             <% else %><span class="login" id="login_link">Login</span> |
+             <span class="login" id="register_link">Register</span>
+             <% end %>
+           </span>
+             <span id="nav-mobile" class="right hide-on-med-and-down">
+               <a href="#">Choose Preferences</a> |
+               <a href="#"> Spread the word </a> |
+               <a href="#"> Leave a review! </a>
+             </span>
 
-  <header id="navbar">
-    <div class="logo">
-      welcome to TOM.
-    </div>
-    <div id="login">
+         </div>
+        </nav>
+      </div>
+    </header>
+
+
+    <% flash.each do |message_type, message| %>
+       <div class="alert alert-<%= message_type %>"><%= message %></div>
+     <% end %>
+
+    <%= yield %>
+
+    <footer class="page-footer white">
       <% if current_profile %>
-        <span id="logout">Signed in as <%= current_profile.email %> | <%= link_to "Logout", logout_path %></span>
-      <% else %>
-        <span class="login" id="login_link">Login</span> | <span class="login" id="register_link">Register</span>
-      <% end %>
-    </div>
-  </header>
-
-  <%= yield %>
-</body>
+        <div class="footer row center-align">
+              <div class="col l4 s2">
+                <button class="btn center-align grey text-white"><h5>Refer A Friend</h5></button>
+              </div>
+        <% else %>
+        <div class="footer row center-align">
+          <div class="col l4 s2">
+            <h5 class="grey-text">Time of the Month.</h5>
+            <button class="btn center-align grey text-white"><h5>Join Now</h5></button>
+            <button class="btn center-align grey text-white"><h5>Refer A Friend</h5></button>
+          </div>
+          <% end %>
+                <div class=" links col l4 s2 center-align ">
+                <ul>
+                  <li><a class="grey-text text-grey" href="#!">FAQ</a></li>
+                  <li><a class="grey-text text-grey" href="#!">BLOG</a></li>
+                </ul>
+                <ul>
+                  <li><a class="grey-text text-grey" href="#!">CONTACT US</a></li>
+                  <li><a class="grey-text text-grey" href="#!">CAREERS</a></li>
+                </ul>
+              </div>
+              <div class="col l4 s2">
+                  <h5 class="grey-text">Connect with us</h5>
+                <i class="fa fa-facebook-official fa-3x"></i>
+                <i class="fa fa-twitter-square fa-3x"></i>
+                <i class="fa fa-instagram fa-3x"></i>
+                <i class="fa fa-pinterest-square fa-3x"></i>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright grey darken-1">
+            <div class="container">
+            © 2016 Tom. Lauren Leibowitz, Denise Measgher & Jeremy Anderson
+            </div>
+          </div>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js">
+        </script>
+  </body>
+  </head>
 </html>
