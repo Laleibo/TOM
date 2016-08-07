@@ -1,6 +1,7 @@
 class ProfilesController < ApplicationController
   before_filter :authorize, except: [:create, :new]
   before_action :set_profile, only: [:show, :edit, :update, :destroy, :delivery, :hold, :invoice]
+  # before_action :create_invoice, only: [:invoice]
 
 
   # GET /profiles
@@ -36,6 +37,7 @@ class ProfilesController < ApplicationController
 
   # POST /profiles
   # POST /profiles.json
+
     def create
       @profile = Profile.new(profile_params)
       # respond_to do |format|
@@ -57,6 +59,8 @@ class ProfilesController < ApplicationController
         flash[:success] = "Please confirm your email address to continue"
         redirect_to profile_path(@profile)
       else
+        format.html { redirect_to new_session_path, notice: 'Profile was not successfully created, please ensure to fill in all' }
+        format.json { render json: @profile.errors, status: :unprocessable_entity }
         flash[:error] = "Ah ah ah.... try again."
         redirect_to new_session_path
       end
@@ -66,6 +70,10 @@ class ProfilesController < ApplicationController
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
   def update
+    # if request.xhr?
+    #   render 'delivery', layout: false
+    # end
+
     respond_to do |format|
       if @profile.update(delivery_params)
         format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
@@ -75,6 +83,7 @@ class ProfilesController < ApplicationController
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # DELETE /profiles/1
@@ -88,6 +97,9 @@ class ProfilesController < ApplicationController
   end
 
   def delivery
+    if request.xhr?
+      render '_del', layout: false
+    end
   end
 
 def invoice

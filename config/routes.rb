@@ -8,15 +8,10 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
   post '/use_form' => 'users#ajax'
-
-  # get  '/_form', to: 'controller_profiles#show'
-  # post '/_form', to: 'controller_profiles#show'
+  get '/deliv_get' => 'profiles#delivery'
 
   resources :users, only: [:destroy, :create]
-  post '/profiles/:profile_id/delivery' => 'profiles#update'
-
-  # get '/profiles/:profile_id', :to => "profiles#hold"
-  # post '/profiles/:profile_id/', :to => "profiles#hold"
+  # post '/add_address' => 'profiles#address'
 
   resources :profiles do
     member do
@@ -34,9 +29,7 @@ Rails.application.routes.draw do
     end
   end
 
-  # resources :charges
-  # resources :profiles
 
   resources :sessions
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
 end

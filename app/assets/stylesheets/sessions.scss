@@ -3,23 +3,49 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .sessions.new .index_pop {
-    border: 1px solid #aaa;
+    border: 2px solid #8e24aa;
     background-color: white;
     position: fixed;
-    padding: 1.5em;
-    border-radius: 1.25em;
-    top: 15em;
+    padding: 1em;
+    // border-radius: 1em;
+    top: 12em;
     width: 35em;
     height: 30em;
     z-index: 3;
+    color: black;
 }
 
+.input#text:focus {
+  border-bottom: 1px black solid;
+}
+
+label:active {
+  color: black;
+}
+
+.input-field {
+  color: black;
+  font-weight: bold;
+}
+
+.login-button button:hover {
+  color: white;
+}
+
+.forgot-pass{
+  float: right;
+  margin-right: 15%;
+  margin-top: 2.5%;
+}
+.sessions.new .index_pop h3 {
+  justify-content: center;
+}
 // .sessions.new #login_pop{
 //
 // }
-
+//
 .sessions.new #register_pop{
-    height: 38em;
+    height: 39em;
 }
 
 .sessions.new .index_exit{
@@ -33,6 +59,7 @@
     right: 1em;
     height: 1em;
     width: 1em;
+    color: #8e24aa;
 }
 
 .home-top {
@@ -78,23 +105,25 @@
     z-index: 1;
 }
 
-.breaker {
-	height: 3em;
-	background-color: #8e24aa;
+.feature_in {
+    margin-top: 75px;
+    padding-top: 6em;
 }
 
-.break {
-	height: 1em;
+.press_logo img {
+  height: 100px;
+  width: 250px;
+
 }
 
-.mentions {
-	height: 5em;
-	background-color: #ccc;
+.home-bottom {
+	height: 450px;
+	background-color: green;
 }
 
 .reviews {
-  background-color: #ccc;
-	height: 400px;
+	background-color: orange;
+	height: 200px;
 }
 
 .img-home {
@@ -112,3 +141,45 @@
 	margin-right: auto;
   z-index: -2;
 }
+
+.breaker {
+  justify-content: center;
+
+}
+.woman {
+  padding-top: 10px;
+  margin-left: 20%;
+}
+
+.easy_women {
+  padding: .1em;
+  margin-left: 10%;
+}
+
+
+.surprises {
+  display: none;
+  color: #8e24aa;
+
+}
+
+.chevrons { width: 100%;  z-index: 0; }
+
+.chevrons div { width: 100%; }
+
+.chevrons div b { color: purple; display: block; float: left; position: relative; margin: -31px 0 .75em 0px; height: 4em; width: 20%; text-indent: -8989px; }
+
+.chevrons div b:before { content: ''; position: absolute; top: 0; left: 0; height: 100%; width: 50%; transform: skew(0deg, 22deg); }
+.chevrons div b:after { content: ''; position: absolute; top: 0; right: 0; height: 100%; width: 50%; transform: skew(0deg, -22deg); }
+
+.chevrons div:nth-child(odd) b:after,
+.chevrons div:nth-child(odd) b:before { background: silver; }
+.chevrons div:nth-child(even) b:after,
+.chevrons div:nth-child(even) b:before { background: white; }
+
+.chevrons div b:before,
+.chevrons div b:after { transition: background-color 1s; }
+
+.chevrons div:hover {} /*needed for transition in IE10*/
+.chevrons div:hover b:before,
+.chevrons div:hover b:after { background: purple; }

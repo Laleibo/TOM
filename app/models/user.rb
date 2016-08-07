@@ -8,9 +8,9 @@ class User < ApplicationRecord
   validates :variety, presence: true
   validates :flow, presence: true
   validates :scent, presence: true
-#   validate :birthday
-# # validates :zip, length: { minimum: 5 }
-#
+#   validates :birthday
+# # # validates :zip, length: { minimum: 5 }
+# #
 #   def birthday
 #     errors.add(:birthday, 'error message') unless self.birthday.past?
 #   end
