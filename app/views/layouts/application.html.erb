@@ -14,6 +14,10 @@
     </script>
     <script src="dist/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
+    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+    <script type="text/javascript">
+  Stripe.setPublishableKey('pk_test_ZLoVpQeHNQJ6jURffN5Jburr');
+</script>
 
   </head>
 
@@ -54,12 +58,19 @@
     <%= yield %>
 
     <footer class="page-footer white">
-            <div class="footer row center-align">
+      <% if current_profile %>
+        <div class="footer row center-align">
               <div class="col l4 s2">
-                <h5 class="grey-text">Simplify Your Life</h5>
-                <button class="btn center-align grey text-white"><h5>Join Now</h5></button>
-                <button class="btn center-align grey text-white"><h5>Tell A Friend</h5></button>
+                <button class="btn center-align grey text-white"><h5>Refer A Friend</h5></button>
               </div>
+        <% else %>
+        <div class="footer row center-align">
+          <div class="col l4 s2">
+            <h5 class="grey-text">Time of the Month.</h5>
+            <button class="btn center-align grey text-white"><h5>Join Now</h5></button>
+            <button class="btn center-align grey text-white"><h5>Refer A Friend</h5></button>
+          </div>
+          <% end %>
                 <div class=" links col l4 s2 center-align ">
                 <ul>
                   <li><a class="grey-text text-grey" href="#!">FAQ</a></li>
@@ -81,8 +92,7 @@
           </div>
           <div class="footer-copyright grey darken-1">
             <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            © 2016 Tom. Lauren Leibowitz, Denise Measgher & Jeremy Anderson
             </div>
           </div>
         </footer>
