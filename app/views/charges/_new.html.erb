@@ -1,7 +1,7 @@
 <form action="<%= profile_charges_path(@profile) %>" method="POST">
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_ZLoVpQeHNQJ6jURffN5Jburr"
+    data-key= '<%= ENV["STRIPE_PUBLISHABLE_KEY"] %>'
     data-amount="Subscribe"
     data-name="TOM BOX"
     data-description="TOM monthly Subscription"
@@ -10,4 +10,3 @@
     data-zip-code="true">
   </script>
 </form>
-

@@ -105,6 +105,13 @@ label:active {
     z-index: 1;
 }
 
+
+p.light {
+font-size: 15px;
+text-align: justify;
+padding-bottom: 65px
+}
+
 .feature_in {
     margin-top: 75px;
     padding-top: 6em;
@@ -146,20 +153,21 @@ label:active {
   justify-content: center;
 
 }
-.woman {
-  padding-top: 10px;
-  margin-left: 20%;
-}
 
 .easy_women {
   padding: .1em;
   margin-left: 10%;
 }
 
+.woman {
+  padding-top: 10px;
+  margin-left: 20%;
+}
 
 .surprises {
   display: none;
   color: #8e24aa;
+  font-weight: bold;
 
 }
 

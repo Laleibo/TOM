@@ -14,10 +14,16 @@
  *= require_self
  */
 
- body {
-   font-family: 'Poppins', sans-serif;
-}
+body {
+    /*display: flex;
+    min-height: 100vh;
+    flex-direction: column;*/
+    font-family: 'Poppins', sans-serif;
+  }
 
+  main {
+    flex: 1 0 auto;
+  }
 /*login{
 	position: absolute;
 	margin-left: auto;
@@ -61,4 +67,28 @@ border: 5px #8e24aa solid,
 }
 .nav-padding {
   padding: 0em 3.25em;
+}
+
+#nav-mobile a:hover {
+  background-color: white;
+  color: #8e24aa;
+  border-radius: 2em;
+  padding: .25em;
+}
+
+#nav-mobile a {
+  color: white;
+  border-radius: 1em;
+  padding: .1em;
+}
+
+a.brand-logo {
+  font-size: 20px !important;
+  transition: 1s;
+}
+a:hover.brand-logo {
+  color: white !important;
+  font-size: 30px !important;
+  background-color: transparent;
+  transform: rotateX(7deg) !important;
 }
