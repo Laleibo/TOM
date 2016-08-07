@@ -17,7 +17,6 @@
 
 .input#text:focus {
   border-bottom: 1px black solid;
-
 }
 
 label:active {
@@ -64,13 +63,47 @@ label:active {
 }
 
 .home-top {
-	margin: 0;
-	padding: 0;
-	height: 375px;
-	width:inherit;
-	background-color: yellow;
+  height: 450px;
+  // background-color: white; opacity: .65;
+  background-image: url("planner_yellow_fade.jpg");
+  // background-image: url('https://s3.amazonaws.com/tombox/tomheader.jpg');
+  background-attachment: fixed;
+  max-width: 100%;
+  background-size: cover;
 }
 
+
+.mission-header {
+  font-family: 'Montserrat', sans-serif;
+  color: #8e24aa;
+  font-size: 11em;
+  -webkit-text-stroke-width: .075em;
+  -webkit-text-stroke-color: #8e24aa;
+  padding: .25em 0 .25em 0;
+  z-index: 1;
+}
+
+// .mission-statement {
+//   font-family: 'Just Another Hand', cursive;
+//   // font-family: 'Rock Salt', cursive;
+//   max-width: 35%;
+//     color: white;
+//     font-size: 3.85em;
+//     line-height: normal;
+//     padding-left: .4em;
+// }
+
+
+.mission-statement {
+  // font-family: 'Just Another Hand', cursive;
+  font-family: 'Rock Salt', cursive;
+  max-width: 30%;
+    color: black;
+    font-size: 2.35em;
+    line-height: 1.35em;
+    padding-left: .75em;
+    z-index: 1;
+}
 
 .feature_in {
     margin-top: 75px;
@@ -100,11 +133,13 @@ label:active {
 }
 
 .circle {
-	background-color: #8e24aa;
-	width: 17em;
-	height: 17em;
+	// background-color: #8e24aa;
+  border: 1px solid #8e24aa;
+	width: 12em;
+	height: 12em;
 	margin-left: auto;
 	margin-right: auto;
+  z-index: -2;
 }
 
 .breaker {
