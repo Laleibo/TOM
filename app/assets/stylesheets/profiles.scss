@@ -43,7 +43,7 @@
 .profiles div.accordion{
 	cursor: pointer;
 	color: #616161;
-	transition: 0.4s;
+	transition: 0.2s;
 	margin-bottom: 1em;
 }
 .profiles.show div.accordion:hover{
@@ -71,7 +71,7 @@
 	margin-bottom: 1em;
 }
 
-.profiles.show .sho{
+.profiles.show .show{
 	background-color: #8e24aa;
 	display: block !important;
 }
@@ -84,11 +84,12 @@
 	color: #8e24aa;
 }
 .profiles.show a{
+	transform: translateX(4px, 0); 
 	color: #616161;
 }
 
 .profiles.show a:hover {
-	background-color: white;
+	/*background-color: white;*/
 	color: #8e24aa;
 }
 
