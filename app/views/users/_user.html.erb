@@ -29,8 +29,8 @@
     </tbody>
   </table>
   <br><br>
-  <button style="z-index:-1;"class="btn purple darken-1 waves-effect waves-light" type="submit" name="action"><%= button_to "Edit User", edit_profile_user_path(@profile.id, @user.id), id: "user_edit" %>
+  <button style="z-index:0;"class="btn purple darken-1 waves-effect waves-light" type="submit" name="action"><%= button_to "Edit User", edit_profile_user_path(@profile.id, @user.id), id: "user_edit" %>
   </button>
 
-  <button style="z-index:-1;" class="btn purple darken-1 waves-effect waves-light" type="submit" name="action"><%= button_to "Remove User", profile_user_path(params[:profile_id], @user), method: "delete" %>
+  <button style="z-index:0;" class="btn purple darken-1 waves-effect waves-light" type="submit" name="action"><%= button_to "Remove User", profile_user_path(params[:profile_id], @user), method: "delete" %>
   </button>
