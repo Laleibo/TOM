@@ -149,8 +149,6 @@ $(document).on("turbolinks:load",function(){
 					edit_user();
 				});
 		});
-
-
 				}
 
 	function pop_functionality(pop, link, exit, other) {
