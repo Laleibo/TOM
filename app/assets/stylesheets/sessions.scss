@@ -132,35 +132,63 @@ label:active {
   justify-content: center;
 
 }
-.period-surprise {
-  margin-left: 7%;
-}
-
-.easy_women {
-  padding: .1em;
-}
-
-
-.surprises {
-  display: none;
-  color: #8e24aa;
-
-}
 
 .how-to {
-  padding-bottom: 5em;
+  padding-bottom: 1em;
 }
 
 
 .how-to-title {
-  font-size: 1.55em;
+  font-size: 2em;
   line-height: normal;
 
 }
 
 .how-to-description {
-  font-size: .75em;
-  line-height: normal;
+  text-align: justify;
+  margin-top: -1em;
+  font-size: 1.35em;
+  line-height: 1.5em;
+}
+
+
+.extras {
+  height: 300px;
+  margin-left: 2em;
+  // background-color: #f1f1f1;
+
+}
+
+.candy{
+  height:inherit;
+  background-image: url("http://cdn1.theodysseyonline.com/files/2015/11/02/6358202956876152191363976_candy-bars-1.jpg");
+  background-size: cover;
+  background-position: bottom;
+}
+
+.easy-women {
+  font-size: 3.5em;
+}
+
+
+.surprises {
+  font-size: 2.5em;
+  display: none;
+  color: #8e24aa;
+
+}
+
+.period-surprise {
+  font-size: 2.25em;
+  line-height: -1em;
+}
+
+.extras .period-extras {
+  font-size: 1.5em;
+  line-height: 1.35em;
+  margin-left: 1.25em;
+
+
 }
 
 /*chevron css */
