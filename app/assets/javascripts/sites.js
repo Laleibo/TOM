@@ -43,6 +43,7 @@ function profile_show(){
 		$(pro_pop).hide();
 		$(".banner").html('Welcome, '+ users);
 	}
+
 	pop_set(pro_pop);
 
 	$(".profiles.show #user_exit").click(function(){
@@ -52,7 +53,7 @@ function profile_show(){
 	$(".profiles.show #new_user").click(function(){
 		$(".profiles.show .step_container").show(170);
 		$(pro_exit).show();
-		// $("#pro_prevent").hide();
+		$("#pro_prevent").hide();
 	});
 
 	var acc = $(".profiles.show .accordion");
