@@ -106,16 +106,15 @@ $(document).on("turbolinks:load",function(){
 			var profile_id = $(".profiles.show .navig").data("profile");
 			var user_id = $(this).data("user");
 			$.ajax({
-				url:'/user_form/' + profile_id,
+				url:'/user_form/' + user_id,
 				type: "post",
 				data: {profile_id: profile_id, user_id: user_id}
 				}).done(function(data){
 					$(".profiles.show .main_panel").text('');
 					$(".profiles.show .main_panel").append(data);
+					edit_user();
 				});
 		});
-
-
 
 		$("#delivery").click(function(){
 		var profile_id = $(".profiles.show .navig").data("profile");
@@ -141,20 +140,18 @@ $(document).on("turbolinks:load",function(){
 			var profile_id = $(".profiles.show .navig").data("profile");
 			var user_id = $(this).data("user");
 			$.ajax({
-				url:'/use_form',
+				url:'/user_form/' + user_id,
 				type: "post",
 				data: {profile_id: profile_id, user_id: user_id}
 				}).done(function(data){
 					$(".profiles.show .main_panel").text('');
 					$(".profiles.show .main_panel").append(data);
+					edit_user();
 				});
 		});
 
-		$(".profiles.show .edit_user").on("click",function(){
-						edit_user();
-			});
 
-	}
+				}
 
 	function pop_functionality(pop, link, exit, other) {
 		$(pop).hide();
@@ -189,6 +186,17 @@ $(document).on("turbolinks:load",function(){
 	}
 
 	function edit_user(){
-		var t1 = $(".main_panel")[0];
-		console.log(t1);
+		$("#user_edit").on("click",function(e){
+						e.preventDefault();
+						var profile_id = $(".profiles.show .navig").data("profile");
+						var user_id = $('#user_profile').data("user");
+						$.ajax({
+							url:'/new_form/' + user_id,
+							type: "get",
+							data: {profile_id: profile_id, user_id: user_id}
+							}).done(function(data){
+								$(".profiles.show .main_panel").text('');
+								$(".profiles.show .main_panel").append(data);
+							});
+					});
 	}

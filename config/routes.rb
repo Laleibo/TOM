@@ -10,9 +10,10 @@ Rails.application.routes.draw do
 
   # get '/user_form' => 'users#update'
   post '/user_form/:id' => 'users#ajax'
+  get '/new_form/:id' => 'users#edit'
   get '/deliv_get' => 'profiles#delivery'
 
-  resources :users, only: [:destroy, :create, :show]
+  resources :users
   # post '/add_address' => 'profiles#address'
 
   resources :profiles do

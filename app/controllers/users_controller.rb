@@ -26,12 +26,18 @@ class UsersController < ApplicationController
 
   def ajax
     @user = User.find(params[:id])
+    @profile = Profile.find(params[:profile_id])
     if request.xhr?
       render '_user',  layout: false
     end
   end
 
   def edit
+    @user = User.find(params[:id])
+    @profile = Profile.find(params[:profile_id])
+    if request.xhr?
+      render '_new',  layout: false
+    end
   end
 
   def update

@@ -21,15 +21,15 @@
       <div class="side_links" id="new_user">New User</div>
       <div class="side_links"><%= link_to 'Delivery', delivery_profile_path(@profile) %></div>
       <div class="side_links">Refer someone</div>
+      <!-- <div class="side_links">
+      </div> -->
       <div class="side_links">
-      </div>
-      <div class="side_links"> 
         <% if @profile.subscribed == nil %>
         <% else @profile.subscribed == true %>
           <%= link_to 'Order History', invoice_profile_path(@profile), method: :get %>
         <% end %>
       </div>
-    </ul> 
+    </ul>
   </div>
 <div class="main_panel">
   <div class="field">
