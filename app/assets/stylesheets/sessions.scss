@@ -74,35 +74,23 @@ label:active {
 
 
 .mission-header {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #8e24aa;
-  font-size: 11em;
+  font-size: 12em;
   -webkit-text-stroke-width: .075em;
   -webkit-text-stroke-color: #8e24aa;
-  padding: .25em 0 .25em 0;
+  padding: .5em 0 .25em .1em;
   z-index: 1;
 }
 
-// .mission-statement {
-//   font-family: 'Just Another Hand', cursive;
-//   // font-family: 'Rock Salt', cursive;
-//   max-width: 35%;
-//     color: white;
-//     font-size: 3.85em;
-//     line-height: normal;
-//     padding-left: .4em;
-// }
-
 
 .mission-statement {
-  // font-family: 'Just Another Hand', cursive;
   font-family: 'Rock Salt', cursive;
-  max-width: 30%;
-    color: black;
-    font-size: 2.75em;
-    line-height: 1.35em;
-    padding-left: .75em;
-    z-index: 1;
+  max-width: 27%;
+  color: black;
+  font-size: 2.6em;
+  line-height: 1.35em;
+  padding-left: .8em;
 }
 
 .feature_in {
@@ -116,14 +104,14 @@ label:active {
 
 }
 
-.home-bottom {
-	height: 450px;
-	background-color: green;
-}
 
 .reviews {
-	background-color: yellow;
-	height: 200px;
+  background-image: url("TOM-emoticons2.png");
+  opacity: .75;
+  // background-size: contain;
+  background-attachment: fixed;
+  background-position: bottom;
+	height: 350px;
 }
 
 .img-home {
@@ -139,21 +127,18 @@ label:active {
 	height: 12em;
 	margin-left: auto;
 	margin-right: auto;
-  z-index: -2;
 }
 
 .breaker {
   justify-content: center;
 
 }
-.woman {
-  padding-top: 10px;
-  margin-left: 20%;
+.period-surprise {
+  margin-left: 7%;
 }
 
 .easy_women {
   padding: .1em;
-  margin-left: 10%;
 }
 
 
@@ -163,12 +148,26 @@ label:active {
 
 }
 
+.how-to {
+  padding-bottom: 5em;
+}
+
+
+.how-to-title {
+  font-size: 1.55em;
+  line-height: normal;
+
+}
+
+.how-to-description {
+  font-size: .75em;
+  line-height: normal;
+}
+
+/*chevron css */
 .chevrons { width: 100%;  z-index: 0; }
-
 .chevrons div { width: 100%; }
-
 .chevrons div b { color: purple; display: block; float: left; position: relative; margin: -31px 0 .75em 0px; height: 4em; width: 20%; text-indent: -8989px; }
-
 .chevrons div b:before { content: ''; position: absolute; top: 0; left: 0; height: 100%; width: 50%; transform: skew(0deg, 22deg); }
 .chevrons div b:after { content: ''; position: absolute; top: 0; right: 0; height: 100%; width: 50%; transform: skew(0deg, -22deg); }
 

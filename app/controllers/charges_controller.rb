@@ -14,14 +14,6 @@ skip_before_filter  :verify_authenticity_token
 
     token = params[:stripeToken]
 
-    Rails.configuration.stripe = {
-      :publishable_key => ENV["STRIPE_PUBLISHABLE_KEY"],
-      :secret_key      => ENV["STRIPE_SECRET_KEY"]
-    }
-
-    Stripe.api_key = ENV['STRIPE_API_KEY']
-
-
     customer = Stripe::Customer.create(
       :email => @profile.email,
       :source  => token,

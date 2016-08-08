@@ -1,5 +1,5 @@
 <div>
-  <strong><%= @user.first_name%>'s Preferences </strong>
+  <strong><%= @user.first_name%>TOM Box </strong>
   <br>
   <strong>First Name:</strong>
   <%= @user.first_name %>
@@ -10,8 +10,10 @@
   <strong>Birthday:</strong>
   <%= @user.birthday %>
   <br>
-  <strong>Variety</strong>
-  <%= @user.variety %>
+  <strong>My Box: <%= @user.flow %> <%= @user.scent %> <%= @user.variety %></strong>
+
+
+  <!-- <%= @user.variety %>
   <br>
   <strong>Flow</strong>
   <%= @user.flow %>
@@ -20,13 +22,13 @@
   <%= @user.scent %>
 </div>
 <br>
-<br>
+<br> -->
 
 
-<%= link_to 'Edit Preferences', edit_profile_user_path(@profile, @user) %> |
-<%= link_to 'Add Another User', new_profile_user_path(@profile) %> |
+<!-- # <%= link_to 'Edit', edit_profile_user_path(@profile, @user) %> | -->
+<%= link_to 'Add Another Box', new_profile_user_path(@profile) %> |
 
 <!-- <%#= link_to 'Cancel these preferences', destroy_user_path(@profile) %> | -->
 
-<%= link_to 'Back to Your Page', @profile %> 
+<%= link_to 'delivery_profile_path', @profile %>
 <!-- <h3> should be go to Delivery/checkout" </h3> -->

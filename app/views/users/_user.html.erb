@@ -1,4 +1,4 @@
-<div>
+
   <p class="dis_title"><%= @user.first_name%>'s Preferences</p>
   <table class="responsive-table bordered">
     <tbody>
@@ -12,24 +12,25 @@
       </tr>
       <tr>
         <td><strong>Birthday:</strong></td>
-        <td class="info"><%= @user.birthday %></td>
+        <td class="info"><%= User.birthday_day(@user.birthday) %></td>
       </tr>
       <tr>
-        <td><strong>Variety </strong></td>
+        <td><strong>My Products </strong></td>
         <td><%= @user.variety %></td>
       </tr>
       <tr>
-        <td><strong>Flow</strong></td>
+        <td><strong>My Flow is </strong></td>
         <td><%= @user.flow %></td>
       </tr>
       <tr>
-        <td><strong>Scented?</strong></td>
+        <td><strong>I like my products to be </strong></td>
         <td><%= @user.scent %></td>
       </tr>
     </tbody>
   </table>
   <br><br>
-  <h6 class="edit_user"><%= link_to "Edit User", edit_profile_user_path(params[:profile_id], @user), method: "update" %></h6>
-  <h6 class="remove_user"><%= button_to "Remove User", profile_user_path(params[:profile_id], @user), method: "delete" %></h6>
-</div>
-<br><br><br>
+  <button class="btn purple darken-1 waves-effect waves-light" type="submit" name="action"><%= button_to "Edit User", edit_profile_user_path(@profile.id, @user.id), id: "user_edit" %>
+  </button>
+
+  <button class="btn purple darken-1 waves-effect waves-light" type="submit" name="action"><%= button_to "Remove User", profile_user_path(params[:profile_id], @user), method: "delete" %>
+  </button>

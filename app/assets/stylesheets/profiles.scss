@@ -9,22 +9,27 @@
 }
 
 .profiles .banner {
+	background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.25)),
+	                rgba(255, 255, 255, 0.10) url('TOM-emoticons2.png');
+	background-attachment: fixed;
 	padding: 1em;
 	text-align: right;
-	border-bottom: 1px solid #9e9e9e;
+	border-bottom: 1px solid #bdbdbd;
 	font-size: 4em;
 	overflow-y: hidden;
-	height: 2.5em;
+	height: 3em;
 	width: 100%;
 }
 
+
 .profiles .profile_container{
 	/*border-top: 1px solid #616161;*/
+	border-bottom: 1px solid #bdbdbd;
 	position: relative;
 	top: 0em;
 	width: 100%;
 	height: 40em;
-	margin-bottom: 2em;
+	margin-bottom: 0;
 }
 
 .profiles .side_panel{
@@ -81,6 +86,7 @@
 	margin-bottom: 1em;
 }
 
+
 .profiles.show div.panel a{
 	padding-top: .25em;
 	font-size: 1.65em;
@@ -119,6 +125,7 @@
 
 .profiles.show #history{
 	transform: translate(4px, 0);
+
 }
 // .profiles.show a{
 // 	/*transform: translateX(4px, 0); */
@@ -180,19 +187,14 @@
 .profiles.show .main_panel h5{
 	margin-left: -3.7em;
 }
-
 .profiles.show #billing{
 	margin-left: 0em;
 }
 
-.profiles.show .main_panel h6{
-	display: flex;
-	box-sizing: inline;
+.profiles.show .main_panel input{
+
 }
 
-.profiles.show .main_panel #edit_user{
-	transform: translate(-10px, 0);
-}
 .profiles.show strong {
 	font-size: 18px;
 }
@@ -251,7 +253,7 @@
 	margin-left: auto;
 	margin-right: auto;
 	padding: 1em 1em 2em 4em;
-	border: 1px solid;
+	border: 1px solid black;
 	width: 68%;
 	height: 90%;
 

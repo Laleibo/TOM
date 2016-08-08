@@ -14,9 +14,13 @@
  *= require_self
  */
 
- body {
-   font-family: 'Poppins', sans-serif;
-}
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+
+main {
+    flex: 1 0 auto;
+  }
 
 /*login{
 	position: absolute;
@@ -33,24 +37,6 @@
 }
 */
 
-/*navbar links*/
-/*#navlinks a {
-  color: #fff;
-  font-size: 1.25em;
-  // padding: 1.5em .5em;
-
-
-  &:visited {
-    color: #fff;
-  }
-
-  #navlinks a hover {
-    color: #ffff00;
-    // background-color: #ab47bc;
-    // padding: 1.5em .5em;
-  }
-}
-/*navbar links above*/*/
 
 .fa {
   color: #8e24aa;
@@ -60,27 +46,52 @@
 /*.links ul li a {
   float: left;
   font-size: 18px;
-  padding: .5em .5em;
 }
 .links ul li a:hover {
   color: #8e24aa;
   background-color: transparent;
-  padding: 1em .5em;
-}*/
 
 button .btn h5 {
-padding-bottom: 5em;
 border: 5px #8e24aa solid,
 }
 
-button:hover {
+/*button:hover {
   color: #8e24aa;
   height: 3.5em;
-}
+}*/
 
 /*.left-footer {
   margin-left: 25%;
 }*/
-.nav-padding {
-  padding: 0em 3.25em;
+.nav-settings {
+  font-size: 1.25em;
+  padding: 0 3.25em;
 }
+
+#nav-mobile a {
+  color: white;
+  border-radius: .25em;
+  padding: .125em;
+}
+
+#nav-mobile a:hover {
+  background-color: #ffff00;
+  color: #8e24aa;
+  border-radius: .25em;
+  padding: .25em;
+}
+
+
+
+tom {
+  /*font-size: 2em;*/
+  background-color: red;
+  /*transition: 1s;*/
+}
+/*
+a:hover.brand-logo {
+  color: white !important;
+  font-size: 30px !important;
+  background-color: transparent;
+  transform: rotateX(7deg) !important;
+}*/
