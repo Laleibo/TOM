@@ -150,9 +150,9 @@ $(document).on("turbolinks:load",function(){
 				});
 		});
 
-		$(".profiles.show .edit_user").on("click",function(){
-						edit_user();
-			});
+		// $(".profiles.show .edit_user").on("click",function(){
+		// 				edit_user();
+		// 	});
 
 	}
 
@@ -188,7 +188,7 @@ $(document).on("turbolinks:load",function(){
     return (!str || /^\s*$/.test(str));
 	}
 
-	function edit_user(){
-		var t1 = $(".main_panel")[0];
-		console.log(t1);
-	}
+	// function edit_user(){
+	// 	var t1 = $(".main_panel")[0];
+	// 	console.log(t1);
+	// }
