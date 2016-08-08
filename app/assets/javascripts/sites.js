@@ -7,10 +7,6 @@ $(document).on("turbolinks:load",function(){
 		profile_show();
 	});
 
-	$(".profiles.invoice").ready(function(){
-		profile_invoice();
-	});
-
 });
 
 function home_page_setup(){
@@ -47,20 +43,16 @@ function profile_show(){
 		$(pro_pop).hide();
 		$(".banner").html('Welcome, '+ users);
 	}
-	$('#create_user').on("click", function(e){
-		alert("Complete your subscribtion by adding your shipping address and billing information.")
-		$(".profiles.show .step_container").hide(170);
-	});
-
 	pop_set(pro_pop);
 
 	$(".profiles.show #user_exit").click(function(){
 		$(".profiles.show .step_container").hide(170);
 	});
+
 	$(".profiles.show #new_user").click(function(){
 		$(".profiles.show .step_container").show(170);
 		$(pro_exit).show();
-		$("#pro_prevent").hide();
+		// $("#pro_prevent").hide();
 	});
 
 	var acc = $(".profiles.show .accordion");
@@ -192,13 +184,6 @@ function pop_set(selected){
 
 }
 
-function profile_invoice(){
-
-}
-
-function isBlank(str) {
-	return (!str || /^\s*$/.test(str));
-}
 
 function edit_user(){
 	$("#user_edit").on("click",function(e){
