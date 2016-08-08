@@ -44,11 +44,6 @@
       </div>
     </header>
 
-
-    <% flash.each do |message_type, message| %>
-       <div class="alert alert-<%= message_type %>"><%= message %></div>
-     <% end %>
-
     <%= yield %>
 
     <footer class="page-footer white" id="footer">
@@ -56,8 +51,8 @@
       <div class="footer row">
         <div class="col s6 m6 l4 offset-l4">
       <ul>
-        <li><a class="grey-text text-grey" href="#!">CONTACT US</a></li>
-        <li><a class="grey-text text-grey" href="#!">CAREERS</a></li>
+        <li><a class="grey-text" href="#!">CONTACT US</a></li>
+        <li><a class="grey-text" href="#!">CAREERS</a></li>
       </ul>
     </div>
       <div class="col s6 m6 l4">
@@ -75,24 +70,24 @@
             <button class="btn purple darken-1 waves-effect waves-light">Join Now</button>
             <button class="btn purple darken-1 waves-effect waves-light">Refer A Friend</button>
           </div>
-                <div class="col s6 m6 l4">
-                <ul>
-                  <li><a class="grey-text text-grey" href="#!">CONTACT US</a></li>
-                  <li><a class="grey-text text-grey" href="#!">CAREERS</a></li>
-                </ul>
-              </div>
-              <div class="col s6 m6 l3">
-                  <h5 class="grey-text">Connect with us</h5>
-                <i class="fa fa-facebook-official fa-3x"></i>
-                <i class="fa fa-twitter-square fa-3x"></i>
-                <i class="fa fa-instagram fa-3x"></i>
-                <i class="fa fa-pinterest-square fa-3x"></i>
-              </div>
+          <div class="col s6 m6 l4">
+            <ul>
+              <li><a class="grey-text text-grey" href="#!">CONTACT US</a></li>
+              <li><a class="grey-text text-grey" href="#!">CAREERS</a></li>
+            </ul>
+          </div>
+          <div class="col s6 m6 l3">
+            <h5 class="grey-text">Connect with us</h5>
+            <i class="fa fa-facebook-official fa-3x"></i>
+            <i class="fa fa-twitter-square fa-3x"></i>
+            <i class="fa fa-instagram fa-3x"></i>
+            <i class="fa fa-pinterest-square fa-3x"></i>
+          </div>
           </div>
           <% end %>
               <div class="footer-copyright grey darken-1">
-                <div class="container">
-                © 2016 Tom. Lauren Leibowitz, Denise Measgher &amp; Jeremy Anderson
+                <div class="container center">
+                © 2016 Tom. Lauren Leibowitz, Denise Meagher &amp; Jeremy Anderson
                 </div>
               </div>
         </footer>

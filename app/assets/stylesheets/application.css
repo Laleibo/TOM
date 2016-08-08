@@ -92,6 +92,11 @@ a:hover.brand-logo {
 
 
 #footer {
+  font-size: 1.25em;
   border-top: 1px solid #bdbdbd;
   margin-top: 0px;
+}
+
+.foot-contact li {
+  list-style-type: none;
 }
