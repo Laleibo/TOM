@@ -121,14 +121,6 @@ label:active {
 	width: 100%;
 }
 
-.circle {
-	// background-color: #8e24aa;
-  border: 1px solid #8e24aa;
-	width: 12em;
-	height: 12em;
-	margin-left: auto;
-	margin-right: auto;
-}
 
 .breaker {
   justify-content: center;
@@ -192,8 +184,33 @@ label:active {
   font-size: 1.5em;
   line-height: 1.35em;
   margin-left: 1.25em;
+}
 
+.how-to-title {
+  font-size: 1.75em;
+  line-height: normal;
+  color: #8e24aa;
+}
 
+.how-to-description {
+  font-size: .75em;
+  line-height: normal;
+  text-align: justify;
+}
+
+.how-to-icon  {
+justify-content: center;
+border-radius: 50%;
+background-color: yellow;
+height: 175px;
+width: 175px;
+margin-left: 30%;
+}
+
+.how-to-icon img {
+  height: 125px;
+  width: 125px;
+  padding: 10px;
 }
 
 /*chevron css */

@@ -1,10 +1,14 @@
 
+<% if flash[:just_signed_up] %>
+<p class="welcome">Thanks for joining TOM!</p>
+<% end %>
+
 <div class="banner" data-users="<%= @first %>"></div>
 
 <div class="profile_container">
   <div class="side_panel">
     <ul class="navig" data-profile="<%= @profile.id %>">
-      <div class="accordion" id="your_orders">Your Subscriptions</div>
+      <div class="accordion" id="your_orders">Your Subscription</div>
       <% @profile.users.each do |user| %>
       <div class="panel" id='user_profile' data-user="<%= user.id %>"><%= link_to user.first_name, profile_user_path(profile_id:@profile.id,id: user.id) %> </div>
       <% end %>
@@ -59,8 +63,8 @@
   </table>
 </div>
 
-<!-- <div class="step_container modal pop-position">
+<div class="step_container modal pop-position">
   <button class="user_exit" id="user_exit">X</button>
 
 <%= render 'users/new', user: @user%>
-</div> -->
+</div>

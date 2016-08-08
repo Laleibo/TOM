@@ -17,10 +17,3 @@
 //= require transit.js
 //= require_tree .
 //= require turbolinks
-
-
-
-$(document).ready(function(){
-  $('.carousel.carousel-slider').carousel({
-    full_width: true
-});
