@@ -1,12 +1,11 @@
 
 <% if flash[:just_signed_up] %>
 <p class="welcome">Thanks for joining TOM!</p>
+<% end %>
 
-<% end %><div class="banner" data-users="<%= @first %>">
-</div>
+<div class="banner" data-users="<%= @first %>"></div>
 
 <div class="profile_container">
-
   <div class="side_panel">
     <ul class="navig" data-profile="<%= @profile.id %>">
       <div class="accordion" id="your_orders">Your Subscriptions</div>
@@ -65,10 +64,10 @@
     </tbody>
   </table>
 </div>
-<div class="step_container modal">
+<div class="step_container modal pop-position">
   <button class="user_exit" id="user_exit">X</button>
 
-  <p id="pro_prevent">You must create a user before proceding</p>
+  <p id="pro_prevent">Thanks for joining TOM! <br> Please set up your first box preferences to continue.</p>
   <%= form_for ([@profile, @user]) do |u| %>
   <div>
     <%= u.label :first_name %>

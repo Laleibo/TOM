@@ -12,7 +12,7 @@ $(document).on("turbolinks:load",function(){
 	});
 
 });
-	
+
 	function home_page_setup(){
 
 		var log_link = $(".sessions.new #login_link");
@@ -29,7 +29,7 @@ $(document).on("turbolinks:load",function(){
 
 		pop_functionality(log_in_pop, log_link, log_in_exit, reg_pop);
 		pop_functionality(reg_pop, reg_link, reg_exit, log_in_pop);
-	
+
 	}
 
 	function profile_show(){
@@ -49,7 +49,7 @@ $(document).on("turbolinks:load",function(){
 		}
 
 		pop_set(pro_pop);
-		
+
 		$(".profiles.show #user_exit").click(function(){
 			$(".profiles.show .step_container").hide(170);
 		});
@@ -58,7 +58,7 @@ $(document).on("turbolinks:load",function(){
 			$(pro_exit).show();
 			$("#pro_prevent").hide();
 		});
-		
+
 		var acc = $(".profiles.show .accordion");
 		var panel = $(".profiles.show .panel")
 		var i;
@@ -100,15 +100,15 @@ $(document).on("turbolinks:load",function(){
 			$(".profiles.show .main_panel").append(d);
     	});
     });
-	 	
+
 	 	$(".profiles.show .panel").click(function(e){
 			e.preventDefault();
 			var profile_id = $(".profiles.show .navig").data("profile");
 			var user_id = $(this).data("user");
 			$.ajax({
 				url:'/user_form',
-				type: "post", 
-				data: {profile_id: profile_id, user_id: user_id} 
+				type: "post",
+				data: {profile_id: profile_id, user_id: user_id}
 				}).done(function(data){
 					$(".profiles.show .main_panel").text('');
 					$(".profiles.show .main_panel").append(data);
@@ -142,8 +142,8 @@ $(document).on("turbolinks:load",function(){
 			var user_id = $(this).data("user");
 			$.ajax({
 				url:'/use_form',
-				type: "post", 
-				data: {profile_id: profile_id, user_id: user_id} 
+				type: "post",
+				data: {profile_id: profile_id, user_id: user_id}
 				}).done(function(data){
 					$(".profiles.show .main_panel").text('');
 					$(".profiles.show .main_panel").append(data);
@@ -166,7 +166,7 @@ $(document).on("turbolinks:load",function(){
 				});
 			});
 		});
-	
+
 	}
 
 	function pop_set(selected){
@@ -177,11 +177,11 @@ $(document).on("turbolinks:load",function(){
 		var left = (win_width/2) - (pop_width/2);
 		var top = (win_height/2) - (pop_height/2) - 45;
 		$(selected).css({'top': top, 'left': left});
-	
+
 	}
 
 	function profile_invoice(){
-		
+
 	}
 
 	function isBlank(str) {
