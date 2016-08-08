@@ -15,11 +15,11 @@
       <div class="side_links pointer" id="new_user">Add a Box</div>
       <div class="side_links pointer" id="delivery">Shipping &amp; Billing</div>
       <div class="side_links pointer" id="refer">Refer someone</div>
-      <div class="side_links pointer" id="history">
-        <% if @profile.subscribed == nil %>
-        <% else @profile.subscribed == true %>
-          <%= link_to 'Order History', invoice_profile_path(@profile), method: :get %>
-        <% end %>
+      <div class="side_links pointer" id="invoice">
+      <% if @profile.subscribed == nil %>
+      <% else @profile.subscribed == true %>
+        <a>Order History</a>
+      <% end %>
       </div>
     </ul>
   </div>
@@ -64,8 +64,9 @@
     </tbody>
   </table>
 </div>
-<div class="step_container modal pop-position">
+
+<!-- <div class="step_container modal pop-position">
   <button class="user_exit" id="user_exit">X</button>
 
 <%= render 'users/new', user: @user%>
-</div>
+</div> -->

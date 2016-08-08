@@ -54,33 +54,18 @@ main {
     // padding: 1.5em .5em;
   }
 }
-/*navbar links above*/*/
+/*navbar links above*/
 
 .fa {
   color: #8e24aa;
-  padding: .25em;
+  padding: 0em .2em 0 .25em;
 }
 
-/*.links ul li a {
-  float: left;
-  font-size: 18px;
-}
-.links ul li a:hover {
-  color: #8e24aa;
-  background-color: transparent;
-
-button .btn h5 {
-border: 5px #8e24aa solid,
+ul li {
+  font-size: 20px;
+  padding: .4em;
 }
 
-/*button:hover {
-  color: #8e24aa;
-  height: 3.5em;
-}*/
-
-/*.left-footer {
-  margin-left: 25%;
-}*/
 .nav-padding {
   padding: 0em 3.25em;
 }
