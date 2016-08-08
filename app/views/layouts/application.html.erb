@@ -7,41 +7,36 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+<!--google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand|Montserrat|Rock+Salt" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js">
     </script>
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-    <script type="text/javascript">
-</script>
-
+    <script type="text/javascript"></script>
   </head>
 
   <body class="<%= controller_name %> <%= action_name %>">
     <header>
       <div class="navbar-fixed">
         <nav>
-          <!-- <div class=" break grey">
-          </div> -->
-          <!-- <div class=" break purple darken-1">
-          </div> -->
-         <div class="nav-wrapper nav-padding purple darken-1 z-depth-1">
-           <a href="#" class="brand-logo center">TOMLOGO</a>
-           <span id="nav-mobile" class="left hide-on-med-and-down">
-             <% if current_profile %>
-             <span id="logout">Signed in as <%= current_profile.email %> |
-             <%= link_to "Logout", logout_path %></span>
-             <% else %><span class="login" id="login_link">Login</span> |
-             <span class="login" id="register_link">Register</span>
-             <% end %>
-           </span>
+
+         <div class="row nav-wrapper nav-settings purple darken-1 z-depth-1">
+             <a href="#" class="brand-logo center">TOM</a>
+             <span id="nav-mobile" class="left hide-on-med-and-down">
+               <% if current_profile %>
+               <span id="logout">Signed in as <%= current_profile.email %> |
+               <%= link_to "Logout", logout_path %></span>
+               <% else %><span class="login" id="login_link">Login</span> |
+               <span class="login" id="register_link">Register</span>
+               <% end %>
+             </span>
              <span id="nav-mobile" class="right hide-on-med-and-down">
-               <a href="#">REFER A FRIEND</a> |
-               <a href="#"> BLOG</a> |
-               <a href="#"> FAQ</a>
+               <a href="#">REFER A FRIEND</a> | <a href="#"> BLOG </a> |
+               <a href="#">FAQ</a>
              </span>
 
          </div>
@@ -73,11 +68,6 @@
       <i class="fa fa-pinterest-square fa-3x"></i>
     </div>
   </div>
-    <div class="footer-copyright grey darken-1">
-      <div class="container">
-      © 2016 Tom. Lauren Leibowitz, Denise Measgher & Jeremy Anderson
-      </div>
-    </div>
         <% else %>
         <div class="footer row center-align">
           <div class="col s6 m6 l3 offset-l1">
@@ -100,10 +90,10 @@
                 <i class="fa fa-instagram fa-3x"></i>
                 <i class="fa fa-pinterest-square fa-3x"></i>
               </div>
-            </div>
+          </div>
               <div class="footer-copyright grey darken-1">
                 <div class="container">
-                © 2016 Tom. Lauren Leibowitz, Denise Measgher & Jeremy Anderson
+                © 2016 Tom. Lauren Leibowitz, Denise Measgher &amp; Jeremy Anderson
                 </div>
               </div>
             <% end %>

@@ -9,17 +9,20 @@
 }
 
 .profiles .banner {
+	background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.25)),
+	                rgba(255, 255, 255, 0.10) url('TOM-emoticons2.png');
+	background-attachment: fixed;
 	padding: 1em;
 	text-align: right;
-	border-bottom: 1px solid #9e9e9e;
+	border-bottom: 1px solid #bdbdbd;
 	font-size: 4em;
 	overflow-y: hidden;
-	height: 2.5em;
+	height: 3em;
 	width: 100%;
 }
 
+
 .profiles .profile_container{
-	/*border-top: 1px solid #616161;*/
 	position: relative;
 	top: 0em;
 	width: 100%;
