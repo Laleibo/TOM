@@ -201,3 +201,7 @@ function edit_user(){
 		});
 	});
 }
+
+function isBlank(str) {
+    return (!str || /^\s*$/.test(str));
+}
