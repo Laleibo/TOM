@@ -1,16 +1,10 @@
-<div class="dis_title">
-		<h5> Your monthly delivery day: <%= Profile.delivery_day(@profile.delivery) %> day of each month. </h5>
-
-	<div class="invoice_boxes"><h5> Total Boxes ordered: <%= Profile.boxes(@profile) %> </h5></div>
-</div>
-
-	<table class="responsive-table bordered">
-	<h5>Order Invoices</h5>
-
+<div class="invoice_table">Invoice History</div>
+<br>
+<table class="responsive-table bordered">
 		<tr>
-			<th><h5> Date </h5> </th>
-			<th><h5> Amount </h5></th>
-			<th><h5> Status </h5> </th>
+			<th><strong>Date</strong></th>
+			<th><strong>Amount</strong></th>
+			<th><strong>Status</strong></th>
 		</tr>
 		<tr>
 			<td><%= Profile.invoice_date(@profile.id) %></td>
@@ -18,12 +12,23 @@
 			<td><%= Profile.status(@profile.id) %> </td>
 		</tr>
 	</table>
-
 	<br>
-  </div>
+	<br>
+	<div class="invoice_table">Box Info </div>
+	<br>
+	<table class="responsive-table bordered">
+	<tr>
+			 <td><strong>Your monthly delivery day &nbsp;&nbsp;<%= Profile.delivery_day(@profile.delivery) %></strong> </td>
+	</tr>
+	<tr>
+			<td><strong>Total Boxes ordered&nbsp;&nbsp;&nbsp;&nbsp;<%= Profile.boxes(@profile) %></strong></td>
+	</tr>
+	</table>
+<br>
+<br>
 	<% if @profile.subscribed == nil %>
 	<% elsif @profile.subscribed == true %>
-  <button class="btn purple darken-1 waves-effect waves-light" type="submit" name="action">  <%= link_to 'Cancel Your Subscription', cancel_profile_charges_path(@profile), method: :put, data: { confirm: 'Are you sure you want to cancel your Subscription?' } %>
+  <%= link_to 'Cancel Your Subscription', cancel_profile_charges_path(@profile), method: :put, data: { confirm: 'Are you sure you want to cancel your Subscription?' } %>
   </button>
 	<% else %>
   <button class="btn purple darken-1 waves-effect waves-light" type="submit" name="action">   <%= link_to 'Re-Activate Subscription', delivery_profile_path(@profile), method: :get, data: { confirm: 'You need to enter your payment information' } %>

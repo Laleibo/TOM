@@ -14,13 +14,11 @@
       <% end %>
       <div class="side_links pointer" id="new_user">Add a Box</div>
       <div class="side_links pointer" id="delivery">Shipping &amp; Billing</div>
-      <div class="side_links pointer" id="refer">Refer someone</div>
-      <div class="side_links pointer" id="invoice">
+      <div class="side_links pointer" id="refer">Referral Code</div>
       <% if @profile.subscribed == nil %>
       <% else @profile.subscribed == true %>
-        <a>Order History</a>
+      <div class="side_links pointer" id="invoice">Order History</div>
       <% end %>
-      </div>
     </ul>
   </div>
 <div class="main_panel">
@@ -35,7 +33,7 @@
         <% unless @profile.address1.blank? %>
         <td><strong>Address:</strong></td>
         <td><%= @profile.address1 %></td>
-        <% end %>>
+        <% end %>
       </tr>
       <tr>
         <% unless @profile.address2.blank? %>
@@ -53,7 +51,7 @@
         <% unless @profile.state.blank? %>
         <td><strong>State:</strong></td>
         <td><%= @profile.state %></td>
-        <% end %>>
+        <% end %>
       </tr>
       <tr>
         <% unless @profile.zip.blank? %>

@@ -93,3 +93,8 @@ a:hover.brand-logo {
   background-color: transparent;
   transform: rotateX(7deg) !important;
 }
+
+#footer {
+  border-top: 2px solid #757575;
+  margin-top: 0px;
+}

@@ -224,36 +224,8 @@
 		border-color: transparent;
 		background-color: #fafafa;
 }
+.invoice_table {
+	margin-left: 5%;
+	font-size: 30px;
 
-.profiles.invoice {
-	padding: 2.3em;
-	/*margin: 0em 0em 1em 0em;*/
-}
-
-.profiles.invoice .invoice_boxes{
-	margin: 3em;
-}
-
-.profiles.invoice table{
-	display: center;
-	position: relative;
-	padding-left: 0.5em;
-	left: 10%;
-	width: 75%;
-}
-
-.profiles.invoice .paper{
-	display: center;
-	margin-top: 2em;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 1em 1em 2em 4em;
-	border: 1px solid black;
-	width: 68%;
-	height: 90%;
-
-}
-
-#invoice a{
-	padding: 0;
 }
