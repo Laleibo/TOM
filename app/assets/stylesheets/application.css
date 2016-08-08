@@ -33,12 +33,31 @@
 }
 */
 
+/*navbar links*/
+/*#navlinks a {
+  color: #fff;
+  font-size: 1.25em;
+  // padding: 1.5em .5em;
+
+
+  &:visited {
+    color: #fff;
+  }
+
+  #navlinks a hover {
+    color: #ffff00;
+    // background-color: #ab47bc;
+    // padding: 1.5em .5em;
+  }
+}
+/*navbar links above*/*/
+
 .fa {
   color: #8e24aa;
   padding: .25em;
 }
 
-.links ul li a {
+/*.links ul li a {
   float: left;
   font-size: 18px;
   padding: .5em .5em;
@@ -47,7 +66,7 @@
   color: #8e24aa;
   background-color: transparent;
   padding: 1em .5em;
-}
+}*/
 
 button .btn h5 {
 padding-bottom: 5em;
@@ -59,9 +78,9 @@ button:hover {
   height: 3.5em;
 }
 
-.left-footer {
+/*.left-footer {
   margin-left: 25%;
-}
+}*/
 .nav-padding {
   padding: 0em 3.25em;
 }

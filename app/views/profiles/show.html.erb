@@ -1,9 +1,12 @@
-<div class="banner" data-users="<%= @first %>"></div>
+
+<% if flash[:just_signed_up] %>
+<p class="welcome">Thanks for joining TOM!</p>
+
+<% end %><div class="banner" data-users="<%= @first %>">
+</div>
 
 <div class="profile_container">
-  <% if flash[:just_signed_up] %>
-  <p class="welcome">Thanks for joining TOM!</p>
-<% end %>
+
   <div class="side_panel">
     <ul class="navig" data-profile="<%= @profile.id %>">
       <div class="accordion" id="your_orders">Your Subscriptions</div>

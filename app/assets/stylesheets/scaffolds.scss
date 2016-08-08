@@ -26,15 +26,17 @@ a {
 
 
   &:visited {
-    color: #666;
+    color: #fff;
   }
 
   &:hover {
-    color: #ccc;
-    background-color: #ab47bc;
+    color: currentColor;
+    // background-color: #ab47bc;
     padding: 1.5em .5em;
   }
 }
+
+
 
 th {
   padding-bottom: 5px;

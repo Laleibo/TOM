@@ -1,5 +1,10 @@
  <button class="user_exit" id="user_exit">X</button>
 
+
+     <!-- <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %> -->
+
   <p id="pro_prevent">You must create a user before proceding</p>
   <%= form_for ([@profile, @user]) do |u| %>
   <div>

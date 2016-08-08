@@ -46,7 +46,7 @@ class ProfilesController < ApplicationController
         respond_to do |format|
         if @profile.save
           session[:profile_id] = @profile.id
-          format.html { redirect_to profile_path(@profile), notice: 'Profile was successfully created.' }
+          format.html { redirect_to profile_path(@profile), notice: 'Thanks for joining TOM!.' }
           format.json { render :show, status: :created, location: @profile }
         else
           format.html { redirect_to new_session_path, notice: 'Profile was not successfully created, please ensure to fill in all fields.' }
