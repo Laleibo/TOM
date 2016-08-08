@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/new_form/:id' => 'users#edit'
   get '/deliv_get' => 'profiles#delivery'
 
+post 'profiles/charges/new' => 'charges#new'
   resources :users
   # post '/add_address' => 'profiles#address'
 

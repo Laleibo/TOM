@@ -12,7 +12,6 @@
   <% end %>
 <h5>Shipping Address</h5>
 <br>
-<br>
   <div class="field">
     <%= f.label :address %>
     <%= f.text_field :address1 %>
@@ -43,8 +42,8 @@
     <%= f.date_field :delivery %>
   </div>
 
-  <div class="actions waves-effect waves-light btn">
-    <%= f.submit %>
+  <button class="btn purple darken-1 waves-effect waves-light" type="submit" name="action">  <%= f.submit %>
+  </button>
   </div>
 <% end %>
 <br>
@@ -52,5 +51,3 @@
 <br>
 
 <%= render 'charges/new' %>
-<br><br>
-<h6><%=link_to 'Cancel', @profile%><h6>

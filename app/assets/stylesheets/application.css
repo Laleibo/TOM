@@ -15,15 +15,13 @@
  */
 
 body {
-    /*display: flex;
-    min-height: 100vh;
-    flex-direction: column;*/
     font-family: 'Poppins', sans-serif;
   }
 
-  main {
+main {
     flex: 1 0 auto;
   }
+
 /*login{
 	position: absolute;
 	margin-left: auto;
