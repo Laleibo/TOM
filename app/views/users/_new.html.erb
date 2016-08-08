@@ -1,4 +1,6 @@
-<p id="pro_prevent">Thanks for joining TOM! <br> Please set up your first box preferences to continue.</p>
+<% unless @user.id %>
+<p id="pro_prevent">Thanks for joining TOM! <br> Please set up your box to continue.</p>
+<% end %>
   <%= form_for ([@profile, @user]) do |u| %>
   <div>
     <%= u.label :first_name %>
@@ -13,16 +15,16 @@
     <%= u.date_field :birthday %>
   </div>
     <div class="radio">
-      I prefer to use...
+      My Box should have
       <%= u.radio_button(:variety, "tampon") %>
       <%= u.label(:variety_tampon, "All Tampons") %>
       <%= u.radio_button(:variety, "pad") %>
       <%= u.label(:variety_pad, "All Pads") %>
       <%= u.radio_button(:variety, "combo") %>
-      <%= u.label(:variety_combo, "Combination") %>
+      <%= u.label(:variety_combo, "A Combination") %>
     </div>
     <div class="radio">
-      My flow is...
+      I flow
       <%= u.radio_button(:flow, "light") %>
       <%= u.label(:flow_light, "Light") %>
       <%= u.radio_button(:flow, "medium") %>
@@ -31,13 +33,13 @@
       <%= u.label(:flow_heavy, "Heavy") %>
     </div>
     <div class="radio">
-      I prefer my Products: Scented or Unscented?
+      I want scented products?
       <%= u.radio_button(:scent, "scented") %>
       <%= u.label(:scent_scented, "Yes") %>
       <%= u.radio_button(:scent, "unscented") %>
       <%= u.label(:scent_unscented, "No") %>
     </div>
-    <button class="btn purple darken-1 waves-effect waves-light" type="submit" name="action">  <%= u.submit %>
+    <button class="btn purple darken-1 waves-effect waves-light" type="submit" name="action" id='create_user'>  <%= u.submit %>
     </button>
 
  <% end %>

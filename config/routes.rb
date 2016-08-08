@@ -11,8 +11,7 @@ Rails.application.routes.draw do
   post '/user_form/:id' => 'users#ajax'
   get '/new_form/:id' => 'users#edit'
   get '/deliv_get' => 'profiles#delivery'
-
-post 'profiles/charges/new' => 'charges#new'
+  get '/orders/:id' => 'profiles#invoice'
   resources :users
   # post '/add_address' => 'profiles#address'
 

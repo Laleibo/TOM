@@ -37,22 +37,14 @@ main {
 }
 */
 
-
 .fa {
   color: #8e24aa;
-  padding: .25em;
+  padding: 0em .2em 0 .25em;
 }
 
-/*.links ul li a {
-  float: left;
-  font-size: 18px;
-}
-.links ul li a:hover {
-  color: #8e24aa;
-  background-color: transparent;
-
-button .btn h5 {
-border: 5px #8e24aa solid,
+ul li {
+  font-size: 20px;
+  padding: .4em;
 }
 
 /*button:hover {
@@ -63,6 +55,8 @@ border: 5px #8e24aa solid,
 /*.left-footer {
   margin-left: 25%;
 }*/
+
+
 .nav-settings {
   font-size: 1.25em;
   padding: 0 3.25em;
@@ -82,7 +76,6 @@ border: 5px #8e24aa solid,
 }
 
 
-
 tom {
   /*font-size: 2em;*/
   background-color: red;
@@ -94,4 +87,11 @@ a:hover.brand-logo {
   font-size: 30px !important;
   background-color: transparent;
   transform: rotateX(7deg) !important;
+<<<<<<< HEAD
 }*/
+
+
+#footer {
+  border-top: 1px solid #bdbdbd;
+  margin-top: 0px;
+}

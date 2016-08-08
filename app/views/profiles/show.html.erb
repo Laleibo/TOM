@@ -10,13 +10,11 @@
       <% end %>
       <div class="side_links pointer" id="new_user">Add a Box</div>
       <div class="side_links pointer" id="delivery">Shipping &amp; Billing</div>
-      <div class="side_links pointer" id="refer">Refer someone</div>
-      <div class="side_links pointer" id="history">
-        <% if @profile.subscribed == nil %>
-        <% else @profile.subscribed == true %>
-          <%= link_to 'Order History', invoice_profile_path(@profile), method: :get %>
-        <% end %>
-      </div>
+      <div class="side_links pointer" id="refer">Referral Code</div>
+      <% if @profile.subscribed == nil %>
+      <% else @profile.subscribed == true %>
+      <div class="side_links pointer" id="invoice">Order History</div>
+      <% end %>
     </ul>
   </div>
 <div class="main_panel">
@@ -31,7 +29,7 @@
         <% unless @profile.address1.blank? %>
         <td><strong>Address:</strong></td>
         <td><%= @profile.address1 %></td>
-        <% end %>>
+        <% end %>
       </tr>
       <tr>
         <% unless @profile.address2.blank? %>
@@ -49,7 +47,7 @@
         <% unless @profile.state.blank? %>
         <td><strong>State:</strong></td>
         <td><%= @profile.state %></td>
-        <% end %>>
+        <% end %>
       </tr>
       <tr>
         <% unless @profile.zip.blank? %>
@@ -60,8 +58,9 @@
     </tbody>
   </table>
 </div>
-<div class="step_container modal pop-position">
+
+<!-- <div class="step_container modal pop-position">
   <button class="user_exit" id="user_exit">X</button>
 
 <%= render 'users/new', user: @user%>
-</div>
+</div> -->
