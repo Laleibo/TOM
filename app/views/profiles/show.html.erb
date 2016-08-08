@@ -13,7 +13,7 @@
       <div class="panel" data-user="<%= user.id %>"><%= link_to user.first_name, profile_user_path(@profile, user) %></div>
       <% end %>
       <div class="side_links pointer" id="new_user">New User</div>
-      <div class="side_links pointer" id="delivery">Delivery</div>
+      <div class="side_links pointer" id="delivery">Shipping &amp; Delivery</div>
       <div class="side_links pointer" id="refer">Refer someone</div>
       <div class="side_links pointer" id="history">
         <% if @profile.subscribed == nil %>
