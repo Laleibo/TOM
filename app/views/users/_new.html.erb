@@ -1,4 +1,4 @@
-  <p id="pro_prevent">Customize your Box</p>
+<p id="pro_prevent">Thanks for joining TOM! <br> Please set up your first box preferences to continue.</p>
   <%= form_for ([@profile, @user]) do |u| %>
   <div>
     <%= u.label :first_name %>
@@ -39,4 +39,5 @@
     </div>
     <button class="btn purple darken-1 waves-effect waves-light" type="submit" name="action">  <%= u.submit %>
     </button>
+
  <% end %>

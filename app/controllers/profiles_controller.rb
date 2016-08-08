@@ -40,31 +40,31 @@ class ProfilesController < ApplicationController
 
     def create
       @profile = Profile.new(profile_params)
-      # respond_to do |format|
 
   # this section is the old way, the second section I added for email confirm, keep this section just in case we toss the other. #
 
-        # if @profile.save
-        #   session[:profile_id] = @profile.id
-        #   format.html { redirect_to profile_path(@profile), notice: 'Profile was successfully created.' }
-        #   format.json { render :show, status: :created, location: @profile }
-        # else
-        #   format.html { redirect_to new_session_path, notice: 'Profile was not successfully created, please ensure to fill in all forms.' }
-        #   format.json { render json: @profile.errors, status: :unprocessable_entity }
-        # end
+        respond_to do |format|
+        if @profile.save
+          session[:profile_id] = @profile.id
+          format.html { redirect_to profile_path(@profile), notice: 'Thanks for joining TOM!.' }
+          format.json { render :show, status: :created, location: @profile }
+        else
+          format.html { redirect_to new_session_path, notice: 'Profile was not successfully created, please ensure to fill in all fields.' }
+          format.json { render json: @profile.errors, status: :unprocessable_entity }
+        end
 
-      if @profile.save
-        session[:profile_id] = @profile.id
-        ProfileMailer.registration_confirmation(@profile).deliver
-        flash[:success] = "Please confirm your email address to continue"
-        redirect_to profile_path(@profile)
-      else
-        format.html { redirect_to new_session_path, notice: 'Profile was not successfully created, please ensure to fill in all' }
-        format.json { render json: @profile.errors, status: :unprocessable_entity }
-        flash[:error] = "Ah ah ah.... try again."
-        redirect_to new_session_path
-      end
-    # end
+      # if @profile.save
+      #   session[:profile_id] = @profile.id
+      #   ProfileMailer.registration_confirmation(@profile).deliver
+      #   flash[:notice] = "Please confirm your email address to continue"
+      #   redirect_to profile_path(@profile)
+      # else
+      #   format.html { redirect_to new_session_path, notice: 'Profile was not successfully created, please ensure to fill in all fields.' }
+      #   format.json { render json: @profile.errors, status: :unprocessable_entity }
+      #   flash[:error] = "Ah ah ah.... try again."
+      #   redirect_to new_session_path
+      # end
+    end
   end
 
   # PATCH/PUT /profiles/1
@@ -139,5 +139,10 @@ end
     def profile_params
       params.require(:profile).permit(:email, :password, :password_confirmation, :address1, :address2, :city, :state, :zip, :delivery)
     end
+
+    # def current_profile
+    #   @_current_profile ||= session[:current_profile_id] &&
+    #   Profile.find_by(id: session[:current_profile_id])
+    # end
 
 end

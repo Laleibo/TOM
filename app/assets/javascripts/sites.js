@@ -101,6 +101,7 @@ $(document).on("turbolinks:load",function(){
     	});
     });
 
+
 	 	$("#user_profile").click(function(e){
 			e.preventDefault();
 			var profile_id = $(".profiles.show .navig").data("profile");

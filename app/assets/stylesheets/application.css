@@ -37,19 +37,37 @@ main {
 }
 */
 
+/*navbar links*/
+/*#navlinks a {
+  color: #fff;
+  font-size: 1.25em;
+  // padding: 1.5em .5em;
+
+
+  &:visited {
+    color: #fff;
+  }
+
+  #navlinks a hover {
+    color: #ffff00;
+    // background-color: #ab47bc;
+    // padding: 1.5em .5em;
+  }
+}
+/*navbar links above*/*/
+
 .fa {
   color: #8e24aa;
   padding: .25em;
 }
 
-.links ul li a {
+/*.links ul li a {
   float: left;
   font-size: 18px;
 }
 .links ul li a:hover {
   color: #8e24aa;
   background-color: transparent;
-}
 
 button .btn h5 {
 border: 5px #8e24aa solid,
@@ -60,9 +78,9 @@ border: 5px #8e24aa solid,
   height: 3.5em;
 }*/
 
-.left-footer {
+/*.left-footer {
   margin-left: 25%;
-}
+}*/
 .nav-padding {
   padding: 0em 3.25em;
 }

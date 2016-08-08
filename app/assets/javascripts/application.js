@@ -23,10 +23,4 @@
 $(document).ready(function(){
   $('.carousel.carousel-slider').carousel({
     full_width: true
-  });
-
-  $("#user_edit").click(function(e){
-    e.preventDefault();
-    console.log($(this));
-  });
 });

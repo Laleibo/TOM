@@ -9,11 +9,10 @@
 }
 
 .profiles .banner {
-	padding-top: 3.2%;
+	padding: 1em;
 	text-align: right;
-	padding-right: 3%;
-	border: 1px solid #9e9e9e;
-	font-size: 32px;
+	border-bottom: 1px solid #9e9e9e;
+	font-size: 4em;
 	overflow-y: hidden;
 	height: 2.5em;
 	width: 100%;
@@ -41,56 +40,97 @@
 }
 
 .profiles div.accordion{
+	padding: .5em;
+	font-size: 1.5em;
 	cursor: pointer;
 	color: #616161;
-	transition: 0.4s;
-	margin-bottom: 1em;
+	transition: 0.2s;
 }
+
 .profiles.show div.accordion:hover{
+	padding: .5em;
+	background-color: #ffff00;
+	color: #8e24aa;
+	border-radius: .25em;
+}
+
+.profiles.show div.accordion:active{
+	padding: .5em;
 	color: #8e24aa;
 }
 
-.profiles .navig {
-	font-size: 180%;
-	position: relative;
-	text-align: right;
-	top: 0.8em;
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	left: 0em;
-	z-index: 3;
-	overflow-y: hidden;
-}
+
+// .profiles .navig {
+// 	font-size: 180%;
+// 	position: relative;
+// 	text-align: right;
+// 	top: 0.8em;
+// 	width: 100%;
+// 	height: 100%;
+// 	margin: 0;
+// 	left: 0em;
+// 	z-index: 3;
+// 	overflow-y: hidden;
+// }
 
 .profiles.show div.panel{
 	display: none;
-	color: black;
+	color: #9e9e9e;
 	background-color: white;
 	margin-top: 0.4em;
 	margin-bottom: 1em;
 }
 
-.profiles.show .sho{
+
+.profiles.show div.panel a{
+	padding-top: .25em;
+	font-size: 1.65em;
+	color: #616161;
+}
+.profiles.show div.panel a:hover{
+	padding: .25em;
+	padding-left: 1.5em;
+	color: #8e24aa;
+}
+
+.profiles.show .show{
 	background-color: #8e24aa;
 	display: block !important;
 }
 
 .profiles.show .side_links {
-	margin-bottom: 0.9em;
+	padding: .5em;
+	font-size: 1.5em;
+	transform: translate(-4px, 0);
 	color: #616161;
 }
 .profiles.show .side_links:hover {
+	padding: .5em;
 	color: #8e24aa;
-}
-.profiles.show a{
-	color: #616161;
+	background-color: #ffff00;
+	border-radius: .25em;
 }
 
-.profiles.show a:hover {
-	background-color: white;
+.profiles.show .side_links:active {
+	padding: .5em;
 	color: #8e24aa;
 }
+
+
+
+.profiles.show #history{
+	transform: translate(4px, 0);
+
+}
+// .profiles.show a{
+// 	/*transform: translateX(4px, 0); */
+// 	color: #616161;
+// }
+//
+// .profiles.show a:hover {
+// 	/*background-color: white;*/
+// 	color: #8e24aa;
+// }
 
 .profiles .pointer{
 	cursor: pointer;
@@ -105,30 +145,28 @@
 }
 
 .profiles.show .radio{
-	text-align: justify;
-	font-size: 16px;
-	margin-bottom: 2.5em;
+	text-align:left;
+	font-size: 1.25em;
+	margin-bottom: 2em;
 }
 
 .profiles .main_panel{
-	font-size: 200%;
 	border-left: 1px solid #9e9e9e;
 	overflow-y: scroll;
 	padding-top: 2%;
 	padding-left: 1%;
-	float: right;
+	// float: right;
 	box-sizing: inline;
 	margin-left: auto;
 	height: 99%;
 	width: 72%;
-	z-index: 1;
 }
 
 .profiles.show .main_panel table {
 	position: relative;
-	padding-left: 0.5em;
+	padding-left: 0.75em;
 	left: 10%;
-	width: 60%;
+	width: 50%;
 }
 
 .profiles.show .main_panel form{
@@ -157,34 +195,34 @@
 }
 
 .profiles.show .dis_title {
-	font-size: 32px;
+	font-size: 3em;
+	font-family: 'Poppins', sans-serif;
 }
 
 .profiles.show .step_container{
     position: fixed;
-    border: 1px solid black;
-    background-color: white;
+    background-color: #fafafa;
+		border-radius: .25em;
     padding: 1%;
-    margin-left: auto;
-    width: 59%;
-    min-height: 78%;
-    z-index: 3;
+		margin-top: 3em;
+    margin-left: 7em;
+    width: 55%;
+    min-height: 80%;
 }
 
-.profiles.show .step_container p{
+.profiles.show .step_container p {
 	text-align: center;
-	padding: -1;
 }
 
 .profiles.show .user_exit{
     display: flex;
-    cursor: pointer;
-    margin-left: auto;
-    text-align: left;
-    left: -1em;
-    font-size: 100%;
-    height: 1.4em;
-    width: 1.8em;
+		float:right;
+		color: #616161;
+		font-size: 1.5em;
+    height: 2.25em;
+    width: 2.25em;
+		border-color: transparent;
+		background-color: #fafafa;
 }
 
 .profiles.invoice {
