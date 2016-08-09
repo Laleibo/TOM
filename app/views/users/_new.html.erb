@@ -14,8 +14,10 @@
     <%= u.label :birthday %>
     <%= u.date_field :birthday %>
   </div>
+  <img src="https://s3.amazonaws.com/tombox/file.png" alt="TomBox" height="50" width="50">
+<span class="user-prefq">  My Box should have: </span>
     <div class="radio">
-      My Box should have
+      <br>
       <%= u.radio_button(:variety, "tampon") %>
       <%= u.label(:variety_tampon, "All Tampons") %>
       <%= u.radio_button(:variety, "pad") %>
@@ -23,8 +25,10 @@
       <%= u.radio_button(:variety, "combo") %>
       <%= u.label(:variety_combo, "A Combination") %>
     </div>
+    <img src="https://s3.amazonaws.com/tombox/flow-guide.png" alt="TomBox" height="50" width="50">
+    <span class="user-prefq"> I flow: </span>
     <div class="radio">
-      I flow
+      <br>
       <%= u.radio_button(:flow, "light") %>
       <%= u.label(:flow_light, "Light") %>
       <%= u.radio_button(:flow, "medium") %>
@@ -32,8 +36,10 @@
       <%= u.radio_button(:flow, "heavy") %>
       <%= u.label(:flow_heavy, "Heavy") %>
     </div>
+    <img src="https://s3.amazonaws.com/tombox/flower.png" alt="TomBox" height="50" width="50">
+    <span class="user-prefq"> I want scented products? </span>
     <div class="radio">
-      I want scented products?
+      <br>
       <%= u.radio_button(:scent, "scented") %>
       <%= u.label(:scent_scented, "Yes") %>
       <%= u.radio_button(:scent, "unscented") %>
