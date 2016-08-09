@@ -103,6 +103,9 @@ class ProfilesController < ApplicationController
   end
 
 def invoice
+  if request.xhr?
+    render '_orders', layout: false
+  end
 end
 
   def confirm_email

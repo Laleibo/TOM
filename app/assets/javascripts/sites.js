@@ -117,7 +117,7 @@ function profile_show(){
 	$("#delivery").click(function(){
 		var profile_id = $(".profiles.show .navig").data("profile");
 		$.ajax({
-			url:'/profiles/'+profile_id+'/delivery',
+			url:'/profiles/'+profile_id+'/del',
 			type: 'get'
 		}).done(function(data){
 			$(".profiles.show .main_panel").text('');
@@ -127,7 +127,7 @@ function profile_show(){
 
 	$(".profiles.show .main_panel span").click(function(){
 		$.ajax({
-			ur:'/add_address'
+			url:'/add_address'
 		}).done(function(data){
 			// console.log(data);
 		});
@@ -152,7 +152,7 @@ function profile_show(){
 		e.preventDefault();
 	var profile_id = $(".profiles.show .navig").data("profile");
 	$.ajax({
-		url:'/profiles/'+profile_id+'/invoice',
+		url:'/profiles/'+profile_id+'/orders',
 		type: 'get'
 	}).done(function(data){
 			$(".profiles.show .main_panel").text('');
@@ -205,3 +205,19 @@ function edit_user(){
 function isBlank(str) {
     return (!str || /^\s*$/.test(str));
 }
+
+// var _sqh = _sqh || [];
+//
+// // Push user details for a user who is logged in to your system
+// _sqh.push(['init', {
+//    tenant_alias: 'test_ao1a2qmlvdugs', // Use the tenant alias.
+//    account_id: '23', // Replace with UID.
+//    payment_provider_id: null, // replace with Payment Provider ID if available, otherwise, and for API programs, use null
+//    user_id: '23', // Replace with UID
+//    email: 'ppp@gmail.com', // Replace with user’s email address
+//    first_name: 'John', // Replace with first name if known.
+//    last_name: 'Doe', // Replace with last name if known.
+//    mode: 'POPUP', // This call is for tracking purposes only, no referral widget
+//    checksum: 'MvMRItrOQZll3OfgFW10Ll1ba75AK+z1TSIGC9iNvVw=' // Checksums are currently turned on. Documentation on usage, and how to turn checksum off, can be found here
+//
+// }]);

@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   # get '/user_form' => 'users#update'
   post '/user_form/:id' => 'users#ajax'
   get '/new_form/:id' => 'users#edit'
-  get '/deliv_get' => 'profiles#delivery'
-  get '/orders/:id' => 'profiles#invoice'
+  get '/profiles/:id/del' => 'profiles#delivery'
+  get '/profiles/:id/orders' => 'profiles#invoice'
   resources :users
   # post '/add_address' => 'profiles#address'
 
