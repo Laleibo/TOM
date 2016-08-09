@@ -22,7 +22,7 @@ validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i,
   end
 
   def self.delivery_day(delivery)
-    delivery.strftime('%d')
+    delivery.strftime('%d').to_i.ordinalize
   end
 
   def self.invoice_date(id)
