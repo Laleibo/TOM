@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = @profile.users.create(user_params)
     if @user.save
       created_product = Product.user_pref(@user)
-      Order.create(user_id: @user.id, product_id: created_product.id)
+      Order.create(user_id: @user.id, product_id: created_product.id) rescue nil
       redirect_to profile_path(@profile), notice: "User was successfully created"
     else
       render :new
