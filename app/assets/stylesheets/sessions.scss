@@ -65,8 +65,7 @@ label:active {
 
 .home-top {
   height: 450px;
-  background-image: url("planner_yellow_fade.jpg");
-  // background-image: url('https://s3.amazonaws.com/tombox/tomheader.jpg');
+  background-image: url("https://s3.amazonaws.com/tombox/planner_yellow_fade.jpg");
   background-attachment: fixed;
   max-width: 100%;
   background-size: cover;
@@ -99,8 +98,8 @@ label:active {
 }
 
 .featured-in p {
-  font-size: 3em;
-  padding: 1em 0;
+  font-size: 3.75em;
+  padding: 1em 0 .5em 0;
   font-weight: bold;
 }
 
@@ -112,7 +111,7 @@ label:active {
 
 
 .reviews {
-  background-image: url("TOM-emoticons2.png");
+  background-image: url("https://s3.amazonaws.com/tombox/TOM-emoticons2.png");
   opacity: .75;
   // background-size: contain;
   background-attachment: fixed;
@@ -159,14 +158,14 @@ label:active {
 .extras {
   background-color: #eee;
   height: 400px;
-  margin: 3em 0;
+  margin: 3em 0 5em 0;
   z-index: 3;
 
 }
 
 .candy{
   height:inherit;
-  background-image: url("candy-bars");
+  background-image: url("https://s3.amazonaws.com/tombox/candy-bars.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -215,7 +214,7 @@ margin-left: 30%;
 
 .chevrons-div {
   height: 250px;
-  margin-top: 7em;
+  margin-top: 12em;
 .chevrons { width: 100%;  z-index: 0; }
 .chevrons div { width: 100%; }
 .chevrons div b { color: purple; display: block; float: left; position: relative; margin: -31px 0 .75em 0px; height: 4em; width: 20%; text-indent: -8989px; }
