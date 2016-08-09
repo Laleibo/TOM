@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
       #   render 'new'
       # end
     else
-      flash.now[:error]= "ah ah ah try again!"
+      # flash.now[:error]= "ah ah ah try again!"
       redirect_to new_session_path
     end
 	end
