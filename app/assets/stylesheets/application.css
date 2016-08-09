@@ -43,22 +43,18 @@ main {
 }
 
 ul li {
+  display: inline;
   font-size: 20px;
   padding: .4em;
 }
 
-/*button:hover {
-  color: #8e24aa;
-  height: 3.5em;
-}*/
-
-/*.left-footer {
-  margin-left: 25%;
-}*/
-
-
 .nav-settings {
   font-size: 1.25em;
+  padding: 0 3.25em;
+}
+
+a.brand-logo {
+  font-size: 4.25em;
   padding: 0 3.25em;
 }
 
@@ -76,27 +72,20 @@ ul li {
 }
 
 
-tom {
-  /*font-size: 2em;*/
-  background-color: red;
+.brand-logo img {
+  height: 60px;
+  width: 40px;
   /*transition: 1s;*/
 }
-/*
-a:hover.brand-logo {
-  color: white !important;
-  font-size: 30px !important;
-  background-color: transparent;
-  transform: rotateX(7deg) !important;
-<<<<<<< HEAD
-}*/
+
+.row .nav-warpper .brand-logo span {
+  font-size: 6em;
+}
+
 
 
 #footer {
   font-size: 1.25em;
   border-top: 1px solid #bdbdbd;
   margin-top: 0px;
-}
-
-.foot-contact li {
-  list-style-type: none;
 }

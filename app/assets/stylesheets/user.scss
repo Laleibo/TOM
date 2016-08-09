@@ -1,3 +1,35 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+input:focus {
+  border-bottom: #8e24aa !important;
+  box-shadow: 0 1px 0 0 #8e24aa !important;
+}
+
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:after {
+  background-color: #8e24aa !important;
+}
+
+[type="radio"]:checked+label:after, [type="radio"].with-gap:checked+label:before, [type="radio"].with-gap:checked+label:after {
+  border: 2px solid #8e24aa !important;
+}
+
+[type="radio"]:not(:checked)+label, [type="radio"]:checked+label {
+  font-size: 1.25rem !important;
+}
+
+label {
+  font-size: 1.25rem !important;
+}
+
+input:not([type]), input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+  font-size: 1.35rem !important;
+}
+
+.flash-message {
+  font-size: 1.75em;
+  line-height: 1.85em;
+  color: #616161;
+}

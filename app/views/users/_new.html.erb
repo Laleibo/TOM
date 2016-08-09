@@ -1,5 +1,5 @@
 <% unless @user.id %>
-<p id="pro_prevent">Thanks for joining TOM! <br> Please set up your box to continue.</p>
+<p id="pro_prevent" class="flash-message">Thanks for joining TOM! <br> Please set up your box to continue.</p>
 <% end %>
   <%= form_for ([@profile, @user]) do |u| %>
   <div>
